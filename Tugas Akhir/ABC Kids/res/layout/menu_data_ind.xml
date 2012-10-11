@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout 
+    
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent" 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal">
+    <TableRow>
+        
+	 
+			<TextView
+		   		android:text="Nama:"
+	    		android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content"/>
+
+			<EditText
+			    android:id="@+id/name"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:ems="10"
+			    android:height="20px"
+			    android:width="380px" >
+
+			    <requestFocus />
+			</EditText>
+
+	 </TableRow>
+	<TableRow>
+			<TextView
+	    		android:text="Umur:"
+	    		android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content"/>
+
+			<EditText
+			    android:id="@+id/age"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:ems="10" />
+ 
+	</TableRow>
+	<RelativeLayout >
+
+		<Button
+		    android:id="@+id/save"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentRight="true"
+		    android:layout_alignParentTop="true"
+		    android:layout_marginRight="21dp"
+		    android:text="Simpan" />
+
+	</RelativeLayout>
+    
+</TableLayout>
