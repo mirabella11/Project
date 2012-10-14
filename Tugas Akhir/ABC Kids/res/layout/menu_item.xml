@@ -8,14 +8,14 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	>
  
-    <Button
+    <ImageButton
         android:id="@+id/hewan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="HEWAN"
         android:textSize="20sp" />
 
-    <Button
+    <ImageButton
         android:id="@+id/bunga"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
          android:textSize="20sp"
         />
     
-     <Button
+     <ImageButton
         android:id="@+id/buah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -1,6 +1,6 @@
 package com.abc.kids;
  
-import android.annotation.SuppressLint;
+ 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.widget.EditText;
  
 public class InputData  extends Activity {
 	private EditText name =null;
+	private EditText age= null;
 	
 	 
 		    @Override
@@ -20,14 +21,14 @@ public class InputData  extends Activity {
 		        setContentView(R.layout.menu_data_ind);
 		        
 		       name = (EditText) findViewById(R.id.name);
-		     
+		       age = (EditText) findViewById(R.id.age);
 		        
 		        Button submit = (Button) findViewById(R.id.save);
 		        submit.setOnClickListener(new View.OnClickListener() {
-		            public void onClick(View view) {
-		             //   Intent  Intent1 = new Intent(view.getContext(), Union3.class);
-		               // startActivityForResult( Intent1, 0);
-		            }
+		            public void onClick(View third) {
+		            	Intent myIntent = new Intent(third.getContext(),FirstChoice.class);
+		                startActivityForResult(myIntent, 0);
+	                }
 
 		        });
 		        

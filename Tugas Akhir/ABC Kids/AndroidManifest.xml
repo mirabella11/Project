@@ -19,6 +19,32 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+             
+        </activity>
+        <activity android:name="LanguageChoice" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN1" />
+            </intent-filter>
+        </activity>
+            <activity android:name="InputData" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN2" />
+            </intent-filter>
+        </activity>
+        <activity android:name="FirstChoice" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN3" />
+            </intent-filter>
+        </activity>
+        <activity android:name="Mainmenu" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN4" />
+            </intent-filter>
+        </activity>
+        <activity android:name="MainLesson" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN5" />
+            </intent-filter>
         </activity>
     </application>
 

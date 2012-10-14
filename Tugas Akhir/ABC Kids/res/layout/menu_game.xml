@@ -8,14 +8,14 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	>
  
-    <Button
+    <ImageButton
         android:id="@+id/suara"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tebak Suara"
         android:textSize="20sp" />
 
-    <Button
+    <ImageButton
         android:id="@+id/gambar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
          android:textSize="20sp"
         />
     
-     <Button
+     <ImageButton
         android:id="@+id/kata"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

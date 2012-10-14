@@ -4,7 +4,7 @@
     android:layout_height="match_parent" >
     
     <Button 
-        android:id="@+id/home1"
+        android:id="@+id/home"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_alignParentTop="true"
@@ -13,22 +13,22 @@
       />
     
     <Button
-        android:id="@+id/satu"
+        android:id="@+id/pre"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
      	android:text="A" />
 
     <Button
-        android:id="@+id/back1"
+        android:id="@+id/back"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/home1"
+        android:layout_toRightOf="@+id/home"
         android:text="Kembali" />
 
     <Button
-        android:id="@+id/lima"
+        android:id="@+id/next"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
@@ -36,27 +36,27 @@
         android:text="E" />
 
     <Button
-        android:id="@+id/tiga"
+        android:id="@+id/spell"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/back1"
+        android:layout_toRightOf="@+id/back"
         android:text="C" />
 
     <Button
-        android:id="@+id/dua"
+        android:id="@+id/suara"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/home1"
+        android:layout_toRightOf="@+id/home"
         android:text="B" />
 
     <Button
-        android:id="@+id/empat"
+        android:id="@+id/daftar"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/lima"
+        android:layout_toLeftOf="@+id/next"
         android:text="D" />
 
 </RelativeLayout>
