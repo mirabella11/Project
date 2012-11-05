@@ -21,10 +21,10 @@ public class MainLesson extends Activity {
 	        
 	        home = (Button) findViewById(R.id.home);
 	        back = (Button) findViewById(R.id.back);
-	        prev = (Button) findViewById(R.id.pre);
-	        voice= (Button) findViewById(R.id.suara);
+	        prev = (Button) findViewById(R.id.prev);
+	        voice= (Button) findViewById(R.id.voice);
 	        spell = (Button) findViewById(R.id.spell);
-	        list = (Button) findViewById(R.id.daftar);
+	        list = (Button) findViewById(R.id.list);
 	        next= (Button) findViewById(R.id.next);
 	        
 	      home.setOnClickListener(new View.OnClickListener() {

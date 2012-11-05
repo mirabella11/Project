@@ -48,15 +48,19 @@ public class FirstChoice extends Activity {
 	        
 	       laporan.setOnClickListener(new View.OnClickListener() {
 				
-				public void onClick(View arg0) {
-					// TODO Auto-generated method stub
+				public void onClick(View second2) {
+					Intent myIntent = new Intent(second2.getContext(), ScoreTest.class);
+	                startActivityForResult(myIntent, 0);
+					
 					
 				}
 			});
 	       akun.setOnClickListener(new View.OnClickListener() {
 				
 				public void onClick(View arg0) {
-					// TODO Auto-generated method stub
+					Intent intent = new Intent();
+	            	setResult(RESULT_OK, intent);
+	            	finish();
 					
 				}
 			});

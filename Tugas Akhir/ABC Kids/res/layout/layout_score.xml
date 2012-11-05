@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:id="@+id/layoutLanguage"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+   <RelativeLayout
+      
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" 
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
 
     <TextView
         android:id="@+id/textView1"
@@ -83,10 +99,10 @@
         android:id="@+id/home"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignLeft="@+id/textView1"
+       	android:layout_toLeftOf="@+id/play"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="54dp"
-        android:layout_marginLeft="72dp"
+        android:layout_marginRight="20dp"
+        
         android:text="Home" />
 
     <Button
@@ -94,7 +110,11 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/home"
+        android:layout_alignParentBottom="true"
+       
         android:text="Play" />
 
+    
+    
+    </RelativeLayout>
 </RelativeLayout>

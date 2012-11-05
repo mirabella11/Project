@@ -1,34 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:id="@+id/layoutLanguage"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
     android:orientation="vertical" >
-
-    <Button
-        android:id="@+id/image1"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+  <RelativeLayout
+      
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="A" />
+        
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+		android:paddingLeft="40dp"
+		android:paddingRight="40dp">
+    
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/splash" />
 
     <Button
-        android:id="@+id/image2"
+        android:id="@+id/button1"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_below="@+id/image1"
-        android:layout_marginTop="100dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginRight="30dp"
         android:text="Angsa" />
 
     <Button
-        android:id="@+id/image3"
+        android:id="@+id/button2"
         android:layout_width="100dp"
         android:layout_height="50dp"
-         android:layout_below="@+id/image1"
-         android:layout_toRightOf="@+id/image2"
-          android:layout_marginTop="100dp"
-           android:layout_marginLeft="40dp"
+        android:layout_below="@+id/image1"
+        android:layout_toRightOf="@+id/button1"
+        android:layout_marginRight="40dp"   
           
         android:text="Babi" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

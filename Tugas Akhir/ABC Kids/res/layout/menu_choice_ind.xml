@@ -1,51 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
-	android:gravity="center" 
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:orientation="vertical"
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	>
-    
-     <ImageButton
-        android:id="@+id/learn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-   	    android:textSize="20sp" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutLanguage"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingBottom="30dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="30dp" >
 
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+         android:layout_margin="40dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/learn"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/test"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/learn"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/report"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/test"
+            android:layout_centerInParent="true"
+           
+            android:textSize="20sp" />
+        
+    
+
+    
+
+    </RelativeLayout>
+
     <ImageButton
-        android:id="@+id/test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        />
-    
-     <ImageButton
-        android:id="@+id/report"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        />
-    
-     <RelativeLayout>
-
+        android:id="@+id/change"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/setting"
+        android:layout_toRightOf="@+id/report"
+        android:textSize="20sp" />
+        
          <ImageButton
-             android:id="@+id/setting"
-             android:layout_width="50dp"
-             android:layout_height="50dp"
-             android:layout_alignParentRight="true"
-             android:layout_alignParentTop="true"
-             android:textSize="20sp" />
+        android:id="@+id/setting"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:textSize="20sp" />
+   
 
-         <ImageButton
-             android:id="@+id/change"
-             android:layout_width="50dp"
-             android:layout_height="50dp"
-             android:layout_alignParentTop="true"
-             android:layout_toLeftOf="@+id/setting"
-             android:textSize="20sp" />
-
-     </RelativeLayout>
-
-</TableLayout>
+</RelativeLayout>
  

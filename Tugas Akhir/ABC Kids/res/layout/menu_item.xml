@@ -1,46 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
-	android:gravity="center"
-	android:id="@+id/layoutchoice"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:orientation="vertical"
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	>
- 
-    <ImageButton
-        android:id="@+id/hewan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="HEWAN"
-        android:textSize="20sp" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutLanguage"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+ 	android:paddingBottom="30dp"
+ 	android:paddingLeft="30dp"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativelayout1"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:layout_margin="40dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
 
-    <ImageButton
-        android:id="@+id/bunga"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BUNGA" 
-         android:textSize="20sp"
-        />
-    
-     <ImageButton
-        android:id="@+id/buah"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BUAH" 
-         android:textSize="20sp"
-        />
+        <ImageButton
+            android:id="@+id/hewan"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp" />
 
-     <RelativeLayout>
+        <ImageButton
+            android:id="@+id/bunga"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/hewan"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp" />
 
-     <Button
-         android:id="@+id/kembali"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignParentLeft="true"
-         android:layout_alignParentTop="true"
-         android:text="Kembali"
-         android:textSize="20sp" />
+        <ImageButton
+            android:id="@+id/buah"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/bunga"
+            android:layout_centerHorizontal="true" />
 
- </RelativeLayout>
-</TableLayout>
+    </RelativeLayout>
+
+        <Button
+            android:id="@+id/kembali"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="65dp"
+            android:layout_alignParentLeft="true"
+            android:text="Kembali"
+            android:textSize="20sp" />
+
+</RelativeLayout>

@@ -8,7 +8,8 @@ import android.content.Intent;
 
 public class FirstActivity extends Activity {
 	
-	 private final int SPLASH_DISPLAY_LENGHT = 1000;
+	 private final int SPLASH_DISPLAY_LENGHT = 2000;
+
 	 public void onCreate(Bundle savedInstanceState) {
 		 super.onCreate(savedInstanceState);
 	        setContentView(R.layout.first_activity);
@@ -21,6 +22,8 @@ public class FirstActivity extends Activity {
 	              
 	            }
 	        }, SPLASH_DISPLAY_LENGHT);
+	        
+	        
 		 
 	 }
 }

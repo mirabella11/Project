@@ -13,7 +13,9 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".FirstActivity"
-            android:label="@string/title_activity_first" >
+            android:label="@string/title_activity_first"
+            android:screenOrientation="landscape" >
+            
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,31 +23,72 @@
             </intent-filter>
              
         </activity>
-        <activity android:name="LanguageChoice" >
+        <activity android:name="LanguageChoice" 
+             android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN1" />
             </intent-filter>
         </activity>
-            <activity android:name="InputData" >
+        <activity android:name="InputData"
+                 android:screenOrientation="landscape"  >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN2" />
             </intent-filter>
         </activity>
-        <activity android:name="FirstChoice" >
+        <activity android:name="FirstChoice"
+             android:screenOrientation="landscape"  >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN3" />
             </intent-filter>
         </activity>
-        <activity android:name="Mainmenu" >
+        <activity android:name="Mainmenu" 
+             android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN4" />
             </intent-filter>
         </activity>
-        <activity android:name="MainLesson" >
+        <activity android:name="MainLesson" 
+             android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN5" />
             </intent-filter>
         </activity>
-    </application>
+        <activity android:name="MenuTest"
+               android:screenOrientation="landscape"  >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN6" />
+            </intent-filter>
+        </activity>
+        <activity android:name="ScoreTest"
+             android:screenOrientation="landscape"  >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN7" />
+            </intent-filter>
+        </activity>
+        <activity android:name="MenuLevel" 
+             android:screenOrientation="landscape" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN8" />
+            </intent-filter>
+        </activity>
+        <activity android:name="VoiceTest" 
+             android:screenOrientation="landscape" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN9" />
+            </intent-filter>
+        </activity>
+        <activity android:name="ImageTest" 
+             android:screenOrientation="landscape" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN10" />
+            </intent-filter>
+        </activity>
+        <activity android:name="ArrangeTest" 
+             android:screenOrientation="landscape" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN11" />
+            </intent-filter>
+        </activity>
+   </application>
 
 </manifest>

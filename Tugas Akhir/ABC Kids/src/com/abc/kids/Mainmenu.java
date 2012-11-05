@@ -28,6 +28,22 @@ public class Mainmenu extends Activity {
 
 	        });
 	       
+	       flower.setOnClickListener(new View.OnClickListener() {
+	            public void onClick(View fourth1) {
+	            	Intent myIntent = new Intent(fourth1.getContext(), MainLesson.class);
+	                startActivityForResult(myIntent, 0);
+               }
+
+	        });
+	       fruit.setOnClickListener(new View.OnClickListener() {
+	            public void onClick(View fourth2) {
+	            	Intent myIntent = new Intent(fourth2.getContext(), MainLesson.class);
+	                startActivityForResult(myIntent, 0);
+               }
+
+	        });
+	       
+	       
 	       back.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View view) {
 	            	Intent intent = new Intent();

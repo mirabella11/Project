@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-    
-    <Button 
+    android:id="@+id/layoutLanguage"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="20dp" >
+
+    <Button
         android:id="@+id/home"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:layout_alignParentTop="true"
-        android:text="Home"
-       
-      />
-    
-    <Button
-        android:id="@+id/pre"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-     	android:text="A" />
+        android:layout_marginRight="20dp"
+        android:text="Home" />
 
     <Button
         android:id="@+id/back"
@@ -26,37 +24,74 @@
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/home"
         android:text="Kembali" />
-
+    
+    
+    
+    <Button
+  	   android:id="@+id/prev"
+  	   android:layout_width="100dp"
+  	   android:layout_height="100dp"
+  	   android:layout_alignParentBottom="true"
+       android:layout_alignParentLeft="true"
+   	   android:text="A" />
+    
+       <Button
+        android:id="@+id/voice"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true" 
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/prev"
+        android:text="B" />
+       
+       <Button
+        android:id="@+id/spell"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="30dp" 
+        android:layout_toRightOf="@+id/voice"
+        android:text="C" />
+       
+       <Button
+        android:id="@+id/list"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="30dp" 
+        android:layout_toRightOf="@+id/spell"
+        android:text="D" />
+       
+       
+       
+       
     <Button
         android:id="@+id/next"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:layout_marginLeft="30dp" 
         android:text="E" />
 
-    <Button
-        android:id="@+id/spell"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/back"
-        android:text="C" />
+    
 
-    <Button
-        android:id="@+id/suara"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/home"
-        android:text="B" />
+ 
 
-    <Button
-        android:id="@+id/daftar"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/next"
-        android:text="D" />
+    
+
+    
+ 
+<RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="700dp"
+        android:layout_height="600dp"
+        android:layout_centerInParent="true"
+        android:layout_margin="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+    </RelativeLayout>
+
+
 
 </RelativeLayout>

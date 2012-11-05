@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutLanguage"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+    
+     <RelativeLayout
+      
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+		android:paddingLeft="40dp"
+		android:paddingRight="40dp">
 
-    <ImageView
-        android:id="@+id/image1"
+    <ImageButton
+        android:id="@+id/animal1"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/ic_launcher" />
-    <ImageView
-        android:id="@+id/image2"
+        android:src="@drawable/splash"
+        android:layout_marginRight="30dp" 
+    />
+    
+    <ImageButton
+        android:id="@+id/animal2"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/ic_launcher" />
+        android:layout_toRightOf="@+id/animal1"
+        android:src="@drawable/splash" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/speaker" />
+    
+</RelativeLayout>
+</RelativeLayout>
