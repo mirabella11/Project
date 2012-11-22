@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutLanguage"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+    
+     <RelativeLayout
+         android:layout_width="400dp"
+         android:layout_height="300dp"
+         android:layout_alignParentTop="true"
+         android:layout_centerHorizontal="true"
+         android:layout_margin="50dp"
+         android:gravity="center_vertical"
+         android:orientation="horizontal" >
+
+         <EditText
+             android:id="@+id/FormName"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:ems="10" >
+
+             <requestFocus />
+         </EditText>
+
+         <Button
+             android:id="@+id/btnCancel"
+             android:layout_width="70dp"
+             android:layout_height="50dp"
+             android:layout_alignParentRight="true"
+             android:layout_below="@+id/FormName"
+             android:layout_marginTop="20dp"
+             android:layout_marginRight="125dp"
+             android:text="Cancel" />
+
+         <Button
+             android:id="@+id/btnSave"
+             android:layout_width="70dp"
+             android:layout_height="50dp"
+             android:layout_below="@+id/FormName"
+             android:layout_marginTop="20dp"
+             android:layout_toLeftOf="@+id/btnCancel"
+             android:layout_marginRight="20dp"
+             android:text=" Save " />
+
+     </RelativeLayout>
+
+</RelativeLayout>

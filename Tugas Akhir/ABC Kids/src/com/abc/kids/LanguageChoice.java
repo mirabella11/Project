@@ -16,6 +16,9 @@ public class LanguageChoice extends Activity {
 	        setContentView(R.layout.language_choice);
 	        
 	    	english=  (Button) findViewById(R.id.eng);
+	    	indo = (Button) findViewById(R.id.ind);
+	    	
+	    	
 			english.setOnClickListener(new OnClickListener() {
 
 				public void onClick(View first) {
@@ -25,13 +28,14 @@ public class LanguageChoice extends Activity {
 				}
 			});
 			
-			indo = (Button) findViewById(R.id.ind);
+			
 			indo.setOnClickListener(new OnClickListener() {
 
 				public void onClick(View second) {
 					  
 					Intent myIntent = new Intent(second.getContext(), InputData.class);
 	                startActivityForResult(myIntent, 0);
+	                
 				}
 			});
 

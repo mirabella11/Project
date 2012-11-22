@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import com.abc.kids.MenuTest;
 
 public class MenuLevel extends Activity {
 	
@@ -21,7 +22,8 @@ public class MenuLevel extends Activity {
 	            public void onClick(View voice1) {
 	            	Intent myIntent = new Intent(voice1.getContext(), VoiceTest.class);
 	                startActivityForResult(myIntent, 0);
-              }
+	           
+	            }
 
 	        });
 	     middle.setOnClickListener(new View.OnClickListener() {

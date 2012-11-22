@@ -3,71 +3,73 @@ package com.abc.kids;
  
 
 
+
+
+
+import java.util.List;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
+ 
 
  
  
 public class InputData  extends Activity {
-	private EditText name =null;
 	
-	private Button Save = null;
-	private Button Add = null;
-
-	 
-	private UserDBAdapter adapter= null;
-
-	private DatabaseAdapter userDb = null;
+	private EditText input_name;
+	private User id;
+	private Button Save;
+	private UserDataSource adapter;
+	
 	 
 	
-	private Dialog formDialog = null;
-	 
+	
 		    @Override
-		    public void onCreate(Bundle savedInstanceState) {
-		        super.onCreate(savedInstanceState);
-		        setContentView(R.layout.menu_data_ind);
+		    public void onCreate(Bundle bundle) {
+		        super.onCreate(bundle);
+		        setContentView(R.layout.menu_data_eng);
 		        
-		       name = (EditText) findViewById(R.id.name);
+		       input_name = (EditText) findViewById(R.id.name);		        
+		       Save = (Button) findViewById(R.id.save);
 		       
-		        
-		        Button submit = (Button) findViewById(R.id.save);
-		        submit.setOnClickListener(new View.OnClickListener() {
+		      
+		       adapter= new UserDataSource(this);
+		       adapter.open();
+		 
+		    
+		       Save.setOnClickListener(new View.OnClickListener() {
 		            public void onClick(View third) {
-		            	Intent myIntent = new Intent(third.getContext(),FirstChoice.class);
+		            	
+		          	 String name = input_name.getText().toString();
+		          	 adapter.createUser(name);
+		          	 
+		     	
+		           	Intent myIntent = new Intent(third.getContext(),ListUser.class);
 		                startActivityForResult(myIntent, 0);
-		                
-	        //   User user = userDb.get(Name.getName().toString());
-			/*			if (book != null) {
-							book.setJudul(Judul.getText().toString());
-							book.setNamaPenulis(Nama.getText().toString());
-							bukuDb.update(book);
-						} else {
-							book = new Buku();
-							book.setISBN(ISBN.getText().toString());
-							book.setJudul(Judul.getText().toString());
-							book.setNamaPenulis(Nama.getText().toString());
-
-							bukuDb.insert(book);
-						}
-						listBukuu = bukuDb.toArray();
-						refreshListAdapter();
-						formDialog.hide();
-					}
-				});*/
+		              
 	                }
 
 		        });
-		        
-	 
+		     		      	 
 		    }
-		}
+		   
+		    protected void onDestroy() {
+				super.onDestroy();
+				adapter.close();
+			}
+		  
+		 	  	
+		  	
+		  }
+		        
+		
 
 
 

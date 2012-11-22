@@ -1,10 +1,16 @@
 package com.abc.kids;
 
 public class User {
-	
+	private long id;
 	private String Name = "";
-	private String Age = "";
 	 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public void setName(String name) {
 		this.Name = name;
@@ -13,19 +19,10 @@ public class User {
 	public String getName() {
 		return Name;
 	}
-
-	public void setAge(String age) {
-		Age = age;
-	}
-
-	public String getAge() {
-		return Age;
-	}
-
-	 
+ 
 
 	public String toString() {
-		return "Name: " + getName()  + "; Age: " + getAge()  ;
+		return getName()    ;
 	}
 
 }

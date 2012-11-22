@@ -45,11 +45,14 @@ public class Mainmenu extends Activity {
 	       
 	       
 	       back.setOnClickListener(new View.OnClickListener() {
-	            public void onClick(View view) {
-	            	Intent intent = new Intent();
-	            	setResult(RESULT_OK, intent);
-	            	finish();
-                }
+	            
+
+					public void onClick(View arg0) {
+						Intent intent = new Intent();
+		            	setResult(RESULT_OK, intent);
+		            	finish();
+						
+             }
 
 	        });
 	        
