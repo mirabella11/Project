@@ -10,18 +10,19 @@ import android.widget.ImageButton;
 
 public class Mainmenu extends Activity {
 	
-	
+	public Button animal , flower, fruit,back;
 	 public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.menu_item);
 	        
-	        ImageButton animal = (ImageButton) findViewById(R.id.hewan);
-	        ImageButton flower = (ImageButton) findViewById(R.id.bunga);
-	        ImageButton fruit = (ImageButton) findViewById(R.id.buah);
-	        Button back = (Button) findViewById(R.id.kembali);
+	        animal = (Button) findViewById(R.id.hewan);
+	        flower = (Button) findViewById(R.id.bunga);
+	        fruit = (Button) findViewById(R.id.buah);
+	        back = (Button) findViewById(R.id.kembali);
 	        
 	       animal.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View fourth) {
+	            	
 	            	Intent myIntent = new Intent(fourth.getContext(), MainLesson.class);
 	                startActivityForResult(myIntent, 0);
                 }

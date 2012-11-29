@@ -80,7 +80,7 @@ public class WordDataSource {
 	    word.setId(cursor.getLong(0));
 	    word.setIndo(cursor.getString(1));
 	    word.setEng(cursor.getString(2));
-	    word.setImg(cursor.getString(3));
+	    word.setImg(cursor.getInt(3));
 	    word.setType(cursor.getLong(4));
 	    
 	    return word;

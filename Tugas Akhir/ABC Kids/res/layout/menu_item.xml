@@ -16,27 +16,30 @@
         android:gravity="center_vertical"
         android:orientation="horizontal" >
 
-        <ImageButton
+        <Button
             android:id="@+id/hewan"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:text="animal" />
 
-        <ImageButton
+        <Button
             android:id="@+id/bunga"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_below="@+id/hewan"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp" 
+            android:text="flower"/>
 
-        <ImageButton
+        <Button
             android:id="@+id/buah"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_below="@+id/bunga"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:text="fruit" />
 
     </RelativeLayout>
 

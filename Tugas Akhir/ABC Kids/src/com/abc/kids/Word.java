@@ -1,12 +1,14 @@
 package com.abc.kids;
 
-public class Word {
+import java.io.Serializable;
+
+public class Word implements Serializable{
 
 	
 		private long id;
 		private String Indonesia = "";
 		private String English = "";
-		private String ImageFile = "";
+		private int ImageFile = 0;
 		private long type;
 		 
 		public long getId() {
@@ -34,11 +36,11 @@ public class Word {
 		}
 
 		
-		public void setImg(String img) {
+		public void setImg(int img) {
 			this.ImageFile = img;
 		}
 
-		public String getImg() {
+		public int getImg() {
 			return ImageFile;
 		}
 		

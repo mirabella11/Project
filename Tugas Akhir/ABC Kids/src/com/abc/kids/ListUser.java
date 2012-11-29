@@ -1,9 +1,7 @@
 package com.abc.kids;
 
-import java.util.ArrayList;
+
 import java.util.List;
-
-
 import android.app.Dialog;
 import android.app.ListActivity;
 import android.content.Intent;
@@ -17,7 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class ListUser extends ListActivity {
 	
@@ -32,7 +30,7 @@ public class ListUser extends ListActivity {
 	
 	 public void onCreate(Bundle savedInstanceState) {
 		 super.onCreate(savedInstanceState);
-	        setContentView(R.layout.choose_user);
+	     setContentView(R.layout.choose_user);
 	       
 	       
 	         datasource = new UserDataSource(this);
@@ -40,9 +38,7 @@ public class ListUser extends ListActivity {
 	         
 	         add = (Button) findViewById(R.id.add);
 	         List<User> values = datasource.getAllUser();
-
-	         // Use the SimpleCursorAdapter to show the
-	         // elements in a ListView
+ 
 	         ArrayAdapter<User> adapter = new ArrayAdapter<User>(this,
 	             android.R.layout.simple_list_item_1, values);
 	         setListAdapter(adapter);
@@ -52,7 +48,7 @@ public class ListUser extends ListActivity {
 		            public void onClick(View view) {
 		            	formdialog.show();
 
-	 }
+		            }
 	         });
 	         prepareFormDialog();
 	         
@@ -61,7 +57,7 @@ public class ListUser extends ListActivity {
 	 @Override
 	 protected void onListItemClick(ListView l, View v, int position, long id) {
 		 super.onListItemClick(l, v, position, id);
-		    // Get the item that was clicked
+		    
 		    User o = (User) l.getItemAtPosition(position);
 		    String keyword =  o.getName();
 		     
@@ -97,7 +93,7 @@ public class ListUser extends ListActivity {
 					listUser = datasource.getAllUser();
 					refreshListAdapter();
 					formdialog.hide(); 
- 			}
+					}
 			});
 
 			Back.setOnClickListener(new OnClickListener() {
@@ -105,15 +101,15 @@ public class ListUser extends ListActivity {
 				public void onClick(View view) {
 
 					formdialog.hide();
-				}
+					}
 			});
 		}
 	 
 	 protected void refreshListAdapter() {
 		 datasource.updateListUser(listUser);
 		 ArrayAdapter<User> adapter = new ArrayAdapter<User>(this,
-	             android.R.layout.simple_list_item_1, listUser);
-	         setListAdapter(adapter);
+	     android.R.layout.simple_list_item_1, listUser);
+	     setListAdapter(adapter);
 	         
 		}
 	 
@@ -139,21 +135,21 @@ public class ListUser extends ListActivity {
 
 				public void onClick(View third) {			 																									
 					GlobalData.getInstance().setIduser(user.getId());
-					Intent myIntent = new Intent(third.getContext(),ListWord.class);
+					Intent myIntent = new Intent(third.getContext(),FirstChoice.class);
 	                startActivityForResult(myIntent, 0);
 					Buttondialog.hide(); 
-			}
+					}
 			});
 
 			Change.setOnClickListener(new OnClickListener() {
 
 				public void onClick(View view) {
 			 		
-					//Updatedialog.show();
+					
 					prepareUpdateDialog(user); 														
 					Updatedialog.show();	
 					Buttondialog.hide(); 
-			}
+					}
 			});
 
 			Back.setOnClickListener(new OnClickListener() {
@@ -161,7 +157,7 @@ public class ListUser extends ListActivity {
 				public void onClick(View view) {
 
 					Buttondialog.hide();
-				}
+					}
 			});
 			
 			Delete.setOnClickListener(new OnClickListener() {
@@ -173,7 +169,7 @@ public class ListUser extends ListActivity {
 					refreshListAdapter();															
 					
 					Buttondialog.hide(); 
-			}
+					}
 			});
 		}
 	 
@@ -205,7 +201,7 @@ public class ListUser extends ListActivity {
 					refreshListAdapter();
 				
 					Updatedialog.hide(); 
-			}
+						}
 			});
 
 			Back.setOnClickListener(new OnClickListener() {
@@ -213,7 +209,7 @@ public class ListUser extends ListActivity {
 				public void onClick(View view) {
 
 					Updatedialog.hide();
-				}
+						}
 			});
 		}
 	 

@@ -25,7 +25,7 @@ public class LanguageChoice extends Activity {
 					Intent myIntent = new Intent(first.getContext(), InputData.class);
 	                startActivityForResult(myIntent, 0);
 					 
-				}
+						}
 			});
 			
 			
@@ -36,7 +36,7 @@ public class LanguageChoice extends Activity {
 					Intent myIntent = new Intent(second.getContext(), InputData.class);
 	                startActivityForResult(myIntent, 0);
 	                
-				}
+						}
 			});
 
 	    }

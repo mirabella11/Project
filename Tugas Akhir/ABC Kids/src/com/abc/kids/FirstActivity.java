@@ -20,12 +20,11 @@ public class FirstActivity extends Activity {
 	                /* Create an Intent that will start the Menu-Activity. */
 	                Intent mainIntent = new Intent(FirstActivity.this, LanguageChoice.class);
 	                startActivity(mainIntent);
-	                //finish();
-	              }
-	        }, SPLASH_DISPLAY_LENGHT);
+	           	            		}
+	        		}, SPLASH_DISPLAY_LENGHT);
 	        
 	        
 		 
-	 }
+	 		}
 }
 

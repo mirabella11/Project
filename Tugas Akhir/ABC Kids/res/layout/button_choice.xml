@@ -60,9 +60,8 @@
               android:layout_height="wrap_content"
               android:gravity="center"
               android:layout_above="@+id/btnSelect"
-              android:layout_alignRight="@+id/btnSelect"
+              android:layout_alignLeft="@+id/btnSelect"
               android:layout_marginTop="20dp"
-              
               android:textAppearance="?android:attr/textAppearanceLarge" />
 
      </RelativeLayout>

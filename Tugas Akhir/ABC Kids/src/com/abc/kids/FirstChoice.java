@@ -54,6 +54,7 @@ public class FirstChoice extends Activity {
 	        materi.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View second) {
 	            	
+	            	
 	            	Intent myIntent = new Intent(second.getContext(), Mainmenu.class);
 	                startActivityForResult(myIntent, 0);
 	                
