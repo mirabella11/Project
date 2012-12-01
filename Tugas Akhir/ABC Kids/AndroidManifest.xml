@@ -46,7 +46,7 @@
                 <action android:name="android.intent.action.MAIN4" />
             </intent-filter>
         </activity>
-        <activity android:name="MainLesson" 
+        <activity android:name=".MainLessonAnimal" 
              android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN5" />
@@ -98,6 +98,24 @@
              android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN13" />
+            </intent-filter>
+        </activity>
+        <activity android:name="MainLessonFlower" 
+             android:screenOrientation="landscape" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN14" />
+            </intent-filter>
+        </activity>
+        <activity android:name="MainLessonFruit" 
+             android:screenOrientation="landscape" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN15" />
+            </intent-filter>
+        </activity>
+         <activity android:name="UserDataSource" 
+             android:screenOrientation="landscape" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN16" />
             </intent-filter>
         </activity>
    </application>

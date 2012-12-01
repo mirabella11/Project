@@ -45,7 +45,7 @@ public class ListWord extends ListActivity{
 		   	Word o = (Word) l.getItemAtPosition(position);
 		   
 		     
-		    Intent mainIntent = new Intent(ListWord.this,MainLesson.class);
+		    Intent mainIntent = new Intent(ListWord.this,MainLessonAnimal.class);
 		    mainIntent.putExtra("Word", o);
             startActivity(mainIntent);
 		   

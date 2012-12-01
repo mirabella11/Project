@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_1"
+    
+      >
+
+   <ImageView
+    android:id="@+id/imageView1"
+    android:layout_width="300dp"
+    android:layout_height="400dp"
+    android:layout_centerHorizontal="true"
+    
+    android:layout_marginLeft="18dp"
+    android:layout_marginTop="8dp" />
+    
+    
+    
+   
+
+
+<RelativeLayout
+    android:id="@+id/layoutabove"
+    android:layout_width="fill_parent"
+    android:layout_height="60dp"
+   
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:orientation="horizontal" >
+    
+    
+     <Button
+        android:id="@+id/home_2"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="20dp"
+        android:text="Home" />
+     
+     <Button
+   		 android:id="@+id/back_2"
+    	 android:layout_width="65dp"
+   	 	 android:layout_height="65dp"
+ 	     android:layout_alignTop="@+id/home_2"
+    	 android:layout_toRightOf="@+id/home_2"
+    	 android:text="Kembali" />
+     
+    
+    </RelativeLayout>
+    
+
+<RelativeLayout
+    android:id="@+id/layoutbelow"
+    android:layout_width="fill_parent"
+    android:layout_height="60dp"
+    android:gravity="center_horizontal"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:orientation="horizontal" >
+     
+     <Button
+  	   android:id="@+id/prev_2"
+  	   android:layout_width="65dp"
+  	   android:layout_height="65dp"
+  	   android:layout_alignParentBottom="true"
+       android:layout_alignParentLeft="true"
+   	   android:text="previous" />
+    
+       
+       
+       <Button
+        android:id="@+id/spell_2"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="30dp" 
+        android:layout_toRightOf="@+id/prev_2"
+        android:text="Spell" />
+       
+       <Button
+        android:id="@+id/list_2"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="30dp" 
+        android:layout_toRightOf="@+id/spell_2"
+        android:text="List" />
+       
+       
+       
+       
+    <Button
+        android:id="@+id/next_2"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/list_2"
+        android:layout_marginLeft="30dp" 
+        android:text="Next" />
+    
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -4,8 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
-import com.abc.kids.MenuTest;
+import android.widget.Button;
+ 
+
 
 public class MenuLevel extends Activity {
 	
@@ -13,14 +14,16 @@ public class MenuLevel extends Activity {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.menu_level);
 	        
-	      ImageButton easy = (ImageButton) findViewById(R.id.easy);
-	      ImageButton middle = (ImageButton) findViewById(R.id.middle);
-	      ImageButton hard = (ImageButton) findViewById(R.id.hard);
+	       Button easy 	 = (Button) findViewById(R.id.easy);
+	       Button middle = (Button) findViewById(R.id.middle);
+	       Button hard 	 = (Button) findViewById(R.id.hard);
 	      
 	      
 	     easy.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View voice1) {
 	            	Intent myIntent = new Intent(voice1.getContext(), VoiceTest.class);
+	            	myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+	            	myIntent.putExtra("EXIT", true);
 	                startActivityForResult(myIntent, 0);
 	           
 	            }
@@ -29,6 +32,8 @@ public class MenuLevel extends Activity {
 	     middle.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View voice1) {
 	            	Intent myIntent = new Intent(voice1.getContext(), VoiceTest.class);
+	            	myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+	            	myIntent.putExtra("EXIT", true);
 	                startActivityForResult(myIntent, 0);
            }
 
@@ -37,6 +42,8 @@ public class MenuLevel extends Activity {
 	    hard.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View voice1) {
 	            	Intent myIntent = new Intent(voice1.getContext(), VoiceTest.class);
+	            	myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+	            	myIntent.putExtra("EXIT", true);
 	                startActivityForResult(myIntent, 0);
            }
 

@@ -10,6 +10,7 @@ import android.widget.Button;
 public class LanguageChoice extends Activity {
 	private Button english=null;
 	private Button indo=null;
+	public UserDataSource datasource;
 	
 	 public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
@@ -18,27 +19,40 @@ public class LanguageChoice extends Activity {
 	    	english=  (Button) findViewById(R.id.eng);
 	    	indo = (Button) findViewById(R.id.ind);
 	    	
-	    	
+	    	  datasource = new UserDataSource(this);
+		      datasource.open();
 			english.setOnClickListener(new OnClickListener() {
 
 				public void onClick(View first) {
-					Intent myIntent = new Intent(first.getContext(), InputData.class);
+					
+					if(datasource.get()){
+						
+					Intent myIntent = new Intent(first.getContext(), ListUser.class);
 	                startActivityForResult(myIntent, 0);
 					 
-						}
+						}else{
+							
+							Intent myIntent = new Intent(first.getContext(), InputData.class);
+							startActivityForResult(myIntent, 0);
+						}}
 			});
 			
 			
 			indo.setOnClickListener(new OnClickListener() {
 
 				public void onClick(View second) {
-					  
-					Intent myIntent = new Intent(second.getContext(), InputData.class);
-	                startActivityForResult(myIntent, 0);
-	                
-						}
+					if(datasource.get()){
+					
+				Intent myIntent = new Intent(second.getContext(), ListUser.class);
+                startActivityForResult(myIntent, 0);
+				 
+					}else{
+						
+						Intent myIntent = new Intent(second.getContext(), InputData.class);
+		                startActivityForResult(myIntent, 0);
+					}}
 			});
-
+		//	datasource.close();
 	    }
 	 
 	     

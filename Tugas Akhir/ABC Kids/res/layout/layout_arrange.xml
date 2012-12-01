@@ -24,7 +24,7 @@
         android:layout_height="170dp"
         android:layout_marginBottom="70dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/splash" />
+        android:src="@drawable/fru_1" />
 
     
 

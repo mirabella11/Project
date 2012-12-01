@@ -19,8 +19,7 @@ public class ImageTest extends Activity{
         
         first.setOnClickListener(new View.OnClickListener() {
             public void onClick(View voice1) {
-            	Intent myIntent = new Intent(voice1.getContext(), ArrangeTest.class);
-                startActivityForResult(myIntent, 0);
+            	 
           }
 
         });

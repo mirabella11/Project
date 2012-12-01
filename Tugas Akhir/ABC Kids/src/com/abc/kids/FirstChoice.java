@@ -22,13 +22,7 @@ import com.abc.kids.LanguageChoice;
 
 
 public class FirstChoice extends Activity {
-	private ImageButton materi = null;
-	private ImageButton test = null;
-	private ImageButton laporan = null;
-	private ImageButton akun = null;
-	private ImageButton set = null;
-	private Button Yes = null;
-	private Button No = null;
+	private Button materi,test,laporan,akun,set,Yes,No; 
 	private Dialog choiceDialog = null;
 	 
 	 
@@ -38,25 +32,20 @@ public class FirstChoice extends Activity {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.menu_choice_ind);
 	        
-	        materi = (ImageButton) findViewById(R.id.learn);
-	        test = (ImageButton) findViewById(R.id.test);
-	        laporan= (ImageButton) findViewById(R.id.report);
-	        akun = (ImageButton) findViewById(R.id.change);
-	        set = (ImageButton) findViewById(R.id.setting);
+	        materi = (Button) findViewById(R.id.learn);
+	        test = (Button) findViewById(R.id.test);
+	        laporan= (Button) findViewById(R.id.report);
+	        akun = (Button) findViewById(R.id.change);
+	        set = (Button) findViewById(R.id.setting);
 	       
 	      
-	        
-	     
-	        
-	        
-	        
 	        
 	        materi.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View second) {
 	            	
 	            	
 	            	Intent myIntent = new Intent(second.getContext(), Mainmenu.class);
-	                startActivityForResult(myIntent, 0);
+	            	startActivityForResult(myIntent, 0);
 	                
 	        }
 	        });
@@ -74,15 +63,16 @@ public class FirstChoice extends Activity {
 				
 				public void onClick(View second2) {
 					Intent myIntent = new Intent(second2.getContext(), ScoreTest.class);
-	                startActivityForResult(myIntent, 0);
+					startActivityForResult(myIntent, 0);
 					
 					
 				}
 			});
 	       akun.setOnClickListener(new View.OnClickListener() {
 				
-				public void onClick(View arg0) {
-					
+				public void onClick(View three) {
+					Intent myIntent = new Intent(three.getContext(), ListUser.class);
+	                startActivityForResult(myIntent, 0);
 					
 				}
 			});
@@ -110,15 +100,18 @@ public class FirstChoice extends Activity {
 	    	             public void onClick(DialogInterface dialog, int which) {
 	    	                //Stop the activity
 	    	                 //maintenancetabs.this.finish();
-	    	               int pid = android.os.Process.myPid();
-	    	                 android.os.Process.killProcess(pid);
-	    	                 finish();
+	    	            	 
+	    	                     finish();
+	    	                  
+	    	                 
 	    	                }
 	    	         })
 	    	        .setNegativeButton("No", null)
 	    	        .show();
-	    	         return true;
+	    		 	
+	    	        return true;
 	    	    }     else {
+	    	    	
 	    	        return super.onKeyDown(keyCode, event);
 	    	    }
 	    	 }

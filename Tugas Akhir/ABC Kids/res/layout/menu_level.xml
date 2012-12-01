@@ -16,27 +16,36 @@
         android:gravity="center_vertical"
         android:orientation="horizontal" >
  
-    <ImageButton
+    <Button
         android:id="@+id/easy"
          android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="easy" 
+        android:textSize="10dp"
+        android:layout_marginBottom="10dp"/>
 
-    <ImageButton
+    <Button
         android:id="@+id/middle"
          android:layout_width="200dp"
         android:layout_height="50dp"
          android:layout_below="@+id/easy"
          android:layout_centerInParent="true"
+		android:text="middle"
+		android:textSize="10dp"
+		android:layout_marginBottom="10dp"
         />
     
-     <ImageButton
+     <Button
         android:id="@+id/hard"
          android:layout_width="200dp"
         android:layout_height="50dp"
          android:layout_below="@+id/middle"
          android:layout_centerInParent="true"
+         android:text="hard"
+         android:textSize="10dp"
+         
         />
 
     

@@ -14,11 +14,11 @@
         android:layout_height="300dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-         android:layout_margin="40dp"
+        android:layout_margin="40dp"
         android:gravity="center_vertical"
         android:orientation="horizontal" >
 
-        <ImageButton
+        <Button
             android:id="@+id/learn"
             android:layout_width="200dp"
             android:layout_height="50dp"
@@ -26,25 +26,27 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="10dp"
-            android:textSize="20sp" />
+            android:text="Learn"
+            android:textSize="10sp" />
 
-        <ImageButton
+        <Button
             android:id="@+id/test"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_below="@+id/learn"
             android:layout_centerInParent="true"
             android:layout_marginBottom="10dp"
-            android:textSize="20sp" />
+            android:text="Test"
+            android:textSize="10sp" />
 
-        <ImageButton
+        <Button
             android:id="@+id/report"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_below="@+id/test"
             android:layout_centerInParent="true"
-           
-            android:textSize="20sp" />
+           	android:text="Report"
+            android:textSize="10sp" />
         
     
 
@@ -52,7 +54,7 @@
 
     </RelativeLayout>
 
-    <ImageButton
+    <Button
         android:id="@+id/change"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -62,7 +64,7 @@
         android:layout_toRightOf="@+id/report"
         android:textSize="20sp" />
         
-         <ImageButton
+      <Button
         android:id="@+id/setting"
         android:layout_width="50dp"
         android:layout_height="50dp"

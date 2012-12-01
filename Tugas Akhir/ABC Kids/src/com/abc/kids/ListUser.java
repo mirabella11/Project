@@ -51,7 +51,7 @@ public class ListUser extends ListActivity {
 		            }
 	         });
 	         prepareFormDialog();
-	         
+	      //   datasource.close();
 	 }
 	 
 	 @Override

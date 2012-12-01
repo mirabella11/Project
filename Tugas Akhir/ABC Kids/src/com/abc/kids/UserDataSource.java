@@ -4,12 +4,10 @@ import java.util.List;
 
 
 
- 
-
-
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -113,6 +111,24 @@ public class UserDataSource {
 	    user.setName(cursor.getString(1));
 	    return user;
 	  }
+	  
+	  public boolean get() {
+		 
+			    	  	  	  
+		  		  Cursor cursor = database.rawQuery ( "select * from user ", new String[] {});
+				if (cursor.getCount() > 0) {
+					 
+					return true;
+						
+					} 
+			
+				else  {
+					return false;
+				}
+			}
+
+			
+	  
 	  
 	   
 	   

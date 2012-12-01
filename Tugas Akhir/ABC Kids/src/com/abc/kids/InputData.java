@@ -38,8 +38,8 @@ public class InputData  extends Activity {
 		          	 adapter.createUser(name);
 		          	 
 		     	
-		           	 Intent myIntent = new Intent(third.getContext(),ListUser.class);
-		             startActivityForResult(myIntent, 0);
+		           	 Intent myIntent = new Intent(third.getContext(),FirstChoice.class);
+		           	 startActivityForResult(myIntent, 0);
 		              
 		            		}
 
