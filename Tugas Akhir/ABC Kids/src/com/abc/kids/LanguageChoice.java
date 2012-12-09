@@ -1,7 +1,10 @@
 package com.abc.kids;
 
+import java.util.Locale;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -39,8 +42,16 @@ public class LanguageChoice extends Activity {
 			
 			
 			indo.setOnClickListener(new OnClickListener() {
+				
 
 				public void onClick(View second) {
+					
+					Locale locale = new Locale("id");
+			        Locale.setDefault(locale);
+			        Configuration config = new Configuration();
+			        config.locale = locale;
+			        getBaseContext().getResources().updateConfiguration(config,  getBaseContext().getResources().getDisplayMetrics());
+					
 					if(datasource.get()){
 					
 				Intent myIntent = new Intent(second.getContext(), ListUser.class);
@@ -52,7 +63,7 @@ public class LanguageChoice extends Activity {
 		                startActivityForResult(myIntent, 0);
 					}}
 			});
-		//	datasource.close();
+		 
 	    }
 	 
 	     

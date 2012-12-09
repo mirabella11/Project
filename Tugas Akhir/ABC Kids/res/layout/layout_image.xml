@@ -24,7 +24,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
-        android:src="@drawable/cow" />
+         />
 
     <Button
         android:id="@+id/button1"
@@ -33,7 +33,7 @@
         android:layout_below="@+id/image1"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="30dp"
-        android:text="Angsa" />
+        />
 
     <Button
         android:id="@+id/button2"
@@ -43,7 +43,7 @@
         android:layout_toRightOf="@+id/button1"
         android:layout_marginRight="40dp"   
           
-        android:text="Babi" />
+         />
 
     </RelativeLayout>
 

@@ -12,107 +12,122 @@
         android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
         <activity
             android:name=".FirstActivity"
+            android:configChanges="locale"
             android:label="@string/title_activity_first"
             android:screenOrientation="landscape" >
-            
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
              
         </activity>
         <activity android:name="LanguageChoice" 
+            android:configChanges="locale"
              android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN1" />
             </intent-filter>
         </activity>
         <activity android:name="InputData"
+            android:configChanges="locale"
                  android:screenOrientation="landscape"  >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN2" />
             </intent-filter>
         </activity>
         <activity android:name="FirstChoice"
+            android:configChanges="locale"
              android:screenOrientation="landscape"  >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN3" />
             </intent-filter>
         </activity>
         <activity android:name="Mainmenu" 
+            android:configChanges="locale"
              android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN4" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainLessonAnimal" 
+        <activity android:name=".MainLessonAnimal"
+            android:configChanges="locale" 
              android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN5" />
             </intent-filter>
         </activity>
         <activity android:name="MenuTest"
+            android:configChanges="locale"
                android:screenOrientation="landscape"  >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN6" />
             </intent-filter>
         </activity>
         <activity android:name="ScoreTest"
+            android:configChanges="locale"
              android:screenOrientation="landscape"  >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN7" />
             </intent-filter>
         </activity>
         <activity android:name="MenuLevel" 
+            android:configChanges="locale"
              android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN8" />
             </intent-filter>
         </activity>
         <activity android:name="VoiceTest" 
-             android:screenOrientation="landscape" >
+            android:configChanges="locale"
+            android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN9" />
             </intent-filter>
         </activity>
         <activity android:name="ImageTest" 
+            android:configChanges="locale"
              android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN10" />
             </intent-filter>
         </activity>
         <activity android:name="ArrangeTest" 
+            android:configChanges="locale"
              android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN11" />
             </intent-filter>
         </activity>
          <activity android:name="ListUser" 
+             android:configChanges="locale"
              android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN12" />
             </intent-filter>
         </activity>
         <activity android:name="ListWord" 
+            android:configChanges="locale"
              android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN13" />
             </intent-filter>
         </activity>
         <activity android:name="MainLessonFlower" 
+            android:configChanges="locale"
              android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN14" />
             </intent-filter>
         </activity>
         <activity android:name="MainLessonFruit" 
+            android:configChanges="locale"
              android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN15" />
             </intent-filter>
         </activity>
          <activity android:name="UserDataSource" 
+             android:configChanges="locale"
              android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN16" />

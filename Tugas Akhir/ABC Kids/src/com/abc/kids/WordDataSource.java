@@ -3,12 +3,15 @@ package com.abc.kids;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 import android.R.integer;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class WordDataSource {
 	
@@ -85,6 +88,42 @@ public class WordDataSource {
 	    
 	    return word;
 	  }
+	  
+	  public Word get(int image,int qType) {
+			 
+		
+  		Cursor cursor = database.rawQuery ( "select * from word where image = "  + (image+1) + " and tipe="+(qType), null);
+  		Word word = new Word();
+  		
+  		if (cursor.getCount() > 0) {
+  			int indexId = cursor.getColumnIndex("idword");
+  			int indexIndo  = cursor.getColumnIndex("indonesia");
+  			int indexEnglish = cursor.getColumnIndex("english");
+			int indexImage = cursor.getColumnIndex("image");
+			int indexType = cursor.getColumnIndex("tipe");
+						
+			cursor.moveToFirst();
+			do {
+				int id = cursor.getInt(indexId);
+				String indonesia = cursor.getString(indexIndo);
+				String inggris = cursor.getString(indexEnglish);
+				int img = cursor.getInt(indexImage);
+				int type = cursor.getInt(indexType);
+
+				word.setId(id);
+				word.setIndo(indonesia);
+				word.setEng(inggris);
+				word.setImg(img);
+				word.setType(type);
+
+				
+
+				cursor.moveToNext();
+			} while (!cursor.isAfterLast());
+		}
+		return word;
+	}
+
 	  
 	  
 	 

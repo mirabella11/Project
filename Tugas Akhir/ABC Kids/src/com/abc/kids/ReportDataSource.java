@@ -36,7 +36,7 @@ public class ReportDataSource {
 	    dbHelper.close();
 	  }
 	
-	public Report createReport(String id, String type , String score) {
+	public Report createReport(long id, int type , int score) {
 		  
 		  ContentValues initialValues = new ContentValues();
 		  initialValues.put(COL_ID_USER, id);
@@ -85,9 +85,41 @@ public class ReportDataSource {
 		Report report = new Report();
 	    report.setId(cursor.getLong(0));
 	    report.setIduser(cursor.getLong(1));
-	    report.setType(cursor.getString(2));
-	    report.setScore(cursor.getString(3));
+	    report.setType(cursor.getInt(2));
+	    report.setScore(cursor.getInt(3));
 	    
 	    return report;
 	  }
+	  
+	  public Report get(long id,int type,int score) {
+			 
+			
+	  		Cursor cursor = database.rawQuery ( "select * from report where  = ", null);
+	  		Report report = new Report();
+	  		
+	  		if (cursor.getCount() > 0) {
+	  			int indexId = cursor.getColumnIndex("idreport");
+	  			int indexIduser  = cursor.getColumnIndex("iduser");
+				int indexType = cursor.getColumnIndex("type_test");
+				int indexScore = cursor.getColumnIndex("score");
+							
+				cursor.moveToFirst();
+				do {
+					int idre = cursor.getInt(indexId);
+					int iduser = cursor.getInt(indexIduser);
+					int type_test = cursor.getInt(indexType);
+					int score_user = cursor.getInt(indexScore);
+					
+
+					report.setId(idre);
+					report.setIduser(iduser);
+					report.setType(type_test);
+					report.setScore(score_user);
+					
+
+					cursor.moveToNext();
+				} while (!cursor.isAfterLast());
+			}
+			return report;
+		}
 }

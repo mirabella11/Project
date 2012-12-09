@@ -1,8 +1,5 @@
 package com.abc.kids;
 
-
-
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -17,7 +14,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
-import com.abc.kids.LanguageChoice;
+
 
 
 
@@ -98,10 +95,8 @@ public class FirstChoice extends Activity {
 	    	                     "Do you really want to exit?")
 	    	        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 	    	             public void onClick(DialogInterface dialog, int which) {
-	    	                //Stop the activity
-	    	                 //maintenancetabs.this.finish();
-	    	            	 
-	    	                     finish();
+	    	               
+	    	            	 moveTaskToBack(true);
 	    	                  
 	    	                 
 	    	                }

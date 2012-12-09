@@ -31,7 +31,7 @@ public class GlobalData {
 	//public int[] abjad_animal = new int [] {}
 	
 	public int position = 0;
- 
+	public Report lastReport=null;
 	protected GlobalData(){
 		 
 	}
@@ -47,7 +47,9 @@ public class GlobalData {
 	public void setPosition(int a){		
 		this.position=a;
 	}
-	
+	public void setReport(Report a){		
+		this.lastReport=a;
+	}
 }
 
 

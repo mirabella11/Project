@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ABC Kids</string>
+    <string name="menu_settings">Pengaturan</string>
+    <string name="title_Activity_first">ABC Kids</string>
+    <string name="button_cancel">Batal</string>
+    
+    <string name="button_learn">Pembelajaran</string>
+    <string name="button_test">Ujian</string>
+    <string name="button_report">Laporan</string>
+    <string name="username">Nama</string>
+    <string name="button_save_user">Simpan</string>
+</resources>

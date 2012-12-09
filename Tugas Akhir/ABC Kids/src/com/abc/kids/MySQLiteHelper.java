@@ -66,13 +66,12 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		  initialValues.put(WordDataSource.COL_TYPE, type);
                
 		  long insertId= db.insert(DB_TABLE_WORD, null, initialValues);
-		  
-		  
-		   
-		 
-		 
-	 }
+		     		 
+		 	 }
 	  
+	  public void getWord(){
+		  
+	  }
 	  public void insertWord(SQLiteDatabase db)
 	      {		
 		  

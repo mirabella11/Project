@@ -4,8 +4,8 @@ public class Report {
 
 	private long id;
 	private long iduser;
-	private String Type = "";
-	private String Score = "";
+	private int Type;
+	private int Score;
 	 
 	public long getId() {
 		return id;
@@ -23,27 +23,27 @@ public class Report {
 		this.iduser = id;
 	}
 	
-		public String getType() {
+		public int getType() {
 		return Type;
 	}
-	public void setType(String type) {
+	public void setType(int type) {
 		this.Type = type;
 	}
  
 	
 
-	public String getScore() {
+	public int getScore() {
 		return Score;
 	}
 
-	public void setScore(String score) {
+	public void setScore(int score) {
 		this.Score = score;
 	}
 	
 	 
 	
 	public String toString() {
-		return null    ;
+		return getIduser()+" "+getType()+" "+getScore();
 	}
 
 }

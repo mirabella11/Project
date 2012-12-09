@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layoutLanguage"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
@@ -26,7 +25,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="10dp"
-            android:text="Learn"
+            android:text="@string/button_learn"
             android:textSize="10sp" />
 
         <Button
@@ -36,7 +35,7 @@
             android:layout_below="@+id/learn"
             android:layout_centerInParent="true"
             android:layout_marginBottom="10dp"
-            android:text="Test"
+            android:text="@string/button_test"
             android:textSize="10sp" />
 
         <Button
@@ -45,7 +44,7 @@
             android:layout_height="50dp"
             android:layout_below="@+id/test"
             android:layout_centerInParent="true"
-           	android:text="Report"
+           	android:text="@string/button_report"
             android:textSize="10sp" />
         
     

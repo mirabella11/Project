@@ -21,7 +21,7 @@ public class InputData  extends Activity {
 		 @Override
 		 public void onCreate(Bundle bundle) {
 		        super.onCreate(bundle);
-		        setContentView(R.layout.menu_data_eng);
+		        setContentView(R.layout.menu_input_user);
 		        
 		        input_name = (EditText) findViewById(R.id.name);		        
 		        Save = (Button) findViewById(R.id.save);
