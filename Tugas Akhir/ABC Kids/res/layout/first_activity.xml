@@ -7,7 +7,7 @@
               android:id="@+id/splashscreen" 
               android:layout_width="wrap_content"
               android:layout_height="fill_parent"
-              android:src="@drawable/manusia"
+              android:src="@drawable/splash"
               android:layout_centerHorizontal="true"/>
 
          

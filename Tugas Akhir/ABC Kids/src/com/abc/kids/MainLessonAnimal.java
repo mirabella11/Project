@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainLessonAnimal extends Activity implements OnClickListener {
 	private Button home,back,prev,voice,spell,list,next;
@@ -19,6 +20,9 @@ public class MainLessonAnimal extends Activity implements OnClickListener {
   	public MediaPlayer player;
   	public Dialog alfabetDialog;
   	public Button a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z;
+  	private TextView name;
+  	private int[] listarray={};
+  	public WordDataSource datasource;
   	
 	
 	
@@ -26,8 +30,12 @@ public class MainLessonAnimal extends Activity implements OnClickListener {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.main_lesson_anm);
 	        
+	        datasource = new WordDataSource(this);
+	        datasource.open();
+	        listarray=datasource.getList(GlobalData.getInstance().lng, 1);
+	        datasource.close();
 	        GlobalData.getInstance().setPosition(0);
-	      //  data = (Word) getIntent().getExtras().getSerializable("Word");
+	        
 	        
 	        home = (Button) findViewById(R.id.home);
 	        back = (Button) findViewById(R.id.back);
@@ -37,6 +45,7 @@ public class MainLessonAnimal extends Activity implements OnClickListener {
 	        list = (Button) findViewById(R.id.list);
 	        next= (Button) findViewById(R.id.next);
 	        image = (ImageView) findViewById(R.id.imageView1);
+	        name = (TextView) findViewById(R.id.animalname);
 	        
 	         
 	         if (GlobalData.getInstance().position==0){
@@ -45,6 +54,7 @@ public class MainLessonAnimal extends Activity implements OnClickListener {
 	         
 	         
 	      ChangeImage();
+
 	        
 	      home.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View five) {
@@ -65,7 +75,17 @@ public class MainLessonAnimal extends Activity implements OnClickListener {
 	        
 	      prev.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View view) {
-	            	 
+	            	
+	            	next.setEnabled(true);
+	            	
+	            	try{
+	    	            if (player.isPlaying()) {
+	    	                player.stop();
+	    	                player.release();
+	    	            }
+	    	        }catch(Exception e){
+	    	            
+	    	        }
 	            	if (GlobalData.getInstance().position-1==0){
 	             		prev.setEnabled(false);
 	             	}else{
@@ -102,6 +122,14 @@ public class MainLessonAnimal extends Activity implements OnClickListener {
 	      next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view1) {
             	prev.setEnabled(true);
+            	try{
+    	            if (player.isPlaying()) {
+    	                player.stop();
+    	                player.release();
+    	            }
+    	        }catch(Exception e){
+    	            
+    	        }
             	if (GlobalData.getInstance().position+1==GlobalData.getInstance().max_number[0]-1){
             		
              		next.setEnabled(false);
@@ -116,11 +144,20 @@ public class MainLessonAnimal extends Activity implements OnClickListener {
 
         });
 	 }
+	 
+	  
+	  
 	  
 	 private void ChangeImage(){
-		 Drawable d = getResources().getDrawable(GlobalData.getInstance().img[0][GlobalData.getInstance().position]);
+		 datasource.open();
+		 Drawable d = getResources().getDrawable(GlobalData.getInstance().img[0][listarray[GlobalData.getInstance().position]-1]);
          image.setImageDrawable(d);
+         Word anm = datasource.get(listarray[GlobalData.getInstance().position]-1, 1);
+         name.setText(anm.getEng());
+         datasource.close();
 	 	}
+	 
+	 
 	 public void playSound( ){
 	    	try{
 	            if (player.isPlaying()) {
@@ -130,10 +167,10 @@ public class MainLessonAnimal extends Activity implements OnClickListener {
 	        }catch(Exception e){
 	            
 	        }
-	       player = MediaPlayer.create(this,GlobalData.getInstance().voice[GlobalData.getInstance().position]);
+	       player = MediaPlayer.create(this,GlobalData.getInstance().voice[listarray[GlobalData.getInstance().position]-1]);
 	 
 	       player.setLooping(false); // Set looping
-	        player.start();
+	         player.start();
 	 	}
 	 
 	   public void onPause() {

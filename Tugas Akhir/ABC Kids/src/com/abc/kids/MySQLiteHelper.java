@@ -69,9 +69,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		     		 
 		 	 }
 	  
-	  public void getWord(){
-		  
-	  }
+	
 	  public void insertWord(SQLiteDatabase db)
 	      {		
 		  
@@ -103,12 +101,12 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
   		dataWord(db,"Srigala","Wolf",26,1);
   		dataWord(db,"Tupai","Squirrel",27,1);
   		dataWord(db,"Ulat","Caterpillar",28,1);
-  		dataWord(db,"Ubur2","Jellyfish",29,1);
+  		dataWord(db,"Ubur-Ubur","Jellyfish",29,1);
   		dataWord(db,"Walet","Swallow",30,1);
   		dataWord(db,"Yuyu","Crab",31,1);
   		dataWord(db,"Zebra","Zebra",32,1);
   		
-  		dataWord(db,"Allium","AlliumOrchid",1,2);
+  		dataWord(db,"Allium","Allium",1,2);
   		dataWord(db,"Anggrek","Orchid",2,2);
   		dataWord(db,"Bugenvil","Bougainvillea",3,2);
   		dataWord(db,"Cempaka","Chrysolite",4,2);

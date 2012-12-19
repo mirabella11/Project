@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layoutLanguage"
+    android:id="@+id/layoutArrange"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
@@ -24,7 +24,7 @@
         android:layout_height="170dp"
         android:layout_marginBottom="70dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/fru_1" />
+         />
 
     
 
@@ -33,8 +33,8 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_below="@+id/image1"
-        android:layout_marginRight="25dp"
-        android:layout_alignParentLeft="true"
+        android:layout_marginRight="10dp"
+        android:layout_alignWithParentIfMissing="true"
         android:text="B" />
 
     <Button
@@ -43,7 +43,7 @@
         android:layout_height="50dp"
         android:layout_below="@+id/image1"
         android:layout_toRightOf="@+id/button1"
-        android:layout_marginRight="25dp"
+        android:layout_marginRight="10dp"
         android:text="C" />
 
     <Button
@@ -51,7 +51,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_below="@+id/image1"
-         android:layout_marginRight="25dp"
+         android:layout_marginRight="10dp"
         android:layout_toRightOf="@+id/button2"
         android:text="D" />
 
@@ -59,7 +59,7 @@
         android:id="@+id/button4"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginRight="10dp"
         android:layout_below="@+id/image1"
         android:layout_toRightOf="@+id/button3"
         android:text="E" />
@@ -69,10 +69,20 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
        android:layout_below="@+id/image1"
-        
+        android:layout_marginRight="10dp"
         android:layout_toRightOf="@+id/button4"
-        android:layout_alignParentRight="true"
+         
         android:text="F" />
+    
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+       	android:layout_below="@+id/image1"
+        
+        android:layout_toRightOf="@+id/button5"
+        android:layout_alignParentRight="true"
+        android:text="G" />
 
    </RelativeLayout>
 

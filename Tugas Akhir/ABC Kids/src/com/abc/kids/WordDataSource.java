@@ -2,10 +2,6 @@ package com.abc.kids;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
-
-import android.R.integer;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -117,12 +113,94 @@ public class WordDataSource {
 				word.setType(type);
 
 				
-
+				
 				cursor.moveToNext();
 			} while (!cursor.isAfterLast());
 		}
 		return word;
-	}
+	} 
+	  
+	  
+	  
+	  public int[] getList(int type,int imgtype) {
+		  int[] listar=new int[GlobalData.getInstance().max_number[imgtype-1]];
+		  if (type==1){
+			  Cursor cursor = database.rawQuery ( "select * from word where tipe = " +imgtype+" order by indonesia asc", null);
+			  if (cursor.getCount() > 0) {
+		  			
+					int indexImage = cursor.getColumnIndex("image"); 
+					int i = 0;			
+					cursor.moveToFirst();
+					do {
+						listar[i]= cursor.getInt(indexImage);
+						i++;
+						cursor.moveToNext();
+					} while (!cursor.isAfterLast());
+				}
+					
+		  		
+		  } else {
+			  Cursor cursor = database.rawQuery ( "select * from word where tipe = " +imgtype+" order by english asc", null);
+			  
+			  if (cursor.getCount() > 0) {
+		  			
+					int indexImage = cursor.getColumnIndex("image"); 
+					int i = 0;			
+					cursor.moveToFirst();
+					do {
+						listar[i]= cursor.getInt(indexImage);
+						i++;
+						cursor.moveToNext();
+					} while (!cursor.isAfterLast());
+				}
+					
+		  }
+		  return  listar;
+	  		
+	  	 
+	  	 
+		  
+	  }
+	  
+	  
+	  public Word[] getSpell(){
+		  //Word word = new Word();
+		  Word[] list=null;
+		  Cursor cursor = database.rawQuery ( "select * from word where length(english)>=3 and length(english)<=6", null);
+		  
+		  if (cursor.getCount() > 0) {
+			  	list = new Word[cursor.getCount()];
+			  	int indexId = cursor.getColumnIndex("idword");
+	  			int indexIndo  = cursor.getColumnIndex("indonesia");
+	  			int indexEnglish = cursor.getColumnIndex("english");
+				int indexImage = cursor.getColumnIndex("image");
+				int indexType = cursor.getColumnIndex("tipe");
+							
+				cursor.moveToFirst();
+				int i=0;
+				do {
+					int id = cursor.getInt(indexId);
+					String indonesia = cursor.getString(indexIndo);
+					String inggris = cursor.getString(indexEnglish);
+					int img = cursor.getInt(indexImage);
+					int typeImg = cursor.getInt(indexType);
+					list[i] = new Word();
+					list[i].setId(id);
+					list[i].setIndo(indonesia);
+					list[i].setEng(inggris);
+					list[i].setImg(img);
+					list[i].setType(typeImg);
+
+					i++;
+					
+					cursor.moveToNext();
+				} while (!cursor.isAfterLast());
+			}
+					  			  					  		 
+		  return list;
+	  }
+	  
+
 
 	  
 	  

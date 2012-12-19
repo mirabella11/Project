@@ -26,11 +26,18 @@ public class GlobalData {
 		       R.drawable.fru_13,R.drawable.fru_14,R.drawable.fru_15,R.drawable.fru_16,R.drawable.fru_17,R.drawable.fru_18,
 		       R.drawable.fru_19,R.drawable.fru_20,R.drawable.fru_21,R.drawable.fru_22 }}; 
 	 
-	public int [] voice = new int [] {R.raw.pling,R.raw.harimau,R.raw.pling,R.raw.harimau,R.raw.pling};
+	public int [] voice = new int [] {R.raw.pling,R.raw.harimau,R.raw.pling,R.raw.harimau,R.raw.pling,
+									  R.raw.pling,R.raw.harimau,R.raw.pling,R.raw.harimau,R.raw.pling,
+									  R.raw.pling,R.raw.harimau,R.raw.pling,R.raw.harimau,R.raw.pling,
+									  R.raw.pling,R.raw.harimau,R.raw.pling,R.raw.harimau,R.raw.pling,
+									  R.raw.pling,R.raw.harimau,R.raw.pling,R.raw.harimau,R.raw.pling,
+									  R.raw.pling,R.raw.harimau,R.raw.pling,R.raw.harimau,R.raw.pling,
+									  R.raw.pling,R.raw.harimau};
 	
-	//public int[] abjad_animal = new int [] {}
+	
 	
 	public int position = 0;
+	public int lng;
 	public Report lastReport=null;
 	protected GlobalData(){
 		 
@@ -49,6 +56,9 @@ public class GlobalData {
 	}
 	public void setReport(Report a){		
 		this.lastReport=a;
+	}
+	public void setLanguage(int language){
+		this.lng=language;
 	}
 }
 

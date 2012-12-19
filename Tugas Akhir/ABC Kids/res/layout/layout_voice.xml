@@ -18,20 +18,19 @@
 		android:paddingLeft="40dp"
 		android:paddingRight="40dp">
 
-    <ImageButton
+    <Button
         android:id="@+id/animal1"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/cow"
         android:layout_marginRight="30dp" 
     />
     
-    <ImageButton
+    <Button
         android:id="@+id/animal2"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_toRightOf="@+id/animal1"
-        android:src="@drawable/anm_1" />
+         />
 
     <Button
         android:id="@+id/btnSound"

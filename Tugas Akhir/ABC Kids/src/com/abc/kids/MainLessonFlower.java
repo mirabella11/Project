@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainLessonFlower extends Activity implements OnClickListener {
 	private Button home,back,prev,spell,list,next;
@@ -18,13 +19,18 @@ public class MainLessonFlower extends Activity implements OnClickListener {
 	private Word data;
    	public Dialog alfabetDialog;
   	public Button a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z;
-  	
-	
+  	private TextView name;
+	public WordDataSource datasource;
+	private int[] listarray={};
 	
 	 public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.main_lesson_flo);
 	        
+	        datasource = new WordDataSource(this);
+	        datasource.open();
+	        listarray=datasource.getList(GlobalData.getInstance().lng, 2);
+	        datasource.close();
 	        GlobalData.getInstance().setPosition(0);
 	      //  data = (Word) getIntent().getExtras().getSerializable("Word");
 	        
@@ -36,7 +42,7 @@ public class MainLessonFlower extends Activity implements OnClickListener {
 	        list = (Button) findViewById(R.id.list_1);
 	        next= (Button) findViewById(R.id.next_1);
 	        image = (ImageView) findViewById(R.id.imageView1);
-	        
+	        name = (TextView) findViewById(R.id.flowername);
 	         
 	         if (GlobalData.getInstance().position==0){
          		prev.setEnabled(false);
@@ -64,7 +70,7 @@ public class MainLessonFlower extends Activity implements OnClickListener {
 	        
 	      prev.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View view) {
-	            	 
+	            	next.setEnabled(true); 
 	            	if (GlobalData.getInstance().position-1==0){
 	             		prev.setEnabled(false);
 	             	}else{
@@ -96,7 +102,7 @@ public class MainLessonFlower extends Activity implements OnClickListener {
 	      next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view1) {
             	prev.setEnabled(true);
-            	if (GlobalData.getInstance().position+1==GlobalData.getInstance().max_number[0]-1){
+            	if (GlobalData.getInstance().position+1==GlobalData.getInstance().max_number[1]-1){
             		
              		next.setEnabled(false);
              	}else{
@@ -112,8 +118,12 @@ public class MainLessonFlower extends Activity implements OnClickListener {
 	 }
 	  
 	 private void ChangeImage(){
-		 Drawable d = getResources().getDrawable(GlobalData.getInstance().img[1][GlobalData.getInstance().position]);
+		 datasource.open();
+		 Drawable d = getResources().getDrawable(GlobalData.getInstance().img[1][listarray[GlobalData.getInstance().position]-1]);
          image.setImageDrawable(d);
+         Word flo = datasource.get(listarray[GlobalData.getInstance().position]-1, 2);
+         name.setText(flo.getEng());
+         datasource.close();
 	 	}
 	  
 	   

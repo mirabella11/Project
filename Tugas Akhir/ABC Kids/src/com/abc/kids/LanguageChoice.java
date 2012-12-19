@@ -24,17 +24,18 @@ public class LanguageChoice extends Activity {
 	    	
 	    	  datasource = new UserDataSource(this);
 		      datasource.open();
+		      
 			english.setOnClickListener(new OnClickListener() {
 
 				public void onClick(View first) {
-					
+					GlobalData.getInstance().setLanguage(2);
 					if(datasource.get()){
 						
 					Intent myIntent = new Intent(first.getContext(), ListUser.class);
 	                startActivityForResult(myIntent, 0);
 					 
 						}else{
-							
+							datasource.close();
 							Intent myIntent = new Intent(first.getContext(), InputData.class);
 							startActivityForResult(myIntent, 0);
 						}}
@@ -45,7 +46,7 @@ public class LanguageChoice extends Activity {
 				
 
 				public void onClick(View second) {
-					
+					GlobalData.getInstance().setLanguage(1);
 					Locale locale = new Locale("id");
 			        Locale.setDefault(locale);
 			        Configuration config = new Configuration();
@@ -58,11 +59,12 @@ public class LanguageChoice extends Activity {
                 startActivityForResult(myIntent, 0);
 				 
 					}else{
-						
+						datasource.close();
 						Intent myIntent = new Intent(second.getContext(), InputData.class);
 		                startActivityForResult(myIntent, 0);
 					}}
 			});
+			
 		 
 	    }
 	 

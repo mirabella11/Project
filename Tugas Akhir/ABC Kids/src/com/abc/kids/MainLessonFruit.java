@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainLessonFruit extends Activity implements OnClickListener {
 	private Button home,back,prev,spell,list,next;
@@ -18,15 +19,22 @@ public class MainLessonFruit extends Activity implements OnClickListener {
 	private Word data;
    	public Dialog alfabetDialog;
   	public Button a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z;
-  	
+  	private TextView name;
+  	public WordDataSource datasource;
+	private int[] listarray={};
 	
 	
 	 public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.main_lesson_fru);
 	        
+	        datasource = new WordDataSource(this);
+	        datasource.open();
+	        listarray=datasource.getList(GlobalData.getInstance().lng, 3);
+	        datasource.close();
+	        
 	        GlobalData.getInstance().setPosition(0);
-	      //  data = (Word) getIntent().getExtras().getSerializable("Word");
+	    
 	        
 	        home = (Button) findViewById(R.id.home_2);
 	        back = (Button) findViewById(R.id.back_2);
@@ -35,7 +43,7 @@ public class MainLessonFruit extends Activity implements OnClickListener {
 	        list = (Button) findViewById(R.id.list_2);
 	        next= (Button) findViewById(R.id.next_2);
 	        image = (ImageView) findViewById(R.id.imageView1);
-	        
+	        name = (TextView) findViewById(R.id.fruitname);
 	         
 	         if (GlobalData.getInstance().position==0){
          		prev.setEnabled(false);
@@ -63,7 +71,7 @@ public class MainLessonFruit extends Activity implements OnClickListener {
 	        
 	      prev.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View view) {
-	            	 
+	            	next.setEnabled(true);
 	            	if (GlobalData.getInstance().position-1==0){
 	             		prev.setEnabled(false);
 	             	}else{
@@ -95,7 +103,7 @@ public class MainLessonFruit extends Activity implements OnClickListener {
 	      next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view1) {
             	prev.setEnabled(true);
-            	if (GlobalData.getInstance().position+1==GlobalData.getInstance().max_number[0]-1){
+            	if (GlobalData.getInstance().position+1==GlobalData.getInstance().max_number[2]-1){
             		
              		next.setEnabled(false);
              	}else{
@@ -111,8 +119,12 @@ public class MainLessonFruit extends Activity implements OnClickListener {
 	 }
 	  
 	 private void ChangeImage(){
-		 Drawable d = getResources().getDrawable(GlobalData.getInstance().img[2][GlobalData.getInstance().position]);
+		 datasource.open();
+		 Drawable d = getResources().getDrawable(GlobalData.getInstance().img[2][listarray[GlobalData.getInstance().position]-1]);
          image.setImageDrawable(d);
+         Word fru = datasource.get(listarray[GlobalData.getInstance().position]-1, 3);
+         name.setText(fru.getEng());
+         datasource.close();
 	 	}
 	
 	   

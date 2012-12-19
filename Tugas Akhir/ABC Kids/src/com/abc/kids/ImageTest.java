@@ -15,7 +15,7 @@ public class ImageTest extends Activity{
 	private ImageView image;
 	private Button first,second;
 	public WordDataSource datasource;
-	private ReportDataSource scoresource;
+	public ReportDataSource scoresource;
 	
 	int quizNumber=10;
 	int rAnswer=0,wAnswer=0;
@@ -28,7 +28,7 @@ public class ImageTest extends Activity{
         
         datasource = new WordDataSource(this);
         scoresource = new ReportDataSource(this);
-        scoresource.open();
+       
         
         image = (ImageView) findViewById(R.id.image1);
         first = (Button) findViewById(R.id.button1);
@@ -52,6 +52,7 @@ public class ImageTest extends Activity{
 	}
 	
 	private void checkAnswer(int answer){
+		 scoresource.open();
 		if(answer==iAnswer){
 			rAnswer++;
 		}else{
@@ -67,6 +68,7 @@ public class ImageTest extends Activity{
 			createQuestion();
 		}
 		
+		scoresource.close();
 		
 	}
 	public void createQuestion(){	

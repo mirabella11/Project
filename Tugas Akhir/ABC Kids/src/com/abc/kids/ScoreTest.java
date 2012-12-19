@@ -47,6 +47,14 @@ public class ScoreTest extends Activity{
 
         });
        
+    /*  play.setOnClickListener(new View.OnClickListener() {
+           public void onClick(View play1) {
+           	Intent myIntent = new Intent(play1.getContext(),FirstChoice.class);
+               startActivityForResult(myIntent, 0);
+           }
+
+       });
+      */ 
         
         
 	}
