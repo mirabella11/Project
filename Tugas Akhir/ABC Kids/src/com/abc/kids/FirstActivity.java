@@ -21,10 +21,7 @@ public class FirstActivity extends Activity {
 	                Intent mainIntent = new Intent(FirstActivity.this, LanguageChoice.class);
 	                startActivity(mainIntent);
 	           	            		}
-	        		}, SPLASH_DISPLAY_LENGHT);
-	        
-	        
-		 
+	        		}, SPLASH_DISPLAY_LENGHT);	            		 
 	 		}
 }
 

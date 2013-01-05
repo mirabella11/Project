@@ -133,6 +133,13 @@
                 <action android:name="android.intent.action.MAIN16" />
             </intent-filter>
         </activity>
+        <activity android:name="Settings" 
+             android:configChanges="locale"
+             android:screenOrientation="landscape" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN17" />
+            </intent-filter>
+        </activity>
    </application>
 
 </manifest>

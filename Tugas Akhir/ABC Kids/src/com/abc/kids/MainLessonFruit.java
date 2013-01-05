@@ -123,7 +123,12 @@ public class MainLessonFruit extends Activity implements OnClickListener {
 		 Drawable d = getResources().getDrawable(GlobalData.getInstance().img[2][listarray[GlobalData.getInstance().position]-1]);
          image.setImageDrawable(d);
          Word fru = datasource.get(listarray[GlobalData.getInstance().position]-1, 3);
-         name.setText(fru.getEng());
+         if (GlobalData.getInstance().lng==0){
+        	 name.setText(fru.getEng());
+             }else{
+             name.setText(fru.getIndo()); 
+             }
+      
          datasource.close();
 	 	}
 	

@@ -37,6 +37,16 @@ public class ListUser extends ListActivity {
 	         datasource.open();
 	         
 	         add = (Button) findViewById(R.id.add);
+	         
+	         if(GlobalData.getInstance().lng==0){
+		        	add.setText("Add New");
+		        	 
+		        	
+		        }else{
+		        	add.setText("Tambah Baru");
+		        	 
+		        }   
+		        
 	         List<User> values = datasource.getAllUser();
  
 	         ArrayAdapter<User> adapter = new ArrayAdapter<User>(this,
@@ -83,6 +93,17 @@ public class ListUser extends ListActivity {
 
 			Back = (Button) formdialog.findViewById(R.id.btnCancel);
 			Save = (Button) formdialog.findViewById(R.id.btnSave);
+			
+			 if(GlobalData.getInstance().lng==0){
+		        	Back.setText("Cancel");
+		        	Save.setText("Save");
+		        	 
+		        	
+		        }else{
+		        	Back.setText("Batal");
+		        	Save.setText("Simpan");
+		        }   
+		        
 
 			Save.setOnClickListener(new OnClickListener() {
 
@@ -129,6 +150,20 @@ public class ListUser extends ListActivity {
 			Select = (Button) Buttondialog.findViewById(R.id.btnSelect);
 			Change = (Button) Buttondialog.findViewById(R.id.btnChange);
 			Delete = (Button)Buttondialog.findViewById(R.id.btnDelete);
+			
+			 if(GlobalData.getInstance().lng==0){
+		        	Back.setText("Cancel");
+		        	Select.setText("Select");
+		        	Change.setText("Change");
+		        	Delete.setText("Delete");
+		        	
+		        }else{
+		        	Back.setText("Batal");
+		        	Select.setText("Pilih");
+		        	Change.setText("Ubah");
+		        	Delete.setText("Hapus");
+		        }   
+		        
 
 			notice.setText(user.getName());
 			Select.setOnClickListener(new OnClickListener() {
@@ -190,6 +225,17 @@ public class ListUser extends ListActivity {
 			Back = (Button) Updatedialog .findViewById(R.id.btnCancel);
 			Save = (Button) Updatedialog .findViewById(R.id.btnSave);
 			 
+
+			 if(GlobalData.getInstance().lng==0){
+		        	Back.setText("Cancel");
+		        	Save.setText("Save");
+		        	 
+		        	
+		        }else{
+		        	Back.setText("Batal");
+		        	Save.setText("Simpan");
+		        }   
+		        
 
 			Save.setOnClickListener(new OnClickListener() {
 

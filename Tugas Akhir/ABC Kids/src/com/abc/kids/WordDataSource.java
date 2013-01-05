@@ -111,9 +111,7 @@ public class WordDataSource {
 				word.setEng(inggris);
 				word.setImg(img);
 				word.setType(type);
-
-				
-				
+								
 				cursor.moveToNext();
 			} while (!cursor.isAfterLast());
 		}
@@ -125,6 +123,7 @@ public class WordDataSource {
 	  public int[] getList(int type,int imgtype) {
 		  int[] listar=new int[GlobalData.getInstance().max_number[imgtype-1]];
 		  if (type==1){
+			  
 			  Cursor cursor = database.rawQuery ( "select * from word where tipe = " +imgtype+" order by indonesia asc", null);
 			  if (cursor.getCount() > 0) {
 		  			
@@ -137,9 +136,10 @@ public class WordDataSource {
 						cursor.moveToNext();
 					} while (!cursor.isAfterLast());
 				}
-					
-		  		
-		  } else {
+		  } 
+		  
+		  else
+		  {
 			  Cursor cursor = database.rawQuery ( "select * from word where tipe = " +imgtype+" order by english asc", null);
 			  
 			  if (cursor.getCount() > 0) {
@@ -156,11 +156,8 @@ public class WordDataSource {
 					
 		  }
 		  return  listar;
-	  		
-	  	 
-	  	 
-		  
-	  }
+	  	
+	  		  }
 	  
 	  
 	  public Word[] getSpell(){
@@ -199,12 +196,4 @@ public class WordDataSource {
 					  			  					  		 
 		  return list;
 	  }
-	  
-
-
-	  
-	  
-	 
-
-
 }

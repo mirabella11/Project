@@ -24,7 +24,8 @@ public class ScoreTest extends Activity{
         Button home = (Button) findViewById(R.id.home);
         Button play = (Button) findViewById(R.id.play);
         
-        
+        if(GlobalData.getInstance().lng==0){
+        	 
         if (hasil.getScore()<=50){
         	result.setText("NOT BAD , TRY AGAIN");
             }else if(hasil.getScore()>50&&hasil.getScore()<=80) {
@@ -32,6 +33,17 @@ public class ScoreTest extends Activity{
             }else if (hasil.getScore()>80&&hasil.getScore()<=100){
             	  result.setText("EXCELLENT");
             }
+        }
+        else {
+        	 if (hasil.getScore()<=50){
+             	result.setText("TIDAK BURUK , COBA LAGI");
+                 }else if(hasil.getScore()>50&&hasil.getScore()<=80) {
+                 	  result.setText("BAGUS");
+                 }else if (hasil.getScore()>80&&hasil.getScore()<=100){
+                 	  result.setText("HEBAT");
+                 }
+        }
+        
        
         resultscore.setText(""+hasil.getScore());
         
@@ -47,14 +59,14 @@ public class ScoreTest extends Activity{
 
         });
        
-    /*  play.setOnClickListener(new View.OnClickListener() {
+      play.setOnClickListener(new View.OnClickListener() {
            public void onClick(View play1) {
-           	Intent myIntent = new Intent(play1.getContext(),FirstChoice.class);
+           	Intent myIntent = new Intent(play1.getContext(),MenuTest.class);
                startActivityForResult(myIntent, 0);
            }
 
        });
-      */ 
+      
         
         
 	}

@@ -32,7 +32,7 @@
              android:layout_below="@+id/FormName"
              android:layout_marginTop="20dp"
              android:layout_marginRight="125dp"
-             android:text="Cancel" />
+              />
 
          <Button
              android:id="@+id/btnSave"
@@ -42,7 +42,7 @@
              android:layout_marginTop="20dp"
              android:layout_toLeftOf="@+id/btnCancel"
              android:layout_marginRight="20dp"
-             android:text=" Save " />
+              />
 
      </RelativeLayout>
 

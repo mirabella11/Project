@@ -18,6 +18,18 @@ public class MenuTest extends Activity{
 	        Button guessimage = (Button) findViewById(R.id.image);
 	        Button arrange    = (Button) findViewById(R.id.word);
 	        
+	        
+	        if(GlobalData.getInstance().lng==0){
+	        	guessvoice.setText("Voice Test");
+	        	guessimage.setText("Image Test");
+	        	arrange.setText("Arrange Word Test");
+	        	
+	        }else{
+	        	guessvoice.setText("Tes Suara");
+	        	guessimage.setText("Tes Gambar");
+	        	arrange.setText("Tes Menyusun Kata");
+	        }   
+	        
 	      guessvoice.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View voice1) {
 	            	Intent myIntent = new Intent(voice1.getContext(), VoiceTest.class);

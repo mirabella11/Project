@@ -99,7 +99,7 @@ public final class R {
         public static final int splash=0x7f020050;
     }
     public static final class id {
-        public static final int FormName=0x7f090065;
+        public static final int FormName=0x7f090066;
         public static final int add=0x7f09000a;
         public static final int animal1=0x7f09001c;
         public static final int animal2=0x7f09001d;
@@ -130,7 +130,7 @@ public final class R {
         public static final int btnQ=0x7f090030;
         public static final int btnR=0x7f090031;
         public static final int btnS=0x7f090032;
-        public static final int btnSave=0x7f090066;
+        public static final int btnSave=0x7f090067;
         public static final int btnSelect=0x7f090002;
         public static final int btnSound=0x7f09001e;
         public static final int btnT=0x7f090033;
@@ -141,30 +141,31 @@ public final class R {
         public static final int btnY=0x7f090038;
         public static final int btnYes=0x7f090006;
         public static final int btnZ=0x7f090039;
-        public static final int buah=0x7f090060;
-        public static final int bunga=0x7f09005f;
+        public static final int buah=0x7f090061;
+        public static final int bunga=0x7f090060;
         public static final int button1=0x7f090011;
         public static final int button2=0x7f090012;
         public static final int button3=0x7f090013;
         public static final int button4=0x7f090014;
         public static final int button5=0x7f090015;
         public static final int button6=0x7f090016;
-        public static final int change=0x7f090056;
-        public static final int easy=0x7f090062;
+        public static final int changeacc=0x7f090056;
+        public static final int changelng=0x7f090057;
+        public static final int easy=0x7f090063;
         public static final int eng=0x7f09000d;
         public static final int flowername=0x7f090046;
         public static final int fruitname=0x7f09004d;
         public static final int group=0x7f090009;
-        public static final int hard=0x7f090064;
-        public static final int hewan=0x7f09005e;
+        public static final int hard=0x7f090065;
+        public static final int hewan=0x7f09005f;
         public static final int home=0x7f09001a;
         public static final int home_1=0x7f090044;
         public static final int home_2=0x7f09004b;
-        public static final int image=0x7f090058;
+        public static final int image=0x7f090059;
         public static final int image1=0x7f090010;
         public static final int imageView1=0x7f09003a;
         public static final int ind=0x7f09000e;
-        public static final int kembali=0x7f090061;
+        public static final int kembali=0x7f090062;
         public static final int layoutArrange=0x7f09000f;
         public static final int layoutLanguage=0x7f090000;
         public static final int layoutabove=0x7f09003b;
@@ -176,9 +177,11 @@ public final class R {
         public static final int list=0x7f090042;
         public static final int list_1=0x7f090049;
         public static final int list_2=0x7f090050;
-        public static final int menu_settings=0x7f090067;
-        public static final int middle=0x7f090063;
-        public static final int name=0x7f09005b;
+        public static final int menu_settings=0x7f09006a;
+        public static final int middle=0x7f090064;
+        public static final int music=0x7f090069;
+        public static final int musicdesc=0x7f090068;
+        public static final int name=0x7f09005c;
         public static final int next=0x7f090043;
         public static final int next_1=0x7f09004a;
         public static final int next_2=0x7f090051;
@@ -188,21 +191,21 @@ public final class R {
         public static final int prev_1=0x7f090047;
         public static final int prev_2=0x7f09004e;
         public static final int relativeLayout1=0x7f090052;
-        public static final int relativelayout1=0x7f09005d;
+        public static final int relativelayout1=0x7f09005e;
         public static final int report=0x7f090055;
-        public static final int save=0x7f09005c;
-        public static final int setting=0x7f090057;
+        public static final int save=0x7f09005d;
+        public static final int setting=0x7f090058;
         public static final int spell=0x7f090041;
         public static final int spell_1=0x7f090048;
         public static final int spell_2=0x7f09004f;
         public static final int splashscreen=0x7f09000c;
         public static final int test=0x7f090054;
-        public static final int text=0x7f09005a;
+        public static final int text=0x7f09005b;
         public static final int textView1=0x7f090017;
         public static final int textView2=0x7f090018;
         public static final int textView3=0x7f090019;
         public static final int voice=0x7f090040;
-        public static final int word=0x7f090059;
+        public static final int word=0x7f09005a;
     }
     public static final class layout {
         public static final int button_choice=0x7f030000;
@@ -225,6 +228,7 @@ public final class R {
         public static final int menu_item=0x7f030011;
         public static final int menu_level=0x7f030012;
         public static final int save_user=0x7f030013;
+        public static final int setting=0x7f030014;
     }
     public static final class menu {
         public static final int first_activity=0x7f080000;

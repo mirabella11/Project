@@ -122,7 +122,12 @@ public class MainLessonFlower extends Activity implements OnClickListener {
 		 Drawable d = getResources().getDrawable(GlobalData.getInstance().img[1][listarray[GlobalData.getInstance().position]-1]);
          image.setImageDrawable(d);
          Word flo = datasource.get(listarray[GlobalData.getInstance().position]-1, 2);
-         name.setText(flo.getEng());
+         if (GlobalData.getInstance().lng==0){
+        	 name.setText(flo.getEng());
+             }else{
+             name.setText(flo.getIndo()); 
+             }
+         
          datasource.close();
 	 	}
 	  

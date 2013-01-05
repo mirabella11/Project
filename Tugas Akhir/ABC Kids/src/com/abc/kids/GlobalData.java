@@ -38,6 +38,8 @@ public class GlobalData {
 	
 	public int position = 0;
 	public int lng;
+	public float msc=1;
+	
 	public Report lastReport=null;
 	protected GlobalData(){
 		 
@@ -59,6 +61,9 @@ public class GlobalData {
 	}
 	public void setLanguage(int language){
 		this.lng=language;
+	}
+	public void setMusic(float music){
+		this.msc=music;
 	}
 }
 

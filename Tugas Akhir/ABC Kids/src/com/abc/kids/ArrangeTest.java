@@ -35,7 +35,7 @@ public class ArrangeTest extends Activity {
         datasource.close();
         scoresource = new ReportDataSource(this);
         
-        image= (ImageView) findViewById (R.id.image1);
+         image= (ImageView) findViewById (R.id.image1);
          first = (Button) findViewById(R.id.button1);
          second = (Button) findViewById(R.id.button2);
          third= (Button) findViewById(R.id.button3);
@@ -47,8 +47,12 @@ public class ArrangeTest extends Activity {
          third.setVisibility(View.GONE);
          fourth.setVisibility(View.GONE);
          fiveth.setVisibility(View.GONE);
-         sixth.setVisibility(View.GONE                                                                                                                    );
-         createQuestion();
+         sixth.setVisibility(View.GONE);
+         if(GlobalData.getInstance().lng==0){
+        	 createQuestion();
+         } else {
+        	 createQuestionIndo();
+         }
 	}
 
 	  
@@ -82,6 +86,7 @@ public class ArrangeTest extends Activity {
     			sixth.setVisibility(View.VISIBLE);
     		break;
     	}
+    	
    	 /*Button b = new Button(this);
    	 b.setOnClickListener(new OnClickListener() {
 
@@ -105,6 +110,37 @@ public class ArrangeTest extends Activity {
     }
     }
     
+
+	 public void getButtonIndo (Word a){
+		    
+		    for(int i=0; i<a.getIndo().length(); i++){
+		   	  
+		    	switch(i){
+		    		case 0: 
+		    			first.setText(""+a.getIndo().charAt(i));
+		    			first.setVisibility(View.VISIBLE);
+		    		break;
+		    		case 1: 
+		    			second.setText(""+a.getIndo().charAt(i));
+		    			second.setVisibility(View.VISIBLE);
+		    		break;
+		    		case 2: 
+		    			third.setText(""+a.getIndo().charAt(i));
+		    			third.setVisibility(View.VISIBLE);
+		    		break;
+		    		case 3: 
+		    			fourth.setText(""+a.getIndo().charAt(i));
+		    			fourth.setVisibility(View.VISIBLE);
+		    		break;
+		    		case 4: 
+		    			fiveth.setText(""+a.getIndo().charAt(i));
+		    			fiveth.setVisibility(View.VISIBLE);
+		    		break;
+		    		case 5: 
+		    			sixth.setText(""+a.getIndo().charAt(i));
+		    			sixth.setVisibility(View.VISIBLE);
+		    		break;
+		    	}}}
     
     
     
@@ -117,9 +153,21 @@ public class ArrangeTest extends Activity {
    	 image.setImageDrawable(a);
    	 
    	 getButton(spell);
-   	 
-   	 
-   	 
+   	   	   	 
     }
+    
+    public void createQuestionIndo (){   	 
+      	 Random random= new Random();
+      	 
+      	 iAnswer=random.nextInt(list.length);
+      	 Word spell=list[iAnswer];   	 	
+      	 Drawable a = getResources().getDrawable(GlobalData.getInstance().img[(int) (spell.getType()-1)][spell.getImg()-1]);
+      	 image.setImageDrawable(a);
+      	 
+      	 getButtonIndo(spell);
+      	 
+      	 
+      	 
+       }
    	 
 }

@@ -23,7 +23,7 @@
              android:layout_alignParentRight="true"
              android:layout_marginBottom="50dp"
              android:layout_marginRight="30dp"
-             android:text="@string/button_cancel" />
+              />
 
          <Button
              android:id="@+id/btnSelect"
@@ -32,7 +32,7 @@
              android:layout_marginBottom="50dp"
              android:layout_toLeftOf="@+id/btnCancel"
              android:layout_marginRight="20dp"
-             android:text="Select" />
+              />
          
           <Button
              android:id="@+id/btnChange"
@@ -41,8 +41,7 @@
              android:layout_marginBottom="50dp"
              android:layout_toLeftOf="@+id/btnSelect"
              android:layout_marginRight="20dp"
-              
-             android:text="Change" />
+             />
  		
           <Button
              android:id="@+id/btnDelete"
@@ -52,7 +51,7 @@
              android:layout_toLeftOf="@+id/btnChange"
              android:layout_marginRight="20dp"
              android:layout_marginLeft="20dp"
-             android:text="Delete" />
+               />
           
           <TextView
               android:id="@+id/notice"

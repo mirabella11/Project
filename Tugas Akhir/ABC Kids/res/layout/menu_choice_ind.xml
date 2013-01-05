@@ -54,14 +54,23 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/change"
+        android:id="@+id/changeacc"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@+id/setting"
+        android:layout_toLeftOf="@+id/changelng"
         android:layout_toRightOf="@+id/report"
-        android:textSize="20sp" />
+          />
+    
+      <Button
+        android:id="@+id/changelng"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/setting"
+        android:layout_marginRight="20dp"
+         />
         
       <Button
         android:id="@+id/setting"
@@ -69,8 +78,9 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:textSize="20sp" />
-   
+          />
+      
+ 
 
 </RelativeLayout>
  

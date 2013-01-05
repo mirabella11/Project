@@ -152,8 +152,13 @@ public class MainLessonAnimal extends Activity implements OnClickListener {
 		 datasource.open();
 		 Drawable d = getResources().getDrawable(GlobalData.getInstance().img[0][listarray[GlobalData.getInstance().position]-1]);
          image.setImageDrawable(d);
+         
          Word anm = datasource.get(listarray[GlobalData.getInstance().position]-1, 1);
+         if (GlobalData.getInstance().lng==0){
          name.setText(anm.getEng());
+         }else{
+         name.setText(anm.getIndo()); 
+         }
          datasource.close();
 	 	}
 	 
@@ -168,7 +173,7 @@ public class MainLessonAnimal extends Activity implements OnClickListener {
 	            
 	        }
 	       player = MediaPlayer.create(this,GlobalData.getInstance().voice[listarray[GlobalData.getInstance().position]-1]);
-	 
+	       player.setVolume(0,GlobalData.getInstance().msc);
 	       player.setLooping(false); // Set looping
 	         player.start();
 	 	}
@@ -184,7 +189,7 @@ public class MainLessonAnimal extends Activity implements OnClickListener {
 	   
 	   public void ListAlfabet(){
 		    alfabetDialog = new Dialog(MainLessonAnimal.this);
-		   alfabetDialog.setContentView(R.layout.list_alfabet);
+		    alfabetDialog.setContentView(R.layout.list_alfabet);
 		   
 		   LayoutParams alfabetDialogParams = alfabetDialog.getWindow().getAttributes();
 			alfabetDialogParams.width = LayoutParams.FILL_PARENT;

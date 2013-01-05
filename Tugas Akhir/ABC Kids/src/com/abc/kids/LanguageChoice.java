@@ -19,25 +19,28 @@ public class LanguageChoice extends Activity {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.language_choice);
 	        
-	    	english=  (Button) findViewById(R.id.eng);
-	    	indo = (Button) findViewById(R.id.ind);
+	    	english	=  (Button) findViewById(R.id.eng);
+	    	indo    =  (Button) findViewById(R.id.ind);
 	    	
-	    	  datasource = new UserDataSource(this);
-		      datasource.open();
+	    	datasource = new UserDataSource(this);
+		    datasource.open();
 		      
 			english.setOnClickListener(new OnClickListener() {
 
 				public void onClick(View first) {
-					GlobalData.getInstance().setLanguage(2);
+					GlobalData.getInstance().setLanguage(0);
 					if(datasource.get()){
-						
+						if(GlobalData.getInstance().iduser!=0){
+							Intent myIntent = new Intent(first.getContext(), FirstChoice.class);
+			                startActivityForResult(myIntent, 0);
+						} else {
 					Intent myIntent = new Intent(first.getContext(), ListUser.class);
 	                startActivityForResult(myIntent, 0);
-					 
-						}else{
-							datasource.close();
-							Intent myIntent = new Intent(first.getContext(), InputData.class);
-							startActivityForResult(myIntent, 0);
+						}
+					}else{
+					datasource.close();
+					Intent myIntent = new Intent(first.getContext(), InputData.class);
+					startActivityForResult(myIntent, 0);
 						}}
 			});
 			
@@ -47,16 +50,23 @@ public class LanguageChoice extends Activity {
 
 				public void onClick(View second) {
 					GlobalData.getInstance().setLanguage(1);
-					Locale locale = new Locale("id");
+				/*	Locale locale = new Locale("id");
 			        Locale.setDefault(locale);
 			        Configuration config = new Configuration();
 			        config.locale = locale;
 			        getBaseContext().getResources().updateConfiguration(config,  getBaseContext().getResources().getDisplayMetrics());
-					
+					*/
 					if(datasource.get()){
+						if(GlobalData.getInstance().iduser!=0){
+							Intent myIntent = new Intent(second.getContext(),FirstChoice.class);
+			                startActivityForResult(myIntent, 0);
+						} else {
+							
+					Intent myIntent = new Intent(second.getContext(), ListUser.class);
+	                startActivityForResult(myIntent, 0);
+						}
 					
-				Intent myIntent = new Intent(second.getContext(), ListUser.class);
-                startActivityForResult(myIntent, 0);
+				
 				 
 					}else{
 						datasource.close();

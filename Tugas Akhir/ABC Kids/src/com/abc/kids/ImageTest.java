@@ -33,7 +33,15 @@ public class ImageTest extends Activity{
         image = (ImageView) findViewById(R.id.image1);
         first = (Button) findViewById(R.id.button1);
         second = (Button) findViewById(R.id.button2);
-        createQuestion();
+        
+        if(GlobalData.getInstance().lng==0){
+        	  createQuestion();
+        	
+        }else{
+        	  createQuestionIndo();
+        }   
+        
+      
         
         first.setOnClickListener(new View.OnClickListener() {
             public void onClick(View voice1) {
@@ -65,12 +73,19 @@ public class ImageTest extends Activity{
 			Intent mainIntent = new Intent(ImageTest.this, ScoreTest.class);
 			startActivity(mainIntent);
 		}else if((rAnswer+wAnswer)<=10){
-			createQuestion();
-		}
+			
+			 if(GlobalData.getInstance().lng==0){
+	        	  createQuestion();
+	        	
+	        }else{
+	        	  createQuestionIndo();
+	        }   
+			 }
 		
 		scoresource.close();
 		
 	}
+	
 	public void createQuestion(){	
 		datasource.open();
 		Random rand = new Random();
@@ -96,6 +111,35 @@ public class ImageTest extends Activity{
             int o = rand.nextInt(max-1);
             Word dua=datasource.get(o,qType+1);
             first.setText(dua.getEng());
+        }       
+        datasource.close();
+	}
+	
+	public void createQuestionIndo(){	
+		datasource.open();
+		Random rand = new Random();
+		
+		qType = rand.nextInt(3);
+		int max = GlobalData.getInstance().max_number[qType];
+		int n = rand.nextInt(max-1);
+		Drawable d = getResources().getDrawable(GlobalData.getInstance().img[qType][n]);
+        image.setImageDrawable(d);
+        
+        iAnswer = rand.nextInt(2);
+        if(iAnswer==0){
+        	Word satu=datasource.get(n,qType+1);
+            first.setText(satu.getIndo());
+            
+            int o = rand.nextInt(max-1);
+            Word dua=datasource.get(o,qType+1);
+            second.setText(dua.getIndo());
+        }else{
+        	Word satu=datasource.get(n,qType+1);
+        	second.setText(satu.getIndo());
+            
+            int o = rand.nextInt(max-1);
+            Word dua=datasource.get(o,qType+1);
+            first.setText(dua.getIndo());
         }       
         datasource.close();
 	}

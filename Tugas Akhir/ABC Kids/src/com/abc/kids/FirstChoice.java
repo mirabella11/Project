@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 
 public class FirstChoice extends Activity {
-	private Button materi,test,laporan,akun,set,Yes,No; 
+	private Button materi,test,laporan,akun,set,Yes,No,bahasa; 
 	private Dialog choiceDialog = null;
 	 
 	 
@@ -30,12 +30,22 @@ public class FirstChoice extends Activity {
 	        setContentView(R.layout.menu_choice_ind);
 	        
 	        materi = (Button) findViewById(R.id.learn);
-	        test = (Button) findViewById(R.id.test);
+	        test   = (Button) findViewById(R.id.test);
 	        laporan= (Button) findViewById(R.id.report);
-	        akun = (Button) findViewById(R.id.change);
-	        set = (Button) findViewById(R.id.setting);
+	        akun   = (Button) findViewById(R.id.changeacc);
+	        set    = (Button) findViewById(R.id.setting);
+	        bahasa = (Button) findViewById(R.id.changelng);
 	       
-	      
+	       if(GlobalData.getInstance().lng==0){
+	        	materi.setText("Learn");
+	        	test.setText("Test");
+	        	laporan.setText("Report");
+	        	
+	        }else{
+	        	materi.setText("Pembelajaran");
+	        	test.setText("Ujian");
+	        	laporan.setText("Laporan");
+	        }  
 	        
 	        materi.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View second) {
@@ -73,10 +83,19 @@ public class FirstChoice extends Activity {
 					
 				}
 			});
+	       bahasa.setOnClickListener(new View.OnClickListener() {
+				
+				public void onClick(View four) {
+					Intent myIntent = new Intent(four.getContext(), LanguageChoice.class);
+	                startActivityForResult(myIntent, 0);
+					
+				}
+			});
 	       set.setOnClickListener(new View.OnClickListener() {
 				
-				public void onClick(View arg0) {
-					// TODO Auto-generated method stub
+				public void onClick(View five) {
+					Intent myIntent = new Intent(five.getContext(), Settings.class);
+	                startActivityForResult(myIntent, 0);
 					
 				}
 			});

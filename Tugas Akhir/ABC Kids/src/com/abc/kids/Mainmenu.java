@@ -20,6 +20,17 @@ public class Mainmenu extends Activity {
 	        fruit = (Button) findViewById(R.id.buah);
 	        back = (Button) findViewById(R.id.kembali);
 	        
+	        if(GlobalData.getInstance().lng==0){
+	        	animal.setText("Animal");
+	        	flower.setText("Flower");
+	        	fruit.setText("Fruit");
+	        	
+	        }else{
+	        	animal.setText("Hewan");
+	           	flower.setText("Bunga");
+	        	fruit.setText("Buah");
+	        }
+	        
 	       animal.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View fourth) {
 	            	
