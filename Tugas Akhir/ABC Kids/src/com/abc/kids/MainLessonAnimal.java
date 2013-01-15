@@ -174,7 +174,7 @@ public class MainLessonAnimal extends Activity implements OnClickListener {
 	        }
 	       player = MediaPlayer.create(this,GlobalData.getInstance().voice[listarray[GlobalData.getInstance().position]-1]);
 	       player.setVolume(0,GlobalData.getInstance().msc);
-	       player.setLooping(false); // Set looping
+	       player.setLooping(false); 
 	         player.start();
 	 	}
 	 

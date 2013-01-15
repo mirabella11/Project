@@ -8,24 +8,22 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ScoreTest extends Activity{
-	
-	private ImageTest scoretest;
-
+		
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_score);
         
         Report hasil = GlobalData.getInstance().lastReport;
         
-        TextView result = (TextView) findViewById(R.id.textView1);
-        TextView score = (TextView) findViewById(R.id.textView2);
-        TextView resultscore = (TextView) findViewById(R.id.textView3);
+        TextView result = (TextView) findViewById(R.id.result_comment);
+        TextView score = (TextView) findViewById(R.id.score_place);
+        TextView resultscore = (TextView) findViewById(R.id.score);
         
         Button home = (Button) findViewById(R.id.home);
         Button play = (Button) findViewById(R.id.play);
         
         if(GlobalData.getInstance().lng==0){
-        	 
+        	score.setText("SCORE"); 
         if (hasil.getScore()<=50){
         	result.setText("NOT BAD , TRY AGAIN");
             }else if(hasil.getScore()>50&&hasil.getScore()<=80) {
@@ -35,6 +33,7 @@ public class ScoreTest extends Activity{
             }
         }
         else {
+        	score.setText("NILAI"); 
         	 if (hasil.getScore()<=50){
              	result.setText("TIDAK BURUK , COBA LAGI");
                  }else if(hasil.getScore()>50&&hasil.getScore()<=80) {
@@ -43,9 +42,7 @@ public class ScoreTest extends Activity{
                  	  result.setText("HEBAT");
                  }
         }
-        
-       
-        resultscore.setText(""+hasil.getScore());
+         resultscore.setText(""+hasil.getScore());
         
         
         

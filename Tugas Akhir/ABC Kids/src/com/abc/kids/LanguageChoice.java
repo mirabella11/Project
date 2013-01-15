@@ -28,6 +28,7 @@ public class LanguageChoice extends Activity {
 			english.setOnClickListener(new OnClickListener() {
 
 				public void onClick(View first) {
+					
 					GlobalData.getInstance().setLanguage(0);
 					if(datasource.get()){
 						if(GlobalData.getInstance().iduser!=0){
@@ -64,10 +65,7 @@ public class LanguageChoice extends Activity {
 							
 					Intent myIntent = new Intent(second.getContext(), ListUser.class);
 	                startActivityForResult(myIntent, 0);
-						}
-					
-				
-				 
+						}											 
 					}else{
 						datasource.close();
 						Intent myIntent = new Intent(second.getContext(), InputData.class);

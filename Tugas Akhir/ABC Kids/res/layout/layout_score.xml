@@ -19,7 +19,7 @@
         android:paddingRight="20dp">
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/result_comment"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
@@ -29,21 +29,21 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/score_place"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/result_comment"
         android:layout_marginTop="30dp"
         android:textSize="20sp"
-        android:text="SCORE" />
+    	 />
     
      <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_toRightOf="@+id/textView2"
+        android:layout_below="@+id/result_comment"
+        android:layout_toRightOf="@+id/score_place"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="50dp"
         android:textSize="20sp"

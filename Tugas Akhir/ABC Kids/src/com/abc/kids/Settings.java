@@ -20,6 +20,7 @@ public class Settings  extends Activity {
 	        
 	        msc=(CheckBox) findViewById (R.id.music);
 	        desc =(TextView) findViewById(R.id.musicdesc);
+	        
 	        if(GlobalData.getInstance().msc==1){
 	        	msc.setChecked(true);
 	        }else{
