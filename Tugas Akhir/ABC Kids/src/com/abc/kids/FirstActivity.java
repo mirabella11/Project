@@ -9,7 +9,7 @@ import android.content.Intent;
 
 public class FirstActivity extends Activity {
 	
-	 private final int SPLASH_DISPLAY_LENGHT = 2000;
+	 private final int SPLASH_DISPLAY_LENGHT = 5000;
 
 	 public void onCreate(Bundle savedInstanceState) {
 		 super.onCreate(savedInstanceState);

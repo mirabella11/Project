@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutLanguage"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+   <RelativeLayout
+      
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" 
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+
+   
+
+    <TextView
+        android:id="@+id/score_place_voice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="huhu"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+    	 />
+    
+     <TextView
+        android:id="@+id/score_voice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/score_place_voice"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:textSize="20sp"
+        android:text="ok"
+          />
+      <TextView
+        android:id="@+id/score_place_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/score_place_voice"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:text="yuhu"
+    	 />
+    
+     <TextView
+        android:id="@+id/score_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/score_voice"
+        android:layout_toRightOf="@+id/score_place_image"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:textSize="20sp"
+        android:text="ok1"
+          />
+      <TextView
+        android:id="@+id/score_place_arrange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/score_place_image"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+            android:text="oooo"
+    	 />
+    
+     <TextView
+        android:id="@+id/score_arrange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/score_image"
+        android:layout_toRightOf="@+id/score_place_arrange"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:textSize="20sp"
+          android:text="ok2"
+          />
+    
+
+
+     
+
+    
+    
+    </RelativeLayout>
+</RelativeLayout>

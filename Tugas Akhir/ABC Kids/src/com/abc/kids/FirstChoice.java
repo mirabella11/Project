@@ -69,7 +69,7 @@ public class FirstChoice extends Activity {
 	       laporan.setOnClickListener(new View.OnClickListener() {
 				
 				public void onClick(View second2) {
-					Intent myIntent = new Intent(second2.getContext(), ScoreTest.class);
+					Intent myIntent = new Intent(second2.getContext(), ScoreTab.class);
 					startActivityForResult(myIntent, 0);
 					
 					

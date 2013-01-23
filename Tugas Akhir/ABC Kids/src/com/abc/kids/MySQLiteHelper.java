@@ -2,7 +2,6 @@ package com.abc.kids;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -140,57 +139,124 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
   		dataWord(db,"Srigala","Wolf",66,1);
   		dataWord(db,"Burung Pelatuk","Woodpecker",67,1);
   		dataWord(db,"Zebra","Zebra",68,1);
-  		
-  		
+  			
   		 	
    		dataWord(db,"Allium","Allium",1,2);
-  		dataWord(db,"Anggrek","Orchid",2,2);
-  		dataWord(db,"Bugenvil","Bougainvillea",3,2);
-  		dataWord(db,"Cempaka","Chrysolite",4,2);
-  		dataWord(db,"Dahlia","Dahlia",5,2);
-  		dataWord(db,"Edelweis","Edelweiss",6,2);
-  		dataWord(db,"Gladiol","Gladiolus",7,2);
-  		dataWord(db,"Hydrangea","Hydrangea",8,2);
-  		dataWord(db,"Ivy","Ivy",9,2);
-  		dataWord(db,"Kamboja","Frangipani",10,2);
-  		dataWord(db,"Lili","Lily",11,2);
-  		dataWord(db,"Matahari","Sunflower",12,2);
-  		dataWord(db,"Mawar","Rose",13,2);
-  		dataWord(db,"Melati","Jasmine",14,2);
-  		dataWord(db,"Narsisis","Narcissus",15,2);
-  		dataWord(db,"Rafflesia","Rafflesia",16,2);
-  		dataWord(db,"Sedap Malam","Tuberose",17,2);
-  		dataWord(db,"Tulip","Tulip",18,2);
-  		dataWord(db,"Vinca","Vinca",19,2);
-  		dataWord(db,"Xeranthemum","Xeranthemum",20,2);
-  		dataWord(db,"Yarrow","Yarrow",21,2);
-  		dataWord(db,"Zinnia","Zinnia",22,2);
+   		dataWord(db,"Anemon","Anemone",2,2);
+  		dataWord(db,"Aster","Aster",3,2);
+  		dataWord(db,"Bunga Bell","Bellflower",4,2);
+  		dataWord(db,"Bugenvil","Bougainvillea",5,2);
+  		dataWord(db,"Bunga Sapu","Broom",6,2);
+  		dataWord(db,"Kamelia","Camellia",7,2);
+  		dataWord(db,"Krisan","Chrysanthemum",8,2);
+		dataWord(db,"Cempaka","Chrysolite",9,2);
+  		dataWord(db,"Klematis","Clematis",10,2);
+  		dataWord(db,"Bunga Cone ","Coneflower",11,2);
+  		dataWord(db,"Bunga Kosmos","Cosmos",12,2);
+  		dataWord(db,"Dahlia","Dahlia",13,2);
+  		dataWord(db,"Daylily","Daylily",14,2);
+  		dataWord(db,"Delphinium","Delphinium",15,2);
+  		dataWord(db,"Edelweis","Edelweiss",16,2);
+  		dataWord(db,"Kamboja","Frangipani",17,2);
+  		dataWord(db,"Geranium","Geranium",18,2);
+  		dataWord(db,"Gladiol","Gladiolus",19,2);
+  		dataWord(db,"Hollyhock","Hollyhock",20,2);
+  		dataWord(db,"Honeysuckle","Honeysuckle",21,2);
+  		dataWord(db,"Hortensia","Hydrangea",22,2);
+  		dataWord(db,"Iris","Iris",23,2);
+  		dataWord(db,"Ivy","Ivy",24,2);
+  		dataWord(db,"Melati","Jasmine",25,2);
+  		dataWord(db,"Lavender","Lavender",26,2);
+  		dataWord(db,"Lilac","Lilac",27,2);
+  		dataWord(db,"Lili","Lily",28,2);
+  		dataWord(db,"Bunga Telekan","Marigold",29,2);
+  		dataWord(db,"Bunga Bulan","Moonflower",30,2);
+  		dataWord(db,"Narsisis","Narcissus",31,2);
+  		dataWord(db,"Oleande","Oleander",32,2);
+  		dataWord(db,"Anggrek","Orchid",33,2);
+  		dataWord(db,"Passionflower","Passionflower",34,2);
+  		dataWord(db,"Peony","Peony",35,2);
+  		dataWord(db,"Bunga Popy","Poppy",36,2);
+  		dataWord(db,"Bunga Bangkai","Rafflesia",37,2);
+  		dataWord(db,"Mawar","Rose",38,2);
+  		dataWord(db,"Snowdrop","Snowdrop",39,2);
+  		dataWord(db,"Bunga Matahari","Sunflower",40,2);
+  		dataWord(db,"Bunga Terompet","Trumpetvine",41,2);
+  		dataWord(db,"Sedap Malam","Tuberose",42,2);
+  		dataWord(db,"Tulip","Tulip",43,2);
+  		dataWord(db,"Vinca","Vinca",44,2);
+  		dataWord(db,"Zinnia","Zinnia",45,2);
+  		dataWord(db,"Foxglove","Foxglove",46,2);
   		
-  		dataWord(db,"Apel","Apple",1,3);
-  		dataWord(db,"Ara","Fig",2,3);
-  		dataWord(db,"Anggur","Grape",3,3);
-  		dataWord(db,"Belimbing","StarFruit",4,3);
-  		dataWord(db,"Ceri","Cherry",5,3);
-  		dataWord(db,"Durian","Durian",6,3);
-  		dataWord(db,"Frambos","RaspBerry",7,3);
-  		dataWord(db,"Jeruk","Orange",8,3);
-  		dataWord(db,"Kelapa","Coconuts",9,3);
-  		dataWord(db,"Kemiri","Hazelnut",10,3);
-  		dataWord(db,"Kiwi","Kiwi",11,3);
-  		dataWord(db,"Leci","Lychee",12,3);
-  		dataWord(db,"Mangga","Mango",13,3);
-  		dataWord(db,"Nangka","Jackfruit",14,3);
-  		dataWord(db,"Pir","Pear",15,3);
-  		dataWord(db,"Pisang","Banana",16,3);
-  		dataWord(db,"Plum Eropa","European Plum",17,3);
-  		dataWord(db,"Rambutan","Rambutan",18,3);
-  		dataWord(db,"Semangka","Watermelon",19,3);
-  		dataWord(db,"Stroberi","Strawberry",20,3);
-  		dataWord(db,"Tomat","Tomato",21,3);
-  		dataWord(db,"Zaitun","Olive",22,3);
-
   		
-  	 	
-  
-  		 }
-}
+  		 		
+  		dataWord(db,"Acai","Acai",1,3);
+  		dataWord(db,"Kacang Almond","Almond",2,3);
+  		dataWord(db,"Apel","Apple",3,3);
+  		dataWord(db,"Aprikot","Apricot",4,3);
+  		dataWord(db,"Alpukat","Avocado",5,3);
+  		dataWord(db,"Pisang","Banana",6,3);
+  		dataWord(db,"Barberi","Barberries",7,3);		
+  		dataWord(db,"Blackcurrant","Blackcurrant",8,3);
+  		dataWord(db,"Blueberi","Blueberries",9,3);
+  		dataWord(db,"Melon Kuning","Cantaloupe",10,3);
+  		dataWord(db,"Jambu Monyet","Cashew",11,3);
+  		dataWord(db,"Cherimoya","Cherimoya",12,3);
+  		dataWord(db,"Ceri","Cherry",13,3);
+  		dataWord(db,"Kastanye","Chestnut",14,3);
+  		dataWord(db,"Clementine","Clementine",15,3);
+  		dataWord(db,"Kelapa","Coconuts",16,3);
+  		dataWord(db,"Crowberi","Crowberry",17,3);
+  		dataWord(db,"Buah Naga","Dragonfruit",18,3);
+  		dataWord(db,"Durian","Durian",19,3);
+  		dataWord(db,"Plum Eropa","European Plum",20,3);
+  		dataWord(db,"Ara","Fig",21,3);
+  		dataWord(db,"Gojiberi","Gojiberry",22,3);
+   		dataWord(db,"Anggur","Grape",23,3);
+  		dataWord(db,"Gooseberi","Gooseberries",24,3);
+  		dataWord(db,"Jeruk Bali","Grapefruit",25,3);
+  		dataWord(db,"Jambu","Guava",26,3);
+  		dataWord(db,"Hazelnut","Hazelnut",27,3);
+  		dataWord(db,"Melon","Honeydew",28,3);
+  		dataWord(db,"Nangka","Jackfruit",29,3);
+  		dataWord(db,"Juniperberi","Juniperberries",30,3);
+  		dataWord(db,"Kiwi","Kiwi",31,3);
+  		dataWord(db,"Kumquat","Kumquat",32,3);
+  		dataWord(db,"Jeruk Nipis","Lemon",33,3);
+  		dataWord(db,"Jeruk Limau","Lime",34,3);
+  		dataWord(db,"Leci","Lychee",35,3);
+  		dataWord(db,"Mangga","Mango",36,3);
+  		dataWord(db,"Manggis","Mangosteen",37,3);
+  		dataWord(db,"Nectarine","Nectarine",38,3);
+  		dataWord(db,"Jeruk","Orange",39,3);
+  		dataWord(db,"Zaitun","Olive",40,3);
+  		dataWord(db,"Pepaya","Papaya",41,3);
+  		dataWord(db,"Markisa","Passionfruit",42,3);
+  		dataWord(db,"Persik","Peach",43,3);
+  		dataWord(db,"Pir","Pear",44,3);
+  		dataWord(db,"Kesemek","Persimmon",45,3);
+  		dataWord(db,"Nanas","Pineapple",46,3);
+  		dataWord(db,"Kacang Pistaci","Pistachio",47,3);
+  		dataWord(db,"Prem","Plum",48,3);
+  		dataWord(db,"Delima","Pomegranate",49,3);
+  		dataWord(db,"Pomelo","Pomelo",50,3);
+  		dataWord(db,"Quince","Quince",51,3);
+  		dataWord(db,"Rambutan","Rambutan",52,3);
+  		dataWord(db,"Frambos","RaspBerry",53,3);
+  		dataWord(db,"Jambu Merah","Red Guava",54,3);
+  		dataWord(db,"Redcurrant","Redcurrant",55,3);
+  		dataWord(db,"Salmonberi","Salmonberry",56,3);
+  		dataWord(db,"Jeruk Mandarin","Satsuma",57,3);
+  		dataWord(db,"Sea Buckthorn","Sea Buckthorn",58,3);
+   		dataWord(db,"Labu","Squash",59,3);
+  		dataWord(db,"Belimbing","StarFruit",60,3);
+  		dataWord(db,"Stroberi","Strawberry",61,3);
+  		dataWord(db,"Jeruk Keprok","Sweety",62,3);
+  		dataWord(db,"Tamarillo","Tamarillo",63,3);
+  		dataWord(db,"Tomat","Tomato",64,3);
+  		dataWord(db,"Ugli","Ugli",65,3);
+  		dataWord(db,"Semangka","Watermelon",66,3);
+  	
+  		
+	 	 }
+	 }		

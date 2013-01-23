@@ -1,15 +1,12 @@
 package com.abc.kids;
 
-import android.app.Activity;
-import android.app.Application;
-import android.content.Intent;
-import android.os.Bundle;
+
 
 public class GlobalData {
 
 	private static GlobalData mInstance=null;
 	public long iduser=0;
-	public int [] max_number = new int []{68,22,22};
+	public int [] max_number = new int []{68,46,66};
 	public  int[][] img = new int [][] {
 			 { R.drawable.anm_1,R.drawable.anm_2,R.drawable.anm_3,R.drawable.anm_4,R.drawable.anm_5,R.drawable.anm_6,
 			   R.drawable.anm_7,R.drawable.anm_8,R.drawable.anm_9,R.drawable.anm_10,R.drawable.anm_11,R.drawable.anm_12,
@@ -23,14 +20,26 @@ public class GlobalData {
 			   R.drawable.anm_55,R.drawable.anm_56,R.drawable.anm_57,R.drawable.anm_58,R.drawable.anm_59,R.drawable.anm_60,
 			   R.drawable.anm_61,R.drawable.anm_62,R.drawable.anm_63,R.drawable.anm_64,R.drawable.anm_65,R.drawable.anm_66,
 			   R.drawable.anm_67,R.drawable.anm_68 },
-			 {  R.drawable.flo_1,R.drawable.flo_2,R.drawable.flo_3,R.drawable.flo_4,R.drawable.flo_5,R.drawable.flo_6,
+			 { R.drawable.flo_1,R.drawable.flo_2,R.drawable.flo_3,R.drawable.flo_4,R.drawable.flo_5,R.drawable.flo_6,
 			   R.drawable.flo_7,R.drawable.flo_8,R.drawable.flo_9,R.drawable.flo_10,R.drawable.flo_11,R.drawable.flo_12,
 			   R.drawable.flo_13,R.drawable.flo_14,R.drawable.flo_15,R.drawable.flo_16,R.drawable.flo_17,R.drawable.flo_18,
-			   R.drawable.flo_19,R.drawable.flo_20,R.drawable.flo_21,R.drawable.flo_22 },
-			 {  R.drawable.fru_1,R.drawable.fru_2,R.drawable.fru_3,R.drawable.fru_4,R.drawable.fru_5,R.drawable.fru_6,
+			   R.drawable.flo_19,R.drawable.flo_20,R.drawable.flo_21,R.drawable.flo_22,R.drawable.flo_23,R.drawable.flo_24,
+			   R.drawable.flo_25,R.drawable.flo_26,R.drawable.flo_27,R.drawable.flo_28,R.drawable.flo_29,R.drawable.flo_30,
+			   R.drawable.flo_31,R.drawable.flo_32,R.drawable.flo_33,R.drawable.flo_34,R.drawable.flo_35,R.drawable.flo_36,
+			   R.drawable.flo_37,R.drawable.flo_38,R.drawable.flo_39,R.drawable.flo_40,R.drawable.flo_41,R.drawable.flo_42,
+			   R.drawable.flo_43,R.drawable.flo_44,R.drawable.flo_45,R.drawable.flo_46},
+			 { R.drawable.fru_1,R.drawable.fru_2,R.drawable.fru_3,R.drawable.fru_4,R.drawable.fru_5,R.drawable.fru_6,
 			   R.drawable.fru_7,R.drawable.fru_8,R.drawable.fru_9,R.drawable.fru_10,R.drawable.fru_11,R.drawable.fru_12,
 		       R.drawable.fru_13,R.drawable.fru_14,R.drawable.fru_15,R.drawable.fru_16,R.drawable.fru_17,R.drawable.fru_18,
-		       R.drawable.fru_19,R.drawable.fru_20,R.drawable.fru_21,R.drawable.fru_22 }}; 
+		       R.drawable.fru_19,R.drawable.fru_20,R.drawable.fru_21,R.drawable.fru_22,R.drawable.fru_23,R.drawable.fru_24,
+		       R.drawable.fru_25,R.drawable.fru_26,R.drawable.fru_27,R.drawable.fru_28,R.drawable.fru_29,R.drawable.fru_30,
+		       R.drawable.fru_31,R.drawable.fru_32,R.drawable.fru_33,R.drawable.fru_34,R.drawable.fru_35,R.drawable.fru_36,
+		       R.drawable.fru_37,R.drawable.fru_38,R.drawable.fru_39,R.drawable.fru_40,R.drawable.fru_41,R.drawable.fru_42,
+		       R.drawable.fru_43,R.drawable.fru_44,R.drawable.fru_45,R.drawable.fru_46,R.drawable.fru_47,R.drawable.fru_48,
+		       R.drawable.fru_49,R.drawable.fru_50,R.drawable.fru_51,R.drawable.fru_52,R.drawable.fru_53,R.drawable.fru_54,
+		       R.drawable.fru_55,R.drawable.fru_56,R.drawable.fru_57,R.drawable.fru_58,R.drawable.fru_59,R.drawable.fru_60,
+		       R.drawable.fru_61,R.drawable.fru_62,R.drawable.fru_63,R.drawable.fru_64,R.drawable.fru_65,R.drawable.fru_66 
+		       }}; 
 	 
 	public int [] voice = new int [] {R.raw.sound_albatross,R.raw.sound_antelop,R.raw.sound_badger,R.raw.sound_bat,R.raw.sound_bear,R.raw.sound_bee,
 									  R.raw.sound_bison,R.raw.sound_buffalo,R.raw.sound_camel,R.raw.sound_canary,R.raw.sound_cardinal,R.raw.sound_cat,
