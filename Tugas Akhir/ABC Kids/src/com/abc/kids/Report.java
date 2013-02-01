@@ -6,6 +6,7 @@ public class Report {
 	private long iduser;
 	private int Type;
 	private int Score;
+	private String username;
 	 
 	public long getId() {
 		return id;
@@ -23,6 +24,13 @@ public class Report {
 		this.iduser = id;
 	}
 	
+	public void setUsername(String uname) {
+		this.username = uname;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
 		public int getType() {
 		return Type;
 	}
@@ -43,7 +51,7 @@ public class Report {
 	 
 	
 	public String toString() {
-		return getIduser()+" "+getType()+" "+getScore();
+		return getUsername()+" "+getScore();
 	}
 
 }

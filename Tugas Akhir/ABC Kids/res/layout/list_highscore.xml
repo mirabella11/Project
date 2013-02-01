@@ -1,26 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/tabhost"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-           
- <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:padding="5dp">
-        <TabWidget
-            android:id="@android:id/tabs"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-       
-        <FrameLayout
-            android:id="@android:id/tabcontent"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:padding="5dp" >
+        android:layout_height="fill_parent" 
+      	>
 
-       
-        </FrameLayout>
-    </LinearLayout>
-</TabHost>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:gravity="center_horizontal">
+        
+        <Button
+            android:id="@+id/hs1"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:text="Voice" />
+        
+        <Button
+            android:id="@+id/hs2"
+             android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/hs1"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:text="Image" />
+        
+        <Button
+            android:id="@+id/hs3"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/hs2"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:text="Arrange" />
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_alignRight="@+id/hs3"
+            android:layout_centerVertical="true"
+            android:layout_margin="50dp"
+            android:layout_marginRight="22dp"
+            android:orientation="horizontal" >
+        </ListView>
+        
+       </RelativeLayout>
+     
+
+    </RelativeLayout>

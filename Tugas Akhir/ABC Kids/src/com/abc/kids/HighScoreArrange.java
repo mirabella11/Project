@@ -8,5 +8,8 @@ public class HighScoreArrange extends Activity{
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.high_score_arrange);
 	        
+	        
+	        
+	        
 	 }
 }

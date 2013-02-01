@@ -2,13 +2,12 @@ package com.abc.kids;
 
 import java.util.Random;
 
-import com.abc.kids.R.layout;
+ 
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;

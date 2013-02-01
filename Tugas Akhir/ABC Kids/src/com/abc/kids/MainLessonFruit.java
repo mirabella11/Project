@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,10 +12,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainLessonFruit extends Activity implements OnClickListener {
+public class MainLessonFruit extends Activity {
 	private Button home,back,prev,spell,list,next;
 	private ImageView image= null;
-	private Word data;
    	public Dialog alfabetDialog;
   	public Button a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z;
   	private TextView name;
@@ -143,98 +141,491 @@ public class MainLessonFruit extends Activity implements OnClickListener {
 			alfabetDialog.getWindow().setAttributes(
 					(android.view.WindowManager.LayoutParams) alfabetDialogParams);
 					
-	/*		 a= (Button)findViewById(R.id.btnA);
-			 a.setOnClickListener(this);
-			 
-			 b= (Button)findViewById(R.id.btnB);
-			 b.setOnClickListener(this);
-			 
-			 c= (Button)findViewById(R.id.btnC);
-			 c.setOnClickListener(this);
-			 
-			 d= (Button)findViewById(R.id.btnD);
-			 d.setOnClickListener(this);
-			 
-			 e= (Button)findViewById(R.id.btnE);
-			 e.setOnClickListener(this);
-			 
-			 f= (Button)findViewById(R.id.btnF);
-			 f.setOnClickListener(this);
-			 
-			 g= (Button)findViewById(R.id.btnG);
-			 g.setOnClickListener(this);
-			 
-			 h= (Button)findViewById(R.id.btnH);
-			 h.setOnClickListener(this);
-			 
-			 i= (Button)findViewById(R.id.btnI);
-			 i.setOnClickListener(this);
-			 
-			 j= (Button)findViewById(R.id.btnJ);
-			 j.setOnClickListener(this);
-			 
-			 k= (Button)findViewById(R.id.btnK);
-			 k.setOnClickListener(this);
-			 
-			 l= (Button)findViewById(R.id.btnL);
-			 l.setOnClickListener(this);
-			 
-			 m= (Button)findViewById(R.id.btnM);
-			 m.setOnClickListener(this);
-			 
-			 n= (Button)findViewById(R.id.btnN); 
-			 n.setOnClickListener(this);
-			 
-			 o= (Button)findViewById(R.id.btnO);
-			 o.setOnClickListener(this);
-			 
-			 p= (Button)findViewById(R.id.btnP);
-			 p.setOnClickListener(this);
-			 
-			 q= (Button)findViewById(R.id.btnQ);
-			 q.setOnClickListener(this);
-			 
-			 r= (Button)findViewById(R.id.btnR);
-			 r.setOnClickListener(this);
-			 
-			 s= (Button)findViewById(R.id.btnS);
-			 s.setOnClickListener(this);
-			 
-			 t= (Button)findViewById(R.id.btnT);
-			 t.setOnClickListener(this);
-			 
-			 u= (Button)findViewById(R.id.btnU);
-			 u.setOnClickListener(this);
-			 
-			 v= (Button)findViewById(R.id.btnV); 
-			 v.setOnClickListener(this);
-			 
-			 w= (Button)findViewById(R.id.btnW); 
-			 w.setOnClickListener(this);
-			 
-			 x= (Button)findViewById(R.id.btnX); 
-			 x.setOnClickListener(this);
-			 
-			 y= (Button)findViewById(R.id.btnY);
-			 y.setOnClickListener(this);
-			 
-			 z= (Button)findViewById(R.id.btnZ);
-			 z.setOnClickListener(this);
+			
+			a= (Button)alfabetDialog.findViewById(R.id.btnA);
+		 	b= (Button)alfabetDialog.findViewById(R.id.btnB);
+		 	c= (Button)alfabetDialog.findViewById(R.id.btnC);
+		 	d= (Button)alfabetDialog.findViewById(R.id.btnD);
+		 	e= (Button)alfabetDialog.findViewById(R.id.btnE); 
+			f= (Button)alfabetDialog.findViewById(R.id.btnF);
+		    g= (Button)alfabetDialog.findViewById(R.id.btnG);
+		    h= (Button)alfabetDialog.findViewById(R.id.btnH); 
+		    i= (Button)alfabetDialog.findViewById(R.id.btnI);
+		    j= (Button)alfabetDialog.findViewById(R.id.btnJ); 
+		    k= (Button)alfabetDialog.findViewById(R.id.btnK);
+		    l= (Button)alfabetDialog.findViewById(R.id.btnL);
+		    m= (Button)alfabetDialog.findViewById(R.id.btnM); 
+		    n= (Button)alfabetDialog.findViewById(R.id.btnN); 
+		    o= (Button)alfabetDialog.findViewById(R.id.btnO);
+		    p= (Button)alfabetDialog.findViewById(R.id.btnP); 
+		    q= (Button)alfabetDialog.findViewById(R.id.btnQ);
+		    r= (Button)alfabetDialog.findViewById(R.id.btnR);
+		    s= (Button)alfabetDialog.findViewById(R.id.btnS); 
+		    t= (Button)alfabetDialog.findViewById(R.id.btnT); 
+			u= (Button)alfabetDialog.findViewById(R.id.btnU);
+			v= (Button)alfabetDialog.findViewById(R.id.btnV); 
+			w= (Button)alfabetDialog.findViewById(R.id.btnW); 
+		    x= (Button)alfabetDialog.findViewById(R.id.btnX); 
+		    y= (Button)alfabetDialog.findViewById(R.id.btnY);
+		    z= (Button)alfabetDialog.findViewById(R.id.btnZ);
 			 
 			 
-			 */
+		 	a.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	
+	            	GlobalData.getInstance().setPosition(0);
+		    		alfabetDialog.hide();
+		        	ChangeImage(); 
+		        	prev.setEnabled(false);
+		        	next.setEnabled(true);
+	            		}
+	        });
+			 
+		 	
+			b.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(5);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(6);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			
+			c.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(9);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(11);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			 
+			d.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(17);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(15);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			 
+			e.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(19);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(17);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			
+			f.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(20);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(17);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			
+			g.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(21);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(18);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			 
+			h.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(26);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(20);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			
+			i.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(28);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(21);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			
+			j.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(28);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(21);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			 
+
+			k.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(30);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(31);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			
+
+			l.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(32);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(38);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			m.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(35);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(40);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			n.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(37);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(45);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			o.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(38);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(48);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			p.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(40);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(48);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			q.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(50);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(55);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			r.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(51);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(56);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			s.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(55);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(58);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			t.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(62);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(62);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			u.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(64);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(64);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(true);
+	                     }
+	            		            		}
+	        });
+			v.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(65);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(false);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(65);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(false);
+	                     }
+	            		            		}
+	        });
+			w.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(65);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(false);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(65);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(false);
+	                     }
+	            		            		}
+	        });
+			x.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(65);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(false);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(65);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(false);
+	                     }
+	            		            		}
+	        });
+			y.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(65);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(false);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(65);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(false);
+	                     }
+	            		            		}
+	        });
+			z.setOnClickListener(new OnClickListener() {
+	            public void onClick(View view) {
+	            	 if (GlobalData.getInstance().lng==0){
+	            		 GlobalData.getInstance().setPosition(65);
+	 		    		alfabetDialog.hide();
+	 		        	ChangeImage(); 
+	 		        	prev.setEnabled(true);
+			        	next.setEnabled(false);
+	                     }else{
+	                    GlobalData.getInstance().setPosition(45);
+	 	 		    	alfabetDialog.hide();
+	 	 		    	ChangeImage(); 
+	 	 		    	prev.setEnabled(true);
+			        	next.setEnabled(false);
+	                     }
+	            		            		}
+	        });
+			 
+			
+			 
 			 
 	   }
 
-	public void onClick(View view) {
-
-		switch (view.getId()){
-		case R.id.btnA:
-			
-			break;
-		}
-		
-	}
+	 
 }
 	
 			

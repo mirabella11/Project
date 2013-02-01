@@ -160,7 +160,7 @@
             </intent-filter>
         </activity>
        
-         <activity android:name="HighScoreTab" 
+         <activity android:name="HighScoreList" 
                    android:screenOrientation="landscape" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN23" />

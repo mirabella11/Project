@@ -111,7 +111,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
   		dataWord(db,"Domba","Lamb",38,1);
   		dataWord(db,"Macan Tutul","Leopard",39,1);
   		dataWord(db,"Singa","Lion",40,1);
-  		dataWord(db,"Llama","Llama",41,1);
+  		dataWord(db,"Ilama","Ilama",41,1);
   		dataWord(db,"Lynx","Lynx",42,1);
   		dataWord(db,"Mockingbird","Mockingbird",43,1);
   		dataWord(db,"Monyet","Monkey",44,1);
@@ -144,7 +144,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
    		dataWord(db,"Allium","Allium",1,2);
    		dataWord(db,"Anemon","Anemone",2,2);
   		dataWord(db,"Aster","Aster",3,2);
-  		dataWord(db,"Bunga Bell","Bellflower",4,2);
+  		dataWord(db,"Bunga Lonceng","Bellflower",4,2);
   		dataWord(db,"Bugenvil","Bougainvillea",5,2);
   		dataWord(db,"Bunga Sapu","Broom",6,2);
   		dataWord(db,"Kamelia","Camellia",7,2);
@@ -172,7 +172,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
   		dataWord(db,"Bunga Telekan","Marigold",29,2);
   		dataWord(db,"Bunga Bulan","Moonflower",30,2);
   		dataWord(db,"Narsisis","Narcissus",31,2);
-  		dataWord(db,"Oleande","Oleander",32,2);
+  		dataWord(db,"Oleander","Oleander",32,2);
   		dataWord(db,"Anggrek","Orchid",33,2);
   		dataWord(db,"Passionflower","Passionflower",34,2);
   		dataWord(db,"Peony","Peony",35,2);

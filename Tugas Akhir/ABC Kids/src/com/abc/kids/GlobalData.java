@@ -61,6 +61,7 @@ public class GlobalData {
 	public float msc=1;
 	
 	public Report lastReport=null;
+	
 	protected GlobalData(){
 		 
 	}

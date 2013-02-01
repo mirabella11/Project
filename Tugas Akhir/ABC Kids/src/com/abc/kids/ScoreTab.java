@@ -30,7 +30,7 @@ public class ScoreTab extends TabActivity {
        
 
         // Do the same for the other tabs
-        Intent highscoreintent = new Intent().setClass(this, HighScoreTab.class);
+        Intent highscoreintent = new Intent().setClass(this, HighScoreList.class);
         TabSpec  highscore = tabHost.newTabSpec("HighScore").setIndicator("HighScore",
                           res.getDrawable(R.drawable.ic_tab_albums))
                       .setContent(highscoreintent );

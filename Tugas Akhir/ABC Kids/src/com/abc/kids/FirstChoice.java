@@ -6,22 +6,15 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.Toast;
-
 
 
 
 public class FirstChoice extends Activity {
 	private Button materi,test,laporan,akun,set,Yes,No,bahasa; 
-	private Dialog choiceDialog = null;
-	 
+  
 	 
 	
  

@@ -4,7 +4,6 @@ package com.abc.kids;
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
-import android.app.Application;
 import android.content.Intent;
 
 public class FirstActivity extends Activity {

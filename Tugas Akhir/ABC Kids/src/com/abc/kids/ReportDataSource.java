@@ -14,6 +14,7 @@ public class ReportDataSource {
 	
 	private SQLiteDatabase database;
 	private MySQLiteHelper dbHelper;
+	private List<Report> listReport = null;
 	
 	public static final String COL_ID = "idreport";
 	public static final String COL_ID_USER = "iduser";
@@ -54,12 +55,7 @@ public class ReportDataSource {
 		  return newReport;
 	  }
 	
-	/*  public void deleteReport(Report report) {
-		    long id = user.getId();
-		    System.out.println("Comment deleted with id: " + id);
-			database.delete(dbHelper.DB_TABLE_USER, COL_ID
-			    + " = " + id, null);
-			  } */
+	 
 		
 	
 	  
@@ -84,17 +80,17 @@ public class ReportDataSource {
 	  private Report cursorToReport(Cursor cursor) {
 		Report report = new Report();
 	    report.setId(cursor.getLong(0));
-	    report.setIduser(cursor.getLong(1));
+	    report.setUsername(cursor.getString(1));
 	    report.setType(cursor.getInt(2));
 	    report.setScore(cursor.getInt(3));
 	    
 	    return report;
 	  }
 	  
-	  public Report get(long id,int type,int score) {
+	  public Report getHigh(long id,int type) {
 			 
 			
-	  		Cursor cursor = database.rawQuery ( "select * from report where  = ", null);
+	  		Cursor cursor = database.rawQuery ( "select idreport,iduser,type_test,max(score) score from report where iduser = "+id+" and type_test="+type, null);
 	  		Report report = new Report();
 	  		
 	  		if (cursor.getCount() > 0) {
@@ -122,4 +118,59 @@ public class ReportDataSource {
 			}
 			return report;
 		}
+
+	   public List<Report> getHighscore(int type) {
+			 
+		   Report[] high=null;
+		   List<Report> reports = new ArrayList<Report>();
+	  		Cursor cursor = database.rawQuery ("select idreport,username,type_test,max(score) score from report r inner join user u on r.iduser=u.iduser where type_test= "+type+" group by r.iduser order by score desc limit 10", null);
+	 
+	  		
+	  		
+	  		if (cursor.getCount() > 0) {
+	  			high = new Report[cursor.getCount()];
+	  			int indexId = cursor.getColumnIndex("idreport");
+	  			int indexIduser  = cursor.getColumnIndex("username");
+				int indexType = cursor.getColumnIndex("type_test");
+				int indexScore = cursor.getColumnIndex("score");
+							
+				cursor.moveToFirst();
+				int i=0;
+				do {
+				 
+					Report report = cursorToReport(cursor);
+				    reports.add(report);
+		 
+
+					cursor.moveToNext();
+				} while (!cursor.isAfterLast());
+			}
+			return reports;
+		}
+	   
+	   public void updateListReport(List<Report> listReport2) {
+			this.listReport = listReport2;
+		}
+	   
+	   /*
+	  public List<User> getAllUser() {
+	   
+	
+	    Cursor cursor = database.query(dbHelper.DB_TABLE_USER,
+	        allColumns, null, null, null, null, null);
+	
+	    cursor.moveToFirst();
+	    while (!cursor.isAfterLast()) {
+		    User user = cursorToUser(cursor);
+		    users.add(user);
+		    cursor.moveToNext();
+	    }
+	    // Make sure to close the cursor
+	    cursor.close();
+	    return users;
+	  }
+	
+	  
+	  */
 }
+

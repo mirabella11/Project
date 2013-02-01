@@ -6,10 +6,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 
 public class ImageTest extends Activity{
 	private ImageView image;
@@ -65,6 +67,7 @@ public class ImageTest extends Activity{
 			rAnswer++;
 		}else{
 			wAnswer++;
+			toastImage();
 		}
 		
 		if(quizNumber==(rAnswer+wAnswer)){
@@ -143,4 +146,12 @@ public class ImageTest extends Activity{
         }       
         datasource.close();
 	}
+	public void toastImage(){
+		Toast toastGambar = new Toast(this);
+		        ImageView iv = new ImageView(this);
+		        iv.setImageResource(R.drawable.wrong);
+		        toastGambar.setGravity(Gravity.AXIS_CLIP |Gravity.CENTER_VERTICAL,0, 0);
+		        toastGambar.setView(iv);
+		        toastGambar.show();
+		}
 }
