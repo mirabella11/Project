@@ -4,7 +4,9 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@drawable/background_quiz"
+     >
   <RelativeLayout
       
         android:layout_width="400dp"
@@ -20,28 +22,37 @@
     <ImageView
         android:id="@+id/image1"
         android:layout_width="150dp"
-        android:layout_height="200dp"
+        android:layout_height="170dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="10dp"
          />
-
+	<TextView 
+	    android:id="@+id/notice"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/image1"
+	    android:text="Pilihlah jawaban yang merupakan nama dari gambar di atas"
+	    android:gravity="center_horizontal"
+	    android:layout_marginBottom="10dp"
+	    />
     <Button
         android:id="@+id/button1"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/image1"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="30dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notice"
+        android:layout_marginLeft="30dp"
+       
+        android:layout_alignParentLeft="true"
         />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/image1"
-        android:layout_toRightOf="@+id/button1"
-        android:layout_marginRight="40dp"   
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notice"
+         android:layout_marginRight="30dp"  
+        android:layout_alignParentRight="true"
           
          />
 

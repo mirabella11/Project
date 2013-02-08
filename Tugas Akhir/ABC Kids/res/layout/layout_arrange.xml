@@ -5,11 +5,12 @@
     android:layout_height="fill_parent"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="@drawable/background_quiz"
      >
   <RelativeLayout
       
         android:layout_width="400dp"
-        android:layout_height="300dp"
+        android:layout_height="280dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:gravity="center_vertical"
@@ -22,26 +23,33 @@
         android:id="@+id/image1"
         android:layout_width="170dp"
         android:layout_height="170dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="20dp"
         android:layout_centerHorizontal="true"
          />
-
+	<TextView 
+	    android:id="@+id/notice"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/image1"
+	    android:text="Susunlah nama dari gambar di atas"
+	    android:gravity="center_horizontal"
+	    android:layout_marginBottom="10dp"
+	    />
     
 
     <Button
         android:id="@+id/button1"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/image1"
+        android:layout_below="@+id/notice"
         android:layout_marginRight="10dp"
-        android:layout_alignWithParentIfMissing="true"
         android:text="B" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/image1"
+        android:layout_below="@+id/notice"
         android:layout_toRightOf="@+id/button1"
         android:layout_marginRight="10dp"
         android:text="C" />
@@ -50,7 +58,7 @@
         android:id="@+id/button3"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/image1"
+        android:layout_below="@+id/notice"
          android:layout_marginRight="10dp"
         android:layout_toRightOf="@+id/button2"
         android:text="D" />
@@ -60,7 +68,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginRight="10dp"
-        android:layout_below="@+id/image1"
+        android:layout_below="@+id/notice"
         android:layout_toRightOf="@+id/button3"
         android:text="E" />
 
@@ -68,7 +76,7 @@
         android:id="@+id/button5"
         android:layout_width="50dp"
         android:layout_height="50dp"
-       android:layout_below="@+id/image1"
+       android:layout_below="@+id/notice"
         android:layout_marginRight="10dp"
         android:layout_toRightOf="@+id/button4"
          
@@ -78,10 +86,8 @@
         android:id="@+id/button6"
         android:layout_width="50dp"
         android:layout_height="50dp"
-       	android:layout_below="@+id/image1"
-        
+       	android:layout_below="@+id/notice"
         android:layout_toRightOf="@+id/button5"
-        android:layout_alignParentRight="true"
         android:text="G" />
 
    </RelativeLayout>

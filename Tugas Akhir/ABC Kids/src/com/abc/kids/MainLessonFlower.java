@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainLessonFlower extends Activity   {
+public class MainLessonFlower extends Activity  {
 	private Button home,back,prev,spell,list,next;
 	private ImageView image= null;
 	private Word data;
@@ -31,7 +31,7 @@ public class MainLessonFlower extends Activity   {
 	        listarray=datasource.getList(GlobalData.getInstance().lng, 2);
 	        datasource.close();
 	        GlobalData.getInstance().setPosition(0);
-	      //  data = (Word) getIntent().getExtras().getSerializable("Word");
+	      
 	        
 	        home = (Button) findViewById(R.id.home_1);
 	        back = (Button) findViewById(R.id.back_1);
@@ -140,6 +140,7 @@ public class MainLessonFlower extends Activity   {
 			alfabetDialog.getWindow().setAttributes(
 					(android.view.WindowManager.LayoutParams) alfabetDialogParams);
 					
+			
 			a= (Button)alfabetDialog.findViewById(R.id.btnA);
 		 	b= (Button)alfabetDialog.findViewById(R.id.btnB);
 		 	c= (Button)alfabetDialog.findViewById(R.id.btnC);
@@ -620,9 +621,9 @@ public class MainLessonFlower extends Activity   {
 	        });
 			 
 			
+		
 			 
 	   }
- 
 }
 	
 			

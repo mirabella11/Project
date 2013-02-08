@@ -163,7 +163,7 @@ public class WordDataSource {
 	  public Word[] getSpell(){
 		  //Word word = new Word();
 		  Word[] list=null;
-		  Cursor cursor = database.rawQuery ( "select * from word where length(english)>=3 and length(english)<=6", null);
+		  Cursor cursor = database.rawQuery ( "select * from word where length(english)>=3 and length(english)<=6 and length(indonesia)>=3 and length(indonesia)<=6", null);
 		  
 		  if (cursor.getCount() > 0) {
 			  	list = new Word[cursor.getCount()];

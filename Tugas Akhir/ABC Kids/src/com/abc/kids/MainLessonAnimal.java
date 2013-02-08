@@ -225,6 +225,7 @@ public class MainLessonAnimal extends Activity  {
 		    y= (Button)alfabetDialog.findViewById(R.id.btnY);
 		    z= (Button)alfabetDialog.findViewById(R.id.btnZ);
 			 
+			 
 		 	a.setOnClickListener(new OnClickListener() {
 	            public void onClick(View view) {
 	            	
@@ -674,6 +675,7 @@ public class MainLessonAnimal extends Activity  {
 	                     }
 	            		            		}
 	        });
+			 
 			 
 			
 			 

@@ -3,9 +3,10 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:paddingBottom="30dp"
+    android:paddingBottom="10dp"
     android:paddingLeft="20dp"
-    android:paddingRight="30dp" >
+    android:paddingRight="30dp" 
+    android:background="@drawable/background2">
 
     <RelativeLayout
         android:id="@+id/relativeLayout1"
@@ -19,58 +20,58 @@
 
         <Button
             android:id="@+id/learn"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            android:layout_marginBottom="10dp"
             android:text="@string/button_learn"
-            android:textSize="10sp" />
+            android:textSize="15sp" 
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_menu_learn"/>
 
         <Button
             android:id="@+id/test"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
             android:layout_below="@+id/learn"
             android:layout_centerInParent="true"
-            android:layout_marginBottom="10dp"
             android:text="@string/button_test"
-            android:textSize="10sp" />
+            android:textSize="15sp" 
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_menu_test"/>
 
         <Button
             android:id="@+id/report"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
             android:layout_below="@+id/test"
             android:layout_centerInParent="true"
            	android:text="@string/button_report"
-            android:textSize="10sp" />
+            android:textSize="15sp" 
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_menu_report"/>
         
     
 
     
 
     </RelativeLayout>
-
-    <Button
-        android:id="@+id/changeacc"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@+id/changelng"
-        android:layout_toRightOf="@+id/report"
-          />
-    
+    
       <Button
-        android:id="@+id/changelng"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/setting"
-        android:layout_marginRight="20dp"
-         />
+          android:id="@+id/changelng"
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:layout_alignParentBottom="true"
+          android:layout_marginRight="10dp"
+          android:layout_toLeftOf="@+id/setting" 
+          android:background="@drawable/button_setting_language"/>
         
       <Button
         android:id="@+id/setting"
@@ -78,9 +79,17 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:background="@drawable/button_setting_setting"
           />
-      
- 
+
+      <Button
+          android:id="@+id/changeacc"
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:layout_alignParentBottom="true"
+          android:layout_marginRight="10dp"
+          android:layout_toLeftOf="@+id/changelng" 
+          android:background="@drawable/button_setting_user"/>
 
 </RelativeLayout>
  

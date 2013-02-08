@@ -28,20 +28,19 @@ public class Settings  extends Activity {
 	        if(GlobalData.getInstance().lng==0){
 	        	 
 	        	desc.setText("Setting For Music");
+	        	msc.setText("Music");
 	        	
 	        }else{
 	        	 
 	        	desc.setText("Pengaturan Musik");
+	        	msc.setText("Musik");
 	        }
 	        msc.setOnClickListener(new OnClickListener() {
 
 				public void onClick(View arg0) {
 					if (msc.isChecked()){
-						 
-						GlobalData.getInstance().setMusic(1);
-						
-					}
-					else {
+					GlobalData.getInstance().setMusic(1);
+					}else {
 						GlobalData.getInstance().setMusic(0);
 					}
 					

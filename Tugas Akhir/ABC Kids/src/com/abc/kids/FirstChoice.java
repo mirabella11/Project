@@ -97,23 +97,56 @@ public class FirstChoice extends Activity {
 	       
 
 	    public boolean onKeyDown(int keyCode, KeyEvent event) 
-	    {
+	    {	  if(GlobalData.getInstance().lng==0){
 	    	 if (keyCode == KeyEvent.KEYCODE_BACK)
 	    	 {
 	    		 new AlertDialog.Builder(this)
-	    	       
-	    	        .setTitle("Exit?")
-	    	        .setMessage("You are about to exit the Application. " + 
-	    	                     "Do you really want to exit?")
-	    	        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+  	       
+  	       
+ 	        .setMessage("You are about to exit the Application.\n" + 
+ 	                     "Do you really want to exit?")
+ 	        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+ 	             public void onClick(DialogInterface dialog, int which) {
+ 	            	 Intent homeIntent= new Intent(Intent.ACTION_MAIN);
+	            	 homeIntent.addCategory(Intent.CATEGORY_HOME);
+	            	 homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	            	 startActivity(homeIntent);
+ 	               
+ 	            	moveTaskToBack(true);
+ 	                }
+ 	         })
+ 	        .setNegativeButton("No", null)
+ 	        .show();
+ 		 	
+ 	        return true;
+ 	    }     else {
+ 	    	
+ 	        return super.onKeyDown(keyCode, event);
+ 	    }
+ 	 }
+        
+	    	
+	    	 
+	    		else{
+	    			if (keyCode == KeyEvent.KEYCODE_BACK)
+	   	    	 {
+	   	    		 new AlertDialog.Builder(this)
+	     	       
+	     	       
+	    	        .setMessage("Anda Akan Keluar Dari Aplikasi ini.\n" + 
+	    	                     "Apakah Anda Ingin Keluar?")
+	    	        .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
 	    	             public void onClick(DialogInterface dialog, int which) {
 	    	               
-	    	            	 moveTaskToBack(true);
-	    	                  
+	    	            	 Intent homeIntent= new Intent(Intent.ACTION_MAIN);
+	    	            	 homeIntent.addCategory(Intent.CATEGORY_HOME);
+	    	            	 homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	    	            	 startActivity(homeIntent); 
+	    	            	 
 	    	                 
 	    	                }
 	    	         })
-	    	        .setNegativeButton("No", null)
+	    	        .setNegativeButton("Tidak", null)
 	    	        .show();
 	    		 	
 	    	        return true;
@@ -121,10 +154,11 @@ public class FirstChoice extends Activity {
 	    	    	
 	    	        return super.onKeyDown(keyCode, event);
 	    	    }
-	    	 }
+	 	        }  
+	    		 
 	    
 	    
-	    
+	    }
 	    
 	       
 	   

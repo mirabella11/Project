@@ -3,9 +3,9 @@
     android:id="@+id/layoutLanguage"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
- 	android:paddingBottom="30dp"
- 	android:paddingLeft="30dp"
-    android:orientation="vertical" >
+ 	android:padding="15dp"
+    android:orientation="vertical" 
+    android:background="@drawable/background_wt">
 
     <RelativeLayout
         android:id="@+id/relativelayout1"
@@ -22,7 +22,10 @@
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
-            android:text="animal" />
+            android:text="Animal" 
+            android:textSize="15dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/button_menu_blue"/>
 
         <Button
             android:id="@+id/bunga"
@@ -31,7 +34,10 @@
             android:layout_below="@+id/hewan"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp" 
-            android:text="flower"/>
+            android:text="Flower"
+            android:textSize="15dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/button_menu_blue"/>
 
         <Button
             android:id="@+id/buah"
@@ -39,7 +45,10 @@
             android:layout_height="50dp"
             android:layout_below="@+id/bunga"
             android:layout_centerHorizontal="true"
-            android:text="fruit" />
+            android:text="Fruit" 
+            android:textSize="15dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/button_menu_blue"/>
 
     </RelativeLayout>
 
@@ -50,7 +59,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginRight="65dp"
             android:layout_alignParentLeft="true"
-            android:text="Back"
+            android:background="@drawable/button_back_white" 
             android:textSize="20sp" />
 
 </RelativeLayout>

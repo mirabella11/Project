@@ -2,66 +2,81 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layoutLanguage"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
+    
     android:gravity="center"
     android:orientation="vertical" >
-    
-
+    
      <RelativeLayout
-         android:layout_width="400dp"
-         android:layout_height="300dp"
+         android:id="@+id/relChoice"
+         android:layout_width="250dp"
+         android:layout_height="150dp"
          android:layout_alignParentTop="true"
-         android:layout_centerHorizontal="true"
-         android:layout_margin="50dp"
+         android:layout_centerVertical="true"
+         android:background="@drawable/background_dialog"
          android:gravity="center_vertical"
-         android:orientation="horizontal" >
+         android:orientation="vertical" >
 
-         <Button
-             android:id="@+id/btnCancel"
-             android:layout_width="69dp"
-             android:layout_height="50dp"
-             android:layout_alignParentRight="true"
-             android:layout_marginBottom="50dp"
-             android:layout_marginRight="30dp"
-              />
-
-         <Button
-             android:id="@+id/btnSelect"
-             android:layout_width="69dp"
-             android:layout_height="50dp"
-             android:layout_marginBottom="50dp"
-             android:layout_toLeftOf="@+id/btnCancel"
-             android:layout_marginRight="20dp"
-              />
-         
-          <Button
-             android:id="@+id/btnChange"
-             android:layout_width="69dp"
-             android:layout_height="50dp"
-             android:layout_marginBottom="50dp"
-             android:layout_toLeftOf="@+id/btnSelect"
-             android:layout_marginRight="20dp"
-             />
- 		
-          <Button
-             android:id="@+id/btnDelete"
-             android:layout_width="69dp"
-             android:layout_height="50dp"
-             android:layout_marginBottom="50dp"
-             android:layout_toLeftOf="@+id/btnChange"
-             android:layout_marginRight="20dp"
-             android:layout_marginLeft="20dp"
-               />
-          
-          <TextView
+         <TextView
               android:id="@+id/notice"
-              android:layout_width="wrap_content"
+              android:layout_width="fill_parent"
               android:layout_height="wrap_content"
               android:gravity="center"
-              android:layout_above="@+id/btnSelect"
-              android:layout_alignLeft="@+id/btnSelect"
+              android:layout_centerInParent="@+id/relChoice"
+              android:text="oke"
               android:layout_marginTop="20dp"
+              android:layout_marginBottom="10dp"              
               android:textAppearance="?android:attr/textAppearanceLarge" />
+         <Button
+             android:id="@+id/btnDelete"
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+             android:layout_below="@+id/notice"
+             android:layout_margin="10dp"     
+             android:drawableLeft="@drawable/icon_delete"      
+             android:background="@drawable/button_dialog_white"
+               />
+         
+         <Button
+             android:id="@+id/btnChange"
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+             android:layout_below="@+id/notice"
+             android:layout_toRightOf="@+id/btnDelete"
+             android:layout_margin="10dp"
+             android:drawableLeft="@drawable/icon_change"
+             android:background="@drawable/button_dialog_white"
+             />
+         
+         <Button
+             android:id="@+id/btnSelect"
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+             android:layout_below="@+id/notice"
+             android:layout_toRightOf="@+id/btnChange"
+             android:layout_margin="10dp"             
+             android:drawableLeft="@drawable/icon_select"
+             android:background="@drawable/button_dialog_white"
+              />
+         
+         <Button
+             android:id="@+id/btnCancel"
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+             android:layout_below="@+id/notice"
+             android:layout_toRightOf="@+id/btnSelect"
+             android:layout_margin="10dp"
+             android:drawableLeft="@drawable/icon_back"
+             android:background="@drawable/button_dialog_white"
+              />
+
+         
+         
+          
+ 		
+          
+          
+          
 
      </RelativeLayout>
 

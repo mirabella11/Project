@@ -4,7 +4,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@drawable/background2" >
    <RelativeLayout
       
         android:layout_width="400dp"
@@ -21,9 +22,10 @@
             android:layout_height="50dp"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="27dp"
+            android:layout_marginBottom="10dp"
             android:layout_centerHorizontal="true"
-            android:text="ENGLISH"
             android:textSize="15sp" 
+            android:background="@drawable/button_language_english"
             />
 
          
@@ -33,7 +35,7 @@
             android:layout_height="50dp"
             android:layout_below="@+id/eng"
             android:layout_centerHorizontal="true"
-            android:text="BAHASA INDONESIA"
+            android:background="@drawable/button_language_indonesia"
             android:textSize="15sp" />
     </RelativeLayout>
 

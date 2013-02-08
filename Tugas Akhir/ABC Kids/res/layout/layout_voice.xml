@@ -4,7 +4,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@drawable/background_quiz">
     
      <RelativeLayout
       
@@ -19,26 +20,39 @@
 		android:paddingRight="40dp">
 
     <Button
-        android:id="@+id/animal1"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginRight="30dp" 
-    />
-    
+        android:id="@+id/btnSound"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"        
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_play_sound" />
+	<TextView 
+	    android:id="@+id/notice"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@id/btnSound"
+	    android:layout_below="@+id/animal2"
+	    android:text="Tekan tombol suara untuk mendengarkan suara hewan, lalu pilihlah hewan yang mempunyai suara tersebut"
+	    android:gravity="center_horizontal"
+	    />
     <Button
         android:id="@+id/animal2"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_toRightOf="@+id/animal1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
          />
 
     <Button
-        android:id="@+id/btnSound"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/speaker" />
+        android:id="@+id/animal1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp" 
+        android:layout_marginTop="15dp"/>
     
 </RelativeLayout>
 </RelativeLayout>

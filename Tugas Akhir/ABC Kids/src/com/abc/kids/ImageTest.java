@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -62,30 +63,22 @@ public class ImageTest extends Activity{
 	}
 	
 	private void checkAnswer(int answer){
-		 scoresource.open();
+		
 		if(answer==iAnswer){
 			rAnswer++;
+			check();
 		}else{
 			wAnswer++;
 			toastImage();
+			new Handler().postDelayed(new Runnable(){
+	            public void run() {
+	            	check();
+	                	               
+	           	            		}
+	        		}, 2000);	
 		}
 		
-		if(quizNumber==(rAnswer+wAnswer)){
-			Report res=scoresource.createReport(GlobalData.getInstance().iduser, 2, (rAnswer*100)/quizNumber);
-			GlobalData.getInstance().setReport(res);
-			Intent mainIntent = new Intent(ImageTest.this, ScoreTest.class);
-			startActivity(mainIntent);
-		}else if((rAnswer+wAnswer)<=10){
-			
-			 if(GlobalData.getInstance().lng==0){
-	        	  createQuestion();
-	        	
-	        }else{
-	        	  createQuestionIndo();
-	        }   
-			 }
 		
-		scoresource.close();
 		
 	}
 	
@@ -154,4 +147,23 @@ public class ImageTest extends Activity{
 		        toastGambar.setView(iv);
 		        toastGambar.show();
 		}
+	public void check(){
+		 scoresource.open();
+		if(quizNumber==(rAnswer+wAnswer)){
+			Report res=scoresource.createReport(GlobalData.getInstance().iduser, 2, (rAnswer*100)/quizNumber);
+			GlobalData.getInstance().setReport(res);
+			Intent mainIntent = new Intent(ImageTest.this, ScoreTest.class);
+			startActivity(mainIntent);
+		}else if((rAnswer+wAnswer)<=10){
+			
+			 if(GlobalData.getInstance().lng==0){
+	        	  createQuestion();
+	        	
+	        }else{
+	        	  createQuestionIndo();
+	        }   
+			 }
+		
+		scoresource.close();
+	}
 }

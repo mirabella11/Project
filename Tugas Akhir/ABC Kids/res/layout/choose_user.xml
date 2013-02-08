@@ -4,7 +4,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/background">
     
 	 
     <LinearLayout
@@ -15,20 +16,20 @@
 
         <Button
             android:id="@+id/add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:onClick="onClick"/>
-
-        
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_dialog_grey"
+            android:onClick="onClick" />
         
     </LinearLayout>
+
     <ListView
         android:id="@android:id/list"
         android:layout_width="300dp"
         android:layout_height="200dp"
-        android:layout_margin="50dp"
-        android:orientation="horizontal"        
-	/>
+        android:background="@drawable/background_list"
+        android:orientation="horizontal" >
+    </ListView>
      
 </LinearLayout>

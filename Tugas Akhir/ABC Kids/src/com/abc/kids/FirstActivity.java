@@ -3,8 +3,13 @@ package com.abc.kids;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.WindowManager;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.PixelFormat;
+import android.graphics.drawable.BitmapDrawable;
 
 public class FirstActivity extends Activity {
 	
@@ -16,11 +21,14 @@ public class FirstActivity extends Activity {
 	       
 	        new Handler().postDelayed(new Runnable(){
 	            public void run() {
-	                /* Create an Intent that will start the Menu-Activity. */
+	            	
+	                
 	                Intent mainIntent = new Intent(FirstActivity.this, LanguageChoice.class);
 	                startActivity(mainIntent);
 	           	            		}
-	        		}, SPLASH_DISPLAY_LENGHT);	            		 
-	 		}
+	        		}, SPLASH_DISPLAY_LENGHT);	
+	       
+	       		}
+	 
 }
 

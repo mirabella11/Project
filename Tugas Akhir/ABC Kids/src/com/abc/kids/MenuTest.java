@@ -27,7 +27,7 @@ public class MenuTest extends Activity{
 	        }else{
 	        	guessvoice.setText("Tes Suara");
 	        	guessimage.setText("Tes Gambar");
-	        	arrange.setText("Tes Menyusun Kata");
+	        	arrange.setText("Tes Merangkai Huruf");
 	        }   
 	        
 	      guessvoice.setOnClickListener(new View.OnClickListener() {

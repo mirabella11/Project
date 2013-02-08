@@ -141,7 +141,6 @@ public class MainLessonFruit extends Activity {
 			alfabetDialog.getWindow().setAttributes(
 					(android.view.WindowManager.LayoutParams) alfabetDialogParams);
 					
-			
 			a= (Button)alfabetDialog.findViewById(R.id.btnA);
 		 	b= (Button)alfabetDialog.findViewById(R.id.btnB);
 		 	c= (Button)alfabetDialog.findViewById(R.id.btnC);
@@ -611,7 +610,7 @@ public class MainLessonFruit extends Activity {
 	 		        	prev.setEnabled(true);
 			        	next.setEnabled(false);
 	                     }else{
-	                    GlobalData.getInstance().setPosition(45);
+	                    GlobalData.getInstance().setPosition(65);
 	 	 		    	alfabetDialog.hide();
 	 	 		    	ChangeImage(); 
 	 	 		    	prev.setEnabled(true);
@@ -622,10 +621,9 @@ public class MainLessonFruit extends Activity {
 			 
 			
 			 
-			 
 	   }
 
-	 
+
 }
 	
 			

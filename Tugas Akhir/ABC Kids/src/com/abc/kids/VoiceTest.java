@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -31,9 +32,7 @@ public class VoiceTest extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_voice);
         scoresource = new ReportDataSource(this);
-        
         datasource = new WordDataSource(this);
-        
         first = (Button) findViewById(R.id.animal1);
         second = (Button) findViewById(R.id.animal2);
         sound = (Button) findViewById(R.id.btnSound);
@@ -91,25 +90,21 @@ public void onPause() {
    
    
    private void checkAnswer(int answer){
-		 scoresource.open();
+		
 		if(answer==iAnswer){
 			rAnswer++;
+			check();
 		}else{
 			wAnswer++;
 			toastImage();
+			 new Handler().postDelayed(new Runnable(){
+		            public void run() {
+		            	check();
+		                	               
+		           	            		}
+		        		}, 2000);	
 		}
-		
-		if(quizNumber==(rAnswer+wAnswer)){
-			Report res=scoresource.createReport(GlobalData.getInstance().iduser, 1, (rAnswer*100)/quizNumber);
-			GlobalData.getInstance().setReport(res);
-			Intent mainIntent = new Intent(VoiceTest.this, ScoreTest.class);
-			startActivity(mainIntent);
-		}else if((rAnswer+wAnswer)<=10){
-			createQuestion();
-		}
-		
-		scoresource.close();
-		
+				
 	}
    
    public void createQuestion(){
@@ -151,6 +146,19 @@ public void onPause() {
 		        iv.setImageResource(R.drawable.wrong);
 		        toastGambar.setGravity(Gravity.AXIS_CLIP |Gravity.CENTER_VERTICAL,0, 0);
 		        toastGambar.setView(iv);
+		        toastGambar.setDuration(1000);
 		        toastGambar.show();
 		}
+   public void check(){
+	   scoresource.open();
+	   if(quizNumber==(rAnswer+wAnswer)){
+			Report res=scoresource.createReport(GlobalData.getInstance().iduser, 1, (rAnswer*100)/quizNumber);
+			GlobalData.getInstance().setReport(res);
+			Intent mainIntent = new Intent(VoiceTest.this, ScoreTest.class);
+			startActivity(mainIntent);
+		}else if((rAnswer+wAnswer)<=10){
+			createQuestion();
+		}
+	   scoresource.close();
+   }
 }

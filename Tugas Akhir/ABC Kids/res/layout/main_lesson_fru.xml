@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-   
+   android:background="@drawable/background_fruit"
     
       >
 
@@ -12,9 +12,9 @@
     android:layout_width="300dp"
     android:layout_height="400dp"
     android:layout_centerHorizontal="true"
-    
     android:layout_marginLeft="18dp"
-    android:layout_marginTop="8dp" />
+    android:layout_marginTop="50dp"
+    android:layout_marginBottom="50dp" />
     
     
     
@@ -24,10 +24,9 @@
 <RelativeLayout
     android:id="@+id/layoutabove"
     android:layout_width="fill_parent"
-    android:layout_height="60dp"
-   
+    android:layout_height="wrap_content"
     android:layout_alignParentTop="true"
-    android:layout_alignParentLeft="true"
+    android:layout_alignParentLeft="true" 
     android:orientation="horizontal" >
     
     
@@ -37,7 +36,7 @@
         android:layout_height="65dp"
         android:layout_alignParentTop="true"
         android:layout_marginRight="20dp"
-        android:text="Home" />
+        android:background="@drawable/button_home" />
      
      <Button
    		 android:id="@+id/back_2"
@@ -45,16 +44,19 @@
    	 	 android:layout_height="65dp"
  	     android:layout_alignTop="@+id/home_2"
     	 android:layout_toRightOf="@+id/home_2"
-    	 android:text="Back" />
+    	 android:background="@drawable/button_back_white" />
      
       <TextView
          android:id="@+id/fruitname"
-         android:layout_width="200dp"
-         android:layout_height="70dp"
-         android:layout_marginLeft="150dp"
+         android:layout_width="300dp"
+         android:layout_height="wrap_content"
          android:layout_alignParentRight="true"
-          android:layout_alignParentTop="true"
-       	 android:textSize="40dp"
+         android:layout_below="@+id/layoutabove"
+         android:layout_marginRight="10dp"
+         android:layout_marginTop="10dp"
+         android:gravity="right"
+         android:textColor="#ffffff"
+         android:textSize="40dp"
          />
      
     
@@ -76,7 +78,7 @@
   	   android:layout_height="65dp"
   	   android:layout_alignParentBottom="true"
        android:layout_alignParentLeft="true"
-   	   android:text="previous" />
+   	   android:background="@drawable/button_prev_s" />
     
        
        
@@ -87,7 +89,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="30dp" 
         android:layout_toRightOf="@+id/prev_2"
-        android:text="Spell" />
+        android:background="@drawable/button_spell" />
        
        <Button
         android:id="@+id/list_2"
@@ -96,7 +98,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="30dp" 
         android:layout_toRightOf="@+id/spell_2"
-        android:text="List" />
+        android:background="@drawable/button_list" />
        
        
        
@@ -108,7 +110,7 @@
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/list_2"
         android:layout_marginLeft="30dp" 
-        android:text="Next" />
+        android:background="@drawable/button_next_s" />
     
     </RelativeLayout>
 
