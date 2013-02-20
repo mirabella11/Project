@@ -11,6 +11,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -32,15 +33,18 @@ public class ImageTest extends Activity{
         datasource = new WordDataSource(this);
         scoresource = new ReportDataSource(this);
        
-        
+        TextView text = (TextView) findViewById(R.id.notice);
         image = (ImageView) findViewById(R.id.image1);
         first = (Button) findViewById(R.id.button1);
         second = (Button) findViewById(R.id.button2);
         
+               
         if(GlobalData.getInstance().lng==0){
+        	text.setText("Choose the answer which are the name of the animal above");
         	  createQuestion();
         	
         }else{
+        	text.setText("Pilihlah jawaban yang merupakan nama dari gambar di atas");
         	  createQuestionIndo();
         }   
         
@@ -96,15 +100,29 @@ public class ImageTest extends Activity{
         if(iAnswer==0){
         	Word satu=datasource.get(n,qType+1);
             first.setText(satu.getEng());
+            boolean pass=true;
+            int o=0;
+            while(pass){
+            	o = rand.nextInt(max-1);
+            	if(o!=n){
+            		pass=false;
+            	}
+            }
             
-            int o = rand.nextInt(max-1);
             Word dua=datasource.get(o,qType+1);
             second.setText(dua.getEng());
         }else{
         	Word satu=datasource.get(n,qType+1);
         	second.setText(satu.getEng());
             
-            int o = rand.nextInt(max-1);
+        	boolean pass=true;
+            int o=0;
+            while(pass){
+            	o = rand.nextInt(max-1);
+            	if(o!=n){
+            		pass=false;
+            	}
+            }
             Word dua=datasource.get(o,qType+1);
             first.setText(dua.getEng());
         }       
@@ -126,14 +144,28 @@ public class ImageTest extends Activity{
         	Word satu=datasource.get(n,qType+1);
             first.setText(satu.getIndo());
             
-            int o = rand.nextInt(max-1);
+            boolean pass=true;
+            int o=0;
+            while(pass){
+            	o = rand.nextInt(max-1);
+            	if(o!=n){
+            		pass=false;
+            	}
+            }
             Word dua=datasource.get(o,qType+1);
             second.setText(dua.getIndo());
         }else{
         	Word satu=datasource.get(n,qType+1);
         	second.setText(satu.getIndo());
             
-            int o = rand.nextInt(max-1);
+        	boolean pass=true;
+            int o=0;
+            while(pass){
+            	o = rand.nextInt(max-1);
+            	if(o!=n){
+            		pass=false;
+            	}
+            }
             Word dua=datasource.get(o,qType+1);
             first.setText(dua.getIndo());
         }       

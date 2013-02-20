@@ -166,6 +166,13 @@
                 <action android:name="android.intent.action.MAIN23" />
             </intent-filter>
         </activity>
+        
+          <activity android:name="Credit" 
+                   android:screenOrientation="landscape" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN24" />
+            </intent-filter>
+        </activity>
    </application>
 
 </manifest>

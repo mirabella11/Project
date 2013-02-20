@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
@@ -19,8 +21,12 @@ public class MainLessonFlower extends Activity  {
    	public Dialog alfabetDialog;
   	public Button a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z;
   	private TextView name;
+  	public MediaPlayer player;
 	public WordDataSource datasource;
 	private int[] listarray={};
+	private Handler myHandler= new Handler();
+	private Runnable myRunn;
+	
 	
 	 public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
@@ -87,7 +93,7 @@ public class MainLessonFlower extends Activity  {
 	        
 	      spell.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View view1) {
-	            	 
+	            	spellVoice();
 	            		}
 
 	        });
@@ -116,6 +122,66 @@ public class MainLessonFlower extends Activity  {
         });
 	 }
 	  
+	 
+	
+	   
+
+		 private void spellVoice(){
+			 spell.setEnabled(false);
+			 final String spellname= name.getText().toString().toLowerCase();
+			 for(int i=0;i<spellname.length();i++){
+				 final int j=spellname.charAt(i) - 97;
+				 final int indx=i;
+				 if(j!=-65){
+					 myHandler.postDelayed(myRunn = new Runnable(){
+				            public void run() {
+				            	if(GlobalData.getInstance().lng==0){
+				            		playSpellEng(j);
+				            	}else{
+				            		playSpellIndo(j);
+				            	}
+				            	if(spellname.length()-1==indx){
+				            		spell.setEnabled(true);
+				            	}
+				           	            		}
+				        		}, 2000*i);
+				 }
+				 
+				 
+			 }
+		 }
+		 
+		 public void playSpellIndo(int i){
+			   try{
+		            if (player.isPlaying()) {
+		                player.stop();
+		                player.release();
+		            }
+		        }catch(Exception e){
+		            
+		        }
+		       player = MediaPlayer.create(this,GlobalData.getInstance().voice_indonesia[i]);
+		       player.setVolume(0,GlobalData.getInstance().msc);
+		       player.setLooping(false); 
+		       player.start();
+			   
+		   }
+		   
+		   public void playSpellEng(int i){
+			   try{
+		            if (player.isPlaying()) {
+		                player.stop();
+		                player.release();
+		            }
+		        }catch(Exception e){
+		            
+		        }
+		       player = MediaPlayer.create(this,GlobalData.getInstance().voice_english[i]);
+		       player.setVolume(0,GlobalData.getInstance().msc);
+		       player.setLooping(false); 
+		       player.start();
+			   
+		   }
 	 private void ChangeImage(){
 		 datasource.open();
 		 Drawable d = getResources().getDrawable(GlobalData.getInstance().img[1][listarray[GlobalData.getInstance().position]-1]);

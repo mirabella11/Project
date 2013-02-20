@@ -25,7 +25,6 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            android:text="@string/button_learn"
             android:textSize="15sp" 
             android:textColor="#ffffff"
             android:textStyle="bold"
@@ -38,7 +37,6 @@
             android:layout_height="40dp"
             android:layout_below="@+id/learn"
             android:layout_centerInParent="true"
-            android:text="@string/button_test"
             android:textSize="15sp" 
             android:textColor="#ffffff"
             android:textStyle="bold"
@@ -51,7 +49,6 @@
             android:layout_height="40dp"
             android:layout_below="@+id/test"
             android:layout_centerInParent="true"
-           	android:text="@string/button_report"
             android:textSize="15sp" 
             android:textColor="#ffffff"
             android:textStyle="bold"
@@ -90,6 +87,16 @@
           android:layout_marginRight="10dp"
           android:layout_toLeftOf="@+id/changelng" 
           android:background="@drawable/button_setting_user"/>
+      
+       <Button
+          android:id="@+id/credit"
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:layout_alignParentBottom="true"
+          android:layout_marginRight="10dp"
+          android:layout_toLeftOf="@+id/changeacc" 
+          android:background="@drawable/button_setting_credit"/>
+      
 
 </RelativeLayout>
  

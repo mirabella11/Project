@@ -31,7 +31,6 @@
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_below="@id/image1"
-	    android:text="Susunlah nama dari gambar di atas"
 	    android:gravity="center_horizontal"
 	    android:layout_marginBottom="10dp"
 	    />

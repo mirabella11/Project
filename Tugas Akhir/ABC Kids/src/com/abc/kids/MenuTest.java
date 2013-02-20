@@ -17,7 +17,7 @@ public class MenuTest extends Activity{
 	        Button guessvoice = (Button) findViewById(R.id.voice);
 	        Button guessimage = (Button) findViewById(R.id.image);
 	        Button arrange    = (Button) findViewById(R.id.word);
-	        
+	        Button back = (Button) findViewById(R.id.back);
 	        
 	        if(GlobalData.getInstance().lng==0){
 	        	guessvoice.setText("Voice Test");
@@ -51,7 +51,16 @@ public class MenuTest extends Activity{
               }
 
 	        });
-	      
+	      back.setOnClickListener(new View.OnClickListener() {
+	            
+
+				public void onClick(View aha) {
+					Intent myIntent = new Intent(aha.getContext(),FirstChoice.class);
+	                startActivityForResult(myIntent, 0);
+					
+       }
+
+      });
 	        
 	        
 }

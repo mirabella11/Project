@@ -32,7 +32,6 @@
 	    android:layout_height="wrap_content"
 	    android:layout_above="@id/btnSound"
 	    android:layout_below="@+id/animal2"
-	    android:text="Tekan tombol suara untuk mendengarkan suara hewan, lalu pilihlah hewan yang mempunyai suara tersebut"
 	    android:gravity="center_horizontal"
 	    />
     <Button
@@ -42,7 +41,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="15dp"
+    
          />
 
     <Button
@@ -52,7 +51,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="10dp" 
-        android:layout_marginTop="15dp"/>
+      />
     
 </RelativeLayout>
 </RelativeLayout>

@@ -13,7 +13,7 @@ import android.widget.Button;
 
 
 public class FirstChoice extends Activity {
-	private Button materi,test,laporan,akun,set,Yes,No,bahasa; 
+	private Button materi,test,laporan,akun,set,Yes,No,bahasa,cre; 
   
 	 
 	
@@ -28,7 +28,8 @@ public class FirstChoice extends Activity {
 	        akun   = (Button) findViewById(R.id.changeacc);
 	        set    = (Button) findViewById(R.id.setting);
 	        bahasa = (Button) findViewById(R.id.changelng);
-	       
+	        cre    = (Button) findViewById(R.id.credit);
+	        
 	       if(GlobalData.getInstance().lng==0){
 	        	materi.setText("Learn");
 	        	test.setText("Test");
@@ -88,6 +89,15 @@ public class FirstChoice extends Activity {
 				
 				public void onClick(View five) {
 					Intent myIntent = new Intent(five.getContext(), Settings.class);
+	                startActivityForResult(myIntent, 0);
+					
+				}
+			});
+	       
+	       cre.setOnClickListener(new View.OnClickListener() {
+				
+				public void onClick(View five) {
+					Intent myIntent = new Intent(five.getContext(), Credit.class);
 	                startActivityForResult(myIntent, 0);
 					
 				}

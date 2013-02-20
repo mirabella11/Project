@@ -26,6 +26,9 @@ public class ListScore extends Activity{
 	        Report rep2 = scoresource.getHigh(GlobalData.getInstance().iduser,2);
 	        score2.setText(""+rep2.getScore());
 	        
+	        Report rep3 = scoresource.getHigh(GlobalData.getInstance().iduser,3);
+	        score3.setText(""+rep3.getScore());
+	        
 	        scoresource.close();
 	        
 	 }

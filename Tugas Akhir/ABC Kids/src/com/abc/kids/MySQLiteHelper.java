@@ -172,7 +172,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
   		dataWord(db,"Bunga Telekan","Marigold",29,2);
   		dataWord(db,"Bunga Bulan","Moonflower",30,2);
   		dataWord(db,"Narsisis","Narcissus",31,2);
-  		dataWord(db,"Oleande","Oleander",32,2);
+  		dataWord(db,"Oleander","Oleander",32,2);
   		dataWord(db,"Anggrek","Orchid",33,2);
   		dataWord(db,"Passionflower","Passionflower",34,2);
   		dataWord(db,"Peony","Peony",35,2);
@@ -236,7 +236,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
   		dataWord(db,"Pir","Pear",44,3);
   		dataWord(db,"Kesemek","Persimmon",45,3);
   		dataWord(db,"Nanas","Pineapple",46,3);
-  		dataWord(db,"Kacang Pistaci","Pistachio",47,3);
+  		dataWord(db,"Kacang Pistacio","Pistachio",47,3);
   		dataWord(db,"Prem","Plum",48,3);
   		dataWord(db,"Delima","Pomegranate",49,3);
   		dataWord(db,"Pomelo","Pomelo",50,3);

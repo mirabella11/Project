@@ -54,7 +54,14 @@ public class GlobalData {
 									  R.raw.sound_sealion,R.raw.sound_snake,R.raw.sound_sparrow,R.raw.sound_swallow,R.raw.sound_tiger,R.raw.sound_turkey,
 									  R.raw.sound_vulture,R.raw.sound_whale,R.raw.sound_wolf,R.raw.sound_woodpecker,R.raw.sound_zebra};
 	 
-	
+	public int [] voice_indonesia = new int []{R.raw.a_indo,R.raw.b_indo,R.raw.c_indo,R.raw.d_indo,R.raw.e_indo,R.raw.f_indo,R.raw.g_indo,R.raw.h_indo,R.raw.i_indo,
+											   R.raw.j_indo,R.raw.k_indo,R.raw.l_indo,R.raw.m_indo,R.raw.n_indo,R.raw.o_indo,R.raw.p_indo,R.raw.q_indo,R.raw.r_indo,
+											   R.raw.s_indo,R.raw.t_indo,R.raw.u_indo,R.raw.v_indo,R.raw.w_indo,R.raw.x_indo,R.raw.y_indo,R.raw.z_indo,R.raw.bagus_indo,
+											   R.raw.hebat_indo,R.raw.tidak_indo};
+	public int [] voice_english = new int   []{R.raw.a_eng,R.raw.b_eng,R.raw.c_eng,R.raw.d_eng,R.raw.e_eng,R.raw.f_eng,R.raw.g_eng,R.raw.h_eng,R.raw.i_eng,R.raw.j_eng,
+											   R.raw.k_eng,R.raw.l_eng,R.raw.m_eng,R.raw.n_eng,R.raw.o_eng,R.raw.p_eng,R.raw.q_eng,R.raw.r_eng,R.raw.s_eng,R.raw.t_eng,
+											   R.raw.u_eng,R.raw.v_eng,R.raw.w_eng,R.raw.x_eng,R.raw.y_eng,R.raw.z_eng,R.raw.good_job,
+											   R.raw.excellent_eng,R.raw.notbad_eng};
 	
 	public int position = 0;
 	public int lng;

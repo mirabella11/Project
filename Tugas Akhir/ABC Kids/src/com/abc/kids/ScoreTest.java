@@ -2,17 +2,20 @@ package com.abc.kids;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class ScoreTest extends Activity{
+	public MediaPlayer player;
 		
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_score);
         
+      
         Report hasil = GlobalData.getInstance().lastReport;
         
         TextView result = (TextView) findViewById(R.id.result_comment);
@@ -26,20 +29,26 @@ public class ScoreTest extends Activity{
         	score.setText("SCORE"); 
         if (hasil.getScore()<=50){
         	result.setText("NOT BAD , TRY AGAIN");
+          	playSoundEnglish(28);
             }else if(hasil.getScore()>50&&hasil.getScore()<=80) {
             	  result.setText("GOOD JOB");
+               	playSoundEnglish(26);
             }else if (hasil.getScore()>80&&hasil.getScore()<=100){
             	  result.setText("EXCELLENT");
+              	playSoundEnglish(27);
             }
         }
         else {
         	score.setText("NILAI"); 
         	 if (hasil.getScore()<=50){
              	result.setText("TIDAK BURUK , COBA LAGI");
+            	playSoundIndo(28);
                  }else if(hasil.getScore()>50&&hasil.getScore()<=80) {
                  	  result.setText("BAGUS");
+                 	 playSoundIndo(26);
                  }else if (hasil.getScore()>80&&hasil.getScore()<=100){
                  	  result.setText("HEBAT");
+                 	 playSoundIndo(27);
                  }
         }
          resultscore.setText(""+hasil.getScore());
@@ -64,7 +73,43 @@ public class ScoreTest extends Activity{
 
        });
       
+      
+      
         
         
 	}
+	
+	public void playSoundEnglish(int position){
+		GlobalData.getInstance().setPosition(position);
+    	try{
+            if (player.isPlaying()) {
+                player.stop();
+                player.release();
+            }
+        }catch(Exception e){
+            
+        }
+       player = MediaPlayer.create(this,GlobalData.getInstance().voice_english[GlobalData.getInstance().position]);
+       player.setVolume(0,GlobalData.getInstance().msc);
+       player.setLooping(false); 
+       player.start();
+ 	}
+	
+	public void playSoundIndo(int position){
+		GlobalData.getInstance().setPosition(position);
+    	try{
+            if (player.isPlaying()) {
+                player.stop();
+                player.release();
+            }
+        }catch(Exception e){
+            
+        }
+       player = MediaPlayer.create(this,GlobalData.getInstance().voice_indonesia[GlobalData.getInstance().position]);
+       player.setVolume(0,GlobalData.getInstance().msc);
+       player.setLooping(false); 
+       player.start();
+ 	}
+	
+ 
 }

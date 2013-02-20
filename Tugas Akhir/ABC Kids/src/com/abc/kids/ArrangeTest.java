@@ -1,14 +1,19 @@
 package com.abc.kids;
 
 import java.util.Random;
+
+import junit.framework.Test;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ArrangeTest extends Activity {
@@ -16,6 +21,7 @@ public class ArrangeTest extends Activity {
 	private Button first,second,third,fourth,fiveth,sixth;
 	public WordDataSource datasource;
 	public ReportDataSource scoresource;
+	public TextView text;
 	String answer="";
 	int quizNumber=10;
 	int rAnswer=0,wAnswer=0;
@@ -41,10 +47,18 @@ public class ArrangeTest extends Activity {
          fourth = (Button) findViewById(R.id.button4);
          fiveth = (Button) findViewById(R.id.button5);
          sixth = (Button) findViewById(R.id.button6);
+         text = (TextView) findViewById(R.id.notice);
          refreshButton();
          createQuestion();
          
+         if(GlobalData.getInstance().lng==0){
+	        	text.setText("Arrange a name of the picture above");
+	         }else{
+	        	text.setText("Susunlah nama dari gambar di atas");
+	        }
 	}
+	
+	
 	private void checkButton(Button btn,String text){
 		btn.setVisibility(View.GONE);
 		answer+=text;
@@ -52,31 +66,47 @@ public class ArrangeTest extends Activity {
 		if(GlobalData.getInstance().lng==0){
 			if(q.getEng().length()==answer.length()){
 				if(q.getEng().toUpperCase().equals(answer.toUpperCase())){
-					Toast.makeText(this,"Answer right", Toast.LENGTH_LONG).show();
 					rAnswer++;
+					answerCheck();
 				}else if(q.getEng().length()==answer.length()){
-					Toast.makeText(this,"Answer wrong", Toast.LENGTH_LONG).show();	
 					wAnswer++;
+					
+					toastImage();
+					new Handler().postDelayed(new Runnable(){
+			            public void run() {
+			            	answerCheck();
+			                	               
+			           	            		}
+			        		}, 2000);	
 				}
-				answerCheck();
 			}
 			
         } else {
         	if(q.getIndo().length()==answer.length()){
         		if(q.getIndo().toUpperCase().equals(answer.toUpperCase())){
-    				Toast.makeText(this,"Answer right", Toast.LENGTH_LONG).show();
-    				rAnswer++;
+       				rAnswer++;
+       				answerCheck();
     			}else if(q.getIndo().length()==answer.length()){
-    				Toast.makeText(this,"Answer wrong", Toast.LENGTH_LONG).show();
-    				wAnswer++;
-    			}
-        		answerCheck();
+      				wAnswer++;
+					
+					toastImage();
+					new Handler().postDelayed(new Runnable(){
+			            public void run() {
+			            	answerCheck();
+			                	               
+			           	            		}
+			        		}, 2000);	
+				}
         	}        	
         }
 	}
+	
+
 	private void answerCheck(){
 		if(rAnswer+wAnswer==quizNumber){
+			scoresource.open();
 			Report res=scoresource.createReport(GlobalData.getInstance().iduser, 3, (rAnswer*100)/quizNumber);
+			scoresource.close();
 			GlobalData.getInstance().setReport(res);
 			Intent mainIntent = new Intent(ArrangeTest.this, ScoreTest.class);
 			startActivity(mainIntent);
@@ -211,6 +241,15 @@ public class ArrangeTest extends Activity {
    	 
    	   	   	 
     }
+    
+    public void toastImage(){
+		Toast toastGambar = new Toast(this);
+		        ImageView iv = new ImageView(this);
+		        iv.setImageResource(R.drawable.wrong);
+		        toastGambar.setGravity(Gravity.AXIS_CLIP |Gravity.CENTER_VERTICAL,0, 0);
+		        toastGambar.setView(iv);
+		        toastGambar.show();
+		}
  
    	 
 }

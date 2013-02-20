@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -36,8 +37,14 @@ public class VoiceTest extends Activity {
         first = (Button) findViewById(R.id.animal1);
         second = (Button) findViewById(R.id.animal2);
         sound = (Button) findViewById(R.id.btnSound);
+        TextView  text = (TextView)findViewById(R.id.notice);
         
         createQuestion();
+        if(GlobalData.getInstance().lng==0){
+        	text.setText("Press the sound to hear the animal voice, then choose the animal which has the voice");
+         }else{
+        	text.setText("Tekan tombol suara untuk mendengarkan suara hewan, lalu pilihlah hewan yang mempunyai suara tersebut");
+        }
         
         first.setOnClickListener(new View.OnClickListener() {
             public void onClick(View voice1) {
@@ -124,8 +131,15 @@ public void onPause() {
     	   Drawable d = getResources().getDrawable(GlobalData.getInstance().img[0][n]);
     	    first.setBackgroundDrawable(d);
        	 
-           
-           int o = rand.nextInt(max-1);
+    	    
+    	    boolean pass=true;
+            int o=0;
+            while(pass){
+            	o = rand.nextInt(max-1);
+            	if(o!=n){
+            		pass=false;
+            	}
+            }
            Drawable e = getResources().getDrawable(GlobalData.getInstance().img[0][o]);
    	    	second.setBackgroundDrawable(e);
       	 
@@ -133,7 +147,14 @@ public void onPause() {
     	   Drawable d = getResources().getDrawable(GlobalData.getInstance().img[0][n]);
     	   second.setBackgroundDrawable(d);
            
-           int o = rand.nextInt(max-1);
+    	   boolean pass=true;
+           int o=0;
+           while(pass){
+           	o = rand.nextInt(max-1);
+           	if(o!=n){
+           		pass=false;
+           	}
+           }
            Drawable e = getResources().getDrawable(GlobalData.getInstance().img[0][o]);
            first.setBackgroundDrawable(e);
        }       
