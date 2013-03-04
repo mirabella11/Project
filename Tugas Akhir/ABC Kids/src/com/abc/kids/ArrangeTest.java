@@ -21,7 +21,7 @@ public class ArrangeTest extends Activity {
 	private Button first,second,third,fourth,fiveth,sixth;
 	public WordDataSource datasource;
 	public ReportDataSource scoresource;
-	public TextView text;
+	public TextView text,answerF;
 	String answer="";
 	int quizNumber=10;
 	int rAnswer=0,wAnswer=0;
@@ -39,7 +39,7 @@ public class ArrangeTest extends Activity {
         list= datasource.getSpell();
         datasource.close();
         scoresource = new ReportDataSource(this);
-        
+        answerF = (TextView) findViewById(R.id.answer);
          image= (ImageView) findViewById (R.id.image1);
          first = (Button) findViewById(R.id.button1);
          second = (Button) findViewById(R.id.button2);
@@ -60,18 +60,29 @@ public class ArrangeTest extends Activity {
 	
 	
 	private void checkButton(Button btn,String text){
-		btn.setVisibility(View.GONE);
+		btn.setVisibility(View.GONE);		
 		answer+=text;
+		if(answerF.getVisibility()==TextView.GONE){
+			answerF.setVisibility(TextView.VISIBLE);			
+		}
+		answerF.setText(answer);
 		Word q=list[iAnswer];
 		if(GlobalData.getInstance().lng==0){
 			if(q.getEng().length()==answer.length()){
 				if(q.getEng().toUpperCase().equals(answer.toUpperCase())){
 					rAnswer++;
-					answerCheck();
+					toastImageRight();
+					new Handler().postDelayed(new Runnable(){
+			            public void run() {
+			            	answerCheck();
+			                	               
+			           	            		}
+			        		}, 2000);	
 				}else if(q.getEng().length()==answer.length()){
 					wAnswer++;
 					
-					toastImage();
+					toastImageWrong();
+					answerF.setText(q.getEng());
 					new Handler().postDelayed(new Runnable(){
 			            public void run() {
 			            	answerCheck();
@@ -85,11 +96,18 @@ public class ArrangeTest extends Activity {
         	if(q.getIndo().length()==answer.length()){
         		if(q.getIndo().toUpperCase().equals(answer.toUpperCase())){
        				rAnswer++;
-       				answerCheck();
+       				toastImageRight();
+					new Handler().postDelayed(new Runnable(){
+			            public void run() {
+			            	answerCheck();
+			                	               
+			           	            		}
+			        		}, 2000);	
     			}else if(q.getIndo().length()==answer.length()){
       				wAnswer++;
-					
-					toastImage();
+      				
+      				toastImageWrong();
+      				answerF.setText(q.getIndo());
 					new Handler().postDelayed(new Runnable(){
 			            public void run() {
 			            	answerCheck();
@@ -111,6 +129,7 @@ public class ArrangeTest extends Activity {
 			Intent mainIntent = new Intent(ArrangeTest.this, ScoreTest.class);
 			startActivity(mainIntent);
 		}else{
+			answerF.setVisibility(TextView.GONE);
 			refreshButton();
 			createQuestion();
 		}
@@ -242,10 +261,19 @@ public class ArrangeTest extends Activity {
    	   	   	 
     }
     
-    public void toastImage(){
+    public void toastImageWrong(){
 		Toast toastGambar = new Toast(this);
 		        ImageView iv = new ImageView(this);
 		        iv.setImageResource(R.drawable.wrong);
+		        toastGambar.setGravity(Gravity.AXIS_CLIP |Gravity.CENTER_VERTICAL,0, 0);
+		        toastGambar.setView(iv);
+		        toastGambar.show();
+		}
+    
+    public void toastImageRight(){
+		Toast toastGambar = new Toast(this);
+		        ImageView iv = new ImageView(this);
+		        iv.setImageResource(R.drawable.right);
 		        toastGambar.setGravity(Gravity.AXIS_CLIP |Gravity.CENTER_VERTICAL,0, 0);
 		        toastGambar.setView(iv);
 		        toastGambar.show();

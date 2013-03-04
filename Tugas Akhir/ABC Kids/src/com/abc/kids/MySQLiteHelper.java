@@ -72,7 +72,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	  public void insertWord(SQLiteDatabase db)
 	      {		
 		dataWord(db,"Elang Laut","Albatross",1,1);  
-		dataWord(db,"Antelope","Antelope",2,1);
+		dataWord(db,"Kijang","Antelope",2,1);
 		dataWord(db,"Luak","Badger",3,1);
 		dataWord(db,"Kelelawar","Bat",4,1);
 		dataWord(db,"Beruang","Bear",5,1);
@@ -201,7 +201,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
   		dataWord(db,"Blueberi","Blueberries",9,3);
   		dataWord(db,"Melon Kuning","Cantaloupe",10,3);
   		dataWord(db,"Jambu Monyet","Cashew",11,3);
-  		dataWord(db,"Cherimoya","Cherimoya",12,3);
+  		dataWord(db,"Srikaya","Cherimoya",12,3);
   		dataWord(db,"Ceri","Cherry",13,3);
   		dataWord(db,"Kastanye","Chestnut",14,3);
   		dataWord(db,"Clementine","Clementine",15,3);
@@ -215,7 +215,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
    		dataWord(db,"Anggur","Grape",23,3);
   		dataWord(db,"Gooseberi","Gooseberries",24,3);
   		dataWord(db,"Jeruk Bali","Grapefruit",25,3);
-  		dataWord(db,"Jambu","Guava",26,3);
+  		dataWord(db,"Jambu Biji","Guava",26,3);
   		dataWord(db,"Hazelnut","Hazelnut",27,3);
   		dataWord(db,"Melon","Honeydew",28,3);
   		dataWord(db,"Nangka","Jackfruit",29,3);

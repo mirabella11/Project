@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.InputFilter.LengthFilter;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
@@ -80,9 +81,11 @@ public class MainLessonAnimal extends Activity  {
 	            	
 	            	next.setEnabled(true);
 	            	
+	            	onDestroy();
+	            	onStart();
 	            	try{
 	    	            if (player.isPlaying()) {
-	    	                player.stop();
+	    	            	player.stop();
 	    	                player.release();
 	    	            }
 	    	        }catch(Exception e){
@@ -93,7 +96,7 @@ public class MainLessonAnimal extends Activity  {
 	             	}else{
 	             		prev.setEnabled(true);
 	             		}	
-	   	        
+	            	
 	            	GlobalData.getInstance().setPosition(GlobalData.getInstance().position-1);
 	            	ChangeImage();
 	            	
@@ -110,7 +113,12 @@ public class MainLessonAnimal extends Activity  {
 	        
 	      spell.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View view1) {
+	            	
 	            	spellVoice();
+	            		            
+	            	      	
+	            	
+	            	              	           
 	            		}
 
 	        });
@@ -125,13 +133,17 @@ public class MainLessonAnimal extends Activity  {
 	      next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view1) {
             	prev.setEnabled(true);
+            	onDestroy();
+            	onStart();
+           	
             	try{
     	            if (player.isPlaying()) {
-    	                player.stop();
+    	            	player.stop();
     	                player.release();
+    	               
     	            }
     	        }catch(Exception e){
-    	            
+    	            e.printStackTrace();
     	        }
             	if (GlobalData.getInstance().position+1==GlobalData.getInstance().max_number[0]-1){
             		
@@ -141,8 +153,11 @@ public class MainLessonAnimal extends Activity  {
              		next.setEnabled(true);
              		
              	}
+            	
             	GlobalData.getInstance().setPosition(GlobalData.getInstance().position+1);
+            	
             	ChangeImage();
+            
          }
 
         });
@@ -162,29 +177,49 @@ public class MainLessonAnimal extends Activity  {
 			            		playSpellEng(j);
 			            	}else{
 			            		playSpellIndo(j);
-			            	}
+				            	}
+			            	
 			            	if(spellname.length()-1==indx){
 			            		spell.setEnabled(true);
 			            	}
-			           	            		}
-			        		}, 2000*i);
-			 }
-			 
-			 
+			            }
+			            
+			        		}, 1500*i); 
+			
+			 } 
+			
 		 }
+		 
+		 } 
+	 
+	 public void spelling(){
+		 if(GlobalData.getInstance().lng==0){
+				
+				
+		     		playSoundAllEnglish();
+		     		
+				
+				 }else{
+		     		
+		     	
+		     		playSoundAllIndo();
+		     		
+		     	}
 	 }
+	 
 	  
 	 private void ChangeImage(){
 		 datasource.open();
 		 Drawable d = getResources().getDrawable(GlobalData.getInstance().img[0][listarray[GlobalData.getInstance().position]-1]);
          image.setImageDrawable(d);
-         
+        
          Word anm = datasource.get(listarray[GlobalData.getInstance().position]-1, 1);
          if (GlobalData.getInstance().lng==0){
          name.setText(anm.getEng());
          }else{
          name.setText(anm.getIndo()); 
          }
+        spelling();
          datasource.close();
 	 	}
 	 
@@ -196,7 +231,7 @@ public class MainLessonAnimal extends Activity  {
 	                player.release();
 	            }
 	        }catch(Exception e){
-	            
+	            e.printStackTrace();
 	        }
 	       player = MediaPlayer.create(this,GlobalData.getInstance().voice[listarray[GlobalData.getInstance().position]-1]);
 	       player.setVolume(0,GlobalData.getInstance().msc);
@@ -204,10 +239,44 @@ public class MainLessonAnimal extends Activity  {
 	       player.start();
 	 	}
 	 
+	 public void playSoundAllIndo(){
+	    	try{
+	            if (player.isPlaying()) {
+	                player.stop();
+	                player.release();
+	            }
+	        }catch(Exception e){
+	            e.printStackTrace();
+	        }
+	       player = MediaPlayer.create(this,GlobalData.getInstance().voice_animal_indo[GlobalData.getInstance().position]);
+	       player.setVolume(0,GlobalData.getInstance().msc);
+	       player.setLooping(false); 
+	       player.start();
+	 	}
+	 
+	 public void playSoundAllEnglish(){
+	    	try{
+	            if (player.isPlaying()) {
+	                player.stop();
+	                player.release();
+	            }
+	        }catch(Exception e){
+	            e.printStackTrace();
+	        }
+	    	
+	       player = MediaPlayer.create(this,GlobalData.getInstance().voice_animal_english[GlobalData.getInstance().position]);
+	       player.setVolume(0,GlobalData.getInstance().msc);
+	       player.setLooping(false); 
+	       player.start();
+	 	}
+	 
+	 
+	 
 	   public void onPause() {
  	        try{
  	        super.onPause();
  	        player.pause();
+ 	        player.reset();
  	        }catch (Exception e){
  	 
  	        }
@@ -220,7 +289,7 @@ public class MainLessonAnimal extends Activity  {
 	                player.release(); 
 	            }
 	        }catch(Exception e){
-	            
+	        	 e.printStackTrace();
 	        }
 		   
           
@@ -238,7 +307,7 @@ public class MainLessonAnimal extends Activity  {
 	                player.release();
 	            }
 	        }catch(Exception e){
-	            
+	        	 e.printStackTrace();
 	        }
 		   
 	       player = MediaPlayer.create(this,GlobalData.getInstance().voice_english[i]);
@@ -247,6 +316,17 @@ public class MainLessonAnimal extends Activity  {
 	       player.start();
 		   
 	   }
+	   
+	   protected void onStart() {
+		    super.onStart();
+		    myHandler = new Handler();
+		    myHandler.post(myRunn);
+
+		}
+	   protected void onDestroy() {
+		    super.onDestroy();
+		    myHandler.removeCallbacksAndMessages(null);
+		}
 	   
 	   public void ListAlfabet(){
 		    alfabetDialog = new Dialog(MainLessonAnimal.this);
@@ -307,7 +387,7 @@ public class MainLessonAnimal extends Activity  {
 	 		        	prev.setEnabled(true);
 			        	next.setEnabled(true);
 	                     }else{
-	                    GlobalData.getInstance().setPosition(5);
+	                    GlobalData.getInstance().setPosition(4);
 	 	 		    	alfabetDialog.hide();
 	 	 		    	ChangeImage(); 
 	 	 		    	prev.setEnabled(true);
@@ -325,8 +405,7 @@ public class MainLessonAnimal extends Activity  {
 	 		        	prev.setEnabled(true);
 			        	next.setEnabled(true);
 	                     }else{
-	                    GlobalData.getInstance().setPosition(18);
-	 	 		    	alfabetDialog.hide();
+	                    GlobalData.getInstance().setPosition(17);
 	 	 		    	ChangeImage(); 
 	 	 		    	prev.setEnabled(true);
 			        	next.setEnabled(true);
@@ -343,7 +422,7 @@ public class MainLessonAnimal extends Activity  {
 	 		        	prev.setEnabled(true);
 			        	next.setEnabled(true);
 	                     }else{
-	                    GlobalData.getInstance().setPosition(18);
+	                    GlobalData.getInstance().setPosition(17);
 	 	 		    	alfabetDialog.hide();
 	 	 		    	ChangeImage(); 
 	 	 		    	prev.setEnabled(true);
@@ -361,7 +440,7 @@ public class MainLessonAnimal extends Activity  {
 	 		        	prev.setEnabled(true);
 			        	next.setEnabled(true);
 	                     }else{
-	                    GlobalData.getInstance().setPosition(19);
+	                    GlobalData.getInstance().setPosition(18);
 	 	 		    	alfabetDialog.hide();
 	 	 		    	ChangeImage(); 
 	 	 		    	prev.setEnabled(true);
@@ -379,7 +458,7 @@ public class MainLessonAnimal extends Activity  {
 	 		        	prev.setEnabled(true);
 			        	next.setEnabled(true);
 	                     }else{
-	                    GlobalData.getInstance().setPosition(21);
+	                    GlobalData.getInstance().setPosition(20);
 	 	 		    	alfabetDialog.hide();
 	 	 		    	ChangeImage(); 
 	 	 		    	prev.setEnabled(true);
@@ -397,7 +476,7 @@ public class MainLessonAnimal extends Activity  {
 	 		        	prev.setEnabled(true);
 			        	next.setEnabled(true);
 	                     }else{
-	                    GlobalData.getInstance().setPosition(23);
+	                    GlobalData.getInstance().setPosition(22);
 	 	 		    	alfabetDialog.hide();
 	 	 		    	ChangeImage(); 
 	 	 		    	prev.setEnabled(true);
@@ -415,7 +494,7 @@ public class MainLessonAnimal extends Activity  {
 	 		        	prev.setEnabled(true);
 			        	next.setEnabled(true);
 	                     }else{
-	                    GlobalData.getInstance().setPosition(26);
+	                    GlobalData.getInstance().setPosition(25);
 	 	 		    	alfabetDialog.hide();
 	 	 		    	ChangeImage(); 
 	 	 		    	prev.setEnabled(true);
@@ -451,7 +530,7 @@ public class MainLessonAnimal extends Activity  {
 	 		        	prev.setEnabled(true);
 			        	next.setEnabled(true);
 	                     }else{
-	                    GlobalData.getInstance().setPosition(29);
+	                    GlobalData.getInstance().setPosition(28);
 	 	 		    	alfabetDialog.hide();
 	 	 		    	ChangeImage(); 
 	 	 		    	prev.setEnabled(true);
@@ -470,7 +549,7 @@ public class MainLessonAnimal extends Activity  {
 	 		        	prev.setEnabled(true);
 			        	next.setEnabled(true);
 	                     }else{
-	                    GlobalData.getInstance().setPosition(30);
+	                    GlobalData.getInstance().setPosition(29);
 	 	 		    	alfabetDialog.hide();
 	 	 		    	ChangeImage(); 
 	 	 		    	prev.setEnabled(true);

@@ -15,6 +15,7 @@
         android:layout_centerHorizontal="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
+        android:layout_marginTop="120dp"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
 		 >
@@ -90,5 +91,22 @@
         android:text="G" />
 
    </RelativeLayout>
-
+<FrameLayout 
+	    android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"	
+       >
+	    
+		<TextView
+		    android:background="@layout/round_shape"
+		    android:padding="5dp"
+		    android:id="@+id/answer"
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"        	        
+	        android:textSize="60dp"
+	        android:textColor="#ffffff"
+	        android:visibility="gone"
+	        android:layout_gravity="center_vertical|center_horizontal"
+	        />
+	    
+	</FrameLayout>
 </RelativeLayout>

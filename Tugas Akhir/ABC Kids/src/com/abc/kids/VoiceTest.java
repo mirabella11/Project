@@ -100,10 +100,16 @@ public void onPause() {
 		
 		if(answer==iAnswer){
 			rAnswer++;
-			check();
+			toastImageRight();
+			 new Handler().postDelayed(new Runnable(){
+		            public void run() {
+		            	check();
+		                	               
+		           	            		}
+		        		}, 2000);	
 		}else{
 			wAnswer++;
-			toastImage();
+			toastImageWrong();
 			 new Handler().postDelayed(new Runnable(){
 		            public void run() {
 		            	check();
@@ -161,13 +167,21 @@ public void onPause() {
        datasource.close();
    }
    
-   public void toastImage(){
+   public void toastImageWrong(){
 		Toast toastGambar = new Toast(this);
 		        ImageView iv = new ImageView(this);
 		        iv.setImageResource(R.drawable.wrong);
 		        toastGambar.setGravity(Gravity.AXIS_CLIP |Gravity.CENTER_VERTICAL,0, 0);
 		        toastGambar.setView(iv);
 		        toastGambar.setDuration(1000);
+		        toastGambar.show();
+		}
+   public void toastImageRight(){
+		Toast toastGambar = new Toast(this);
+		        ImageView iv = new ImageView(this);
+		        iv.setImageResource(R.drawable.right);
+		        toastGambar.setGravity(Gravity.AXIS_CLIP |Gravity.CENTER_VERTICAL,0, 0);
+		        toastGambar.setView(iv);
 		        toastGambar.show();
 		}
    public void check(){
